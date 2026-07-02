@@ -256,18 +256,18 @@ svg {
 
 .hero-glow {
   background: radial-gradient(
-    980px 520px at 50% -120px,
+    1320px 760px at 50% -180px,
     rgba(92, 158, 255, 0.16),
-    transparent 76%
+    transparent 80%
   );
 }
 
 .hero-grid-bg {
   background-image: linear-gradient(rgba(151, 168, 190, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(151, 168, 190, 0.07) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(1080px 620px at 50% -120px, #000, transparent 78%);
-  mask-image: radial-gradient(1080px 620px at 50% -120px, #000, transparent 78%);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(1440px 860px at 50% -200px, #000, transparent 82%);
+  mask-image: radial-gradient(1440px 860px at 50% -200px, #000, transparent 82%);
 }
 
 .hero .container {
