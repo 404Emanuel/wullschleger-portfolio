@@ -19,7 +19,7 @@ export const translations = {
       contact: "Kontakt",
     },
     hero: {
-      badge: "Junior Digital Integration Software Engineer · Franke Coffee Systems",
+      badge: "Junior Digital Integration Software Engineer",
       name: "Emanuel Wullschleger",
       headline: "Software Engineering Student",
       subheadline:
@@ -32,8 +32,8 @@ export const translations = {
       num: "01",
       title: "Über mich",
       paragraphs: [
-        "Ich arbeite als Junior Digital Integration Software Engineer bei Franke Coffee Systems und studiere berufsbegleitend Applikationsentwicklung an der TEKO (dipl. Informatiker HF).",
-        "Mein beruflicher Hintergrund liegt im Testen komplexer Systeme – von Qualitätssicherung und Testautomatisierung bis zu Bug-Analyse und CI/CD-Workflows. Diese Arbeit hat mir beigebracht, Software wirklich zu verstehen: wie sie funktioniert, wo sie bricht und wie man sie besser macht. Genau dieses Fundament nutze ich jetzt, um mich gezielt in Richtung Software Engineering und Application Development weiterzuentwickeln.",
+        "Ich arbeite als Junior Digital Integration Software Engineer bei Franke Coffee Systems und studiere berufsbegleitend den Dipl. Informatiker Applikationsentwicklung HF",
+        "Mein beruflicher Hintergrund liegt im Testen komplexer Systeme, von Qualitätssicherung und Testautomatisierung bis zu Bug-Analyse und CI/CD-Workflows. Diese Arbeit hat mir beigebracht, Software wirklich zu verstehen: wie sie funktioniert, wo sie bricht und wie man sie besser macht. Genau dieses Fundament nutze ich jetzt, um mich gezielt in Richtung Software Engineering und Application Development weiterzuentwickeln.",
       ],
     },
     focus: {
@@ -63,15 +63,15 @@ export const translations = {
           note: "Im Studium, in Lernprojekten und im eigenen Homelab.",
           building: true,
           items: [
-            "Application Development",
+            "Applikationsentwicklung",
             "FastAPI",
             "SQL / PostgreSQL",
             "Docker Basics",
             "Go Basics",
             "React/Vite Basics",
             "GitHub",
-            "Cloudflare Pages",
-            "Linux Basics",
+            "Cloudflare",
+            "Linux",
           ],
         },
       ],
@@ -116,8 +116,8 @@ export const translations = {
     contact: {
       num: "05",
       title: "Kontakt",
-      lead: "Lass uns vernetzen.",
-      text: "Ob Feedback, Austausch oder eine mögliche Zusammenarbeit – ich freue mich über deine Nachricht.",
+      lead: "Lass uns vernetzen!",
+      text: "Ob Feedback, Austausch oder eine mögliche Zusammenarbeit, ich freue mich über deine Nachricht.",
       cv: "CV herunterladen",
       cvSoon: "folgt bald",
     },
@@ -137,7 +137,7 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      badge: "Junior Digital Integration Software Engineer · Franke Coffee Systems",
+      badge: "Junior Digital Integration Software Engineer",
       name: "Emanuel Wullschleger",
       headline: "Software Engineering Student",
       subheadline:
@@ -150,8 +150,8 @@ export const translations = {
       num: "01",
       title: "About",
       paragraphs: [
-        "I work as a Junior Digital Integration Software Engineer at Franke Coffee Systems and study application development at TEKO (Dipl. Informatiker HF) alongside my job.",
-        "My professional background is in testing complex systems — from quality assurance and test automation to bug analysis and CI/CD workflows. That work taught me to understand software in depth: how it works, where it breaks and how to make it better. It is the foundation I am now building on as I grow towards software engineering and application development.",
+        "I work as a Junior Digital Integration Software Engineer at Franke Coffee Systems and study computer science with a focus on application development (Dipl. Informatiker HF).",
+        "My professional background is in testing complex systems, from quality assurance and test automation to bug analysis and CI/CD workflows. That work taught me to understand software in depth: how it works, where it breaks and how to make it better. It is the foundation I am now building on as I grow towards software engineering and application development.",
       ],
     },
     focus: {
@@ -188,8 +188,8 @@ export const translations = {
             "Go Basics",
             "React/Vite Basics",
             "GitHub",
-            "Cloudflare Pages",
-            "Linux Basics",
+            "Cloudflare",
+            "Linux",
           ],
         },
       ],
@@ -234,8 +234,8 @@ export const translations = {
     contact: {
       num: "05",
       title: "Contact",
-      lead: "Let's connect.",
-      text: "Whether it's feedback, a quick chat or a potential opportunity — I'm happy to hear from you.",
+      lead: "Let's connect!",
+      text: "Whether it's feedback, a quick chat or a potential opportunity, i'm happy to hear from you.",
       cv: "Download CV",
       cvSoon: "coming soon",
     },
