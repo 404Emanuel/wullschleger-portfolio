@@ -27,7 +27,6 @@ export const translations = {
       headline: "Software Engineering & Test Automation",
       subheadline:
         "Ich teste und automatisiere komplexe Systeme mit Python, Squish und Selenium – und baue dieses Fundament gezielt Richtung Application Development aus.",
-      meta: "Franke Coffee Systems · Informatik HF (TEKO) · Schweiz",
       linkedin: "LinkedIn",
       github: "GitHub",
       gdev: "Google Developer Profil",
@@ -149,7 +148,6 @@ export const translations = {
       headline: "Software Engineering & Test Automation",
       subheadline:
         "I test and automate complex systems with Python, Squish and Selenium — and I'm building on that foundation to grow into application development.",
-      meta: "Franke Coffee Systems · Computer Science HF (TEKO) · Switzerland",
       linkedin: "LinkedIn",
       github: "GitHub",
       gdev: "Google Developer profile",

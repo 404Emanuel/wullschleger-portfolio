@@ -379,16 +379,8 @@ svg {
   line-height: 1.7;
 }
 
-.hero-meta {
-  margin-top: 20px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-  color: var(--text-faint);
-}
-
 .hero-actions {
-  margin-top: 32px;
+  margin-top: 36px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

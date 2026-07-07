@@ -22,11 +22,7 @@ export default function Hero({ t }) {
           {t.hero.subheadline}
         </p>
 
-        <p className="hero-meta fade-up" style={{ animationDelay: "240ms" }}>
-          {t.hero.meta}
-        </p>
-
-        <div className="hero-actions fade-up" style={{ animationDelay: "300ms" }}>
+        <div className="hero-actions fade-up" style={{ animationDelay: "270ms" }}>
           <a className="btn btn-primary" href="#contact">
             {t.hero.contact}
             <ArrowRightIcon />
