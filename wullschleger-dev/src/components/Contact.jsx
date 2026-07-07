@@ -1,5 +1,5 @@
 import Reveal from "./Reveal.jsx";
-import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./Icons.jsx";
+import { DownloadIcon, GitHubIcon, GoogleDevIcon, LinkedInIcon, MailIcon } from "./Icons.jsx";
 import { profile } from "../translations.js";
 
 // CV download is a placeholder for now.
@@ -48,6 +48,15 @@ export default function Contact({ t }) {
               >
                 <GitHubIcon />
                 GitHub
+              </a>
+              <a
+                className="btn btn-ghost"
+                href={profile.gdev}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GoogleDevIcon />
+                Google Dev
               </a>
               {CV_URL ? (
                 <a className="btn btn-ghost" href={CV_URL} download>

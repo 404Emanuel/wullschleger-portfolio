@@ -5,6 +5,7 @@ export const profile = {
   email: "emanuel.wullschleger@icloud.com",
   linkedin: "https://www.linkedin.com/in/emanuel-wullschleger/",
   github: "https://github.com/404Emanuel",
+  gdev: "https://g.dev/404Emanuel",
 };
 
 export const translations = {
@@ -26,6 +27,7 @@ export const translations = {
         "Ich baue praktische Software-Development-Skills auf und bringe Erfahrung in Testing, Automatisierung und technischer Fehleranalyse mit.",
       linkedin: "LinkedIn",
       github: "GitHub",
+      gdev: "Google Dev",
       contact: "Kontakt",
     },
     about: {
@@ -144,6 +146,7 @@ export const translations = {
         "I am building practical software development skills with a background in testing, automation and technical problem solving.",
       linkedin: "LinkedIn",
       github: "GitHub",
+      gdev: "Google Dev",
       contact: "Contact",
     },
     about: {

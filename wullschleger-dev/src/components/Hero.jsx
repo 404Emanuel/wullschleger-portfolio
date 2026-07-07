@@ -1,4 +1,4 @@
-import { GitHubIcon, LinkedInIcon } from "./Icons.jsx";
+import { GitHubIcon, GoogleDevIcon, LinkedInIcon } from "./Icons.jsx";
 import { profile } from "../translations.js";
 
 export default function Hero({ t }) {
@@ -40,6 +40,15 @@ export default function Hero({ t }) {
           >
             <GitHubIcon />
             {t.hero.github}
+          </a>
+          <a
+            className="btn btn-ghost"
+            href={profile.gdev}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GoogleDevIcon />
+            {t.hero.gdev}
           </a>
           <a className="btn btn-primary" href="#contact">
             {t.hero.contact}
