@@ -8,13 +8,13 @@ Personal portfolio of **Emanuel Wullschleger** — Junior Digital Integration So
 
 ## About this site
 
-I designed and built the site from scratch — no template, no UI library.
+Deliberately small — no template, no UI library, no CSS framework.
 
 - **React + Vite**, fully static, hosted on Cloudflare Pages
-- **Hand-written CSS** on a small design-token system (colors, spacing, radii, shadows) in a single stylesheet
+- **Custom CSS** on a small design-token system (colors, spacing, radii, shadows) in a single stylesheet
 - **Bilingual** — German (default) and English, with all copy in one translations file
-- **Subtle motion** — CSS entrance animation and IntersectionObserver scroll reveals, fully disabled for `prefers-reduced-motion`
-- **Accessibility basics** — semantic HTML, skip link, visible focus states, ARIA labels, dark color scheme with tested contrast
+- **Subtle motion** — CSS entrance animation and IntersectionObserver scroll reveals, disabled for `prefers-reduced-motion`
+- **Accessibility basics** — semantic HTML, skip link, visible focus states, ARIA labels
 
 ## Structure
 
