@@ -16,15 +16,20 @@ export default function Experience({ t }) {
         <div className="xp-list">
           {experience.entries.map((entry, i) => (
             <Reveal key={`${entry.role}-${entry.org}`} delay={i * 80}>
-              <article className="xp-item">
+              <article className={`xp-item${entry.edu ? " xp-item--edu" : ""}`}>
                 <p className="xp-period">{entry.period}</p>
-                <div className="xp-body">
+                <span className="xp-marker" aria-hidden="true"></span>
+                <div className="xp-card">
                   <div className="xp-role-row">
                     <h3 className="xp-role">{entry.role}</h3>
                     {entry.tag && <span className="xp-tag">{entry.tag}</span>}
                   </div>
                   <p className="xp-org">{entry.org}</p>
-                  <p className="xp-note">{entry.note}</p>
+                  <ul className="xp-bullets">
+                    {entry.bullets.map((bullet) => (
+                      <li key={bullet.slice(0, 24)}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               </article>
             </Reveal>

@@ -1,5 +1,11 @@
 import Reveal from "./Reveal.jsx";
-import { DownloadIcon, GitHubIcon, GoogleDevIcon, LinkedInIcon, MailIcon } from "./Icons.jsx";
+import {
+  ArrowRightIcon,
+  DownloadIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+} from "./Icons.jsx";
 import { profile } from "../translations.js";
 
 // CV download is a placeholder for now.
@@ -9,6 +15,34 @@ const CV_URL = "";
 
 export default function Contact({ t }) {
   const { contact } = t;
+
+  const channels = [
+    {
+      key: "email",
+      href: `mailto:${profile.email}`,
+      label: contact.channels.email,
+      value: profile.email,
+      Icon: MailIcon,
+      external: false,
+    },
+    {
+      key: "linkedin",
+      href: profile.linkedin,
+      label: contact.channels.linkedin,
+      value: "emanuel-wullschleger",
+      Icon: LinkedInIcon,
+      external: true,
+    },
+    {
+      key: "github",
+      href: profile.github,
+      label: contact.channels.github,
+      value: "404Emanuel",
+      Icon: GitHubIcon,
+      external: true,
+    },
+  ];
+
   return (
     <section className="section" id="contact">
       <div className="container">
@@ -25,46 +59,38 @@ export default function Contact({ t }) {
             <p className="contact-lead">{contact.lead}</p>
             <p className="contact-text">{contact.text}</p>
 
-            <a className="contact-email" href={`mailto:${profile.email}`}>
-              <MailIcon />
-              {profile.email}
-            </a>
+            <div className="contact-cards">
+              {channels.map(({ key, href, label, value, Icon, external }) => (
+                <a
+                  key={key}
+                  className="contact-card"
+                  href={href}
+                  {...(external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  <span className="contact-card-icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className="contact-card-body">
+                    <span className="contact-card-label">{label}</span>
+                    <span className="contact-card-value">{value}</span>
+                  </span>
+                  <span className="contact-card-arrow" aria-hidden="true">
+                    <ArrowRightIcon />
+                  </span>
+                </a>
+              ))}
+            </div>
 
-            <div className="contact-actions">
-              <a
-                className="btn btn-ghost"
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LinkedInIcon />
-                LinkedIn
-              </a>
-              <a
-                className="btn btn-ghost"
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GitHubIcon />
-                GitHub
-              </a>
-              <a
-                className="btn btn-ghost"
-                href={profile.gdev}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GoogleDevIcon />
-                Google Dev
-              </a>
-              {CV_URL && (
+            {CV_URL && (
+              <div className="contact-actions">
                 <a className="btn btn-ghost" href={CV_URL} download>
                   <DownloadIcon />
                   {contact.cv}
                 </a>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </Reveal>
       </div>

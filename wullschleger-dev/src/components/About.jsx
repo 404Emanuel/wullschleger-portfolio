@@ -12,13 +12,27 @@ export default function About({ t }) {
             <span className="section-line" aria-hidden="true"></span>
           </header>
         </Reveal>
-        <Reveal delay={80}>
-          <div className="about-text">
-            {about.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
-            ))}
-          </div>
-        </Reveal>
+
+        <div className="about-layout">
+          <Reveal delay={80}>
+            <div className="about-text">
+              {about.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={160}>
+            <div className="about-facts">
+              {about.highlights.map((fact) => (
+                <div className="fact" key={fact.label}>
+                  <span className="fact-label">{fact.label}</span>
+                  <p>{fact.text}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

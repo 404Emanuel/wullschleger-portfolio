@@ -8,6 +8,7 @@ export default function Header({ lang, onLangChange, t }) {
     ["#about", t.nav.about],
     ["#focus", t.nav.focus],
     ["#experience", t.nav.experience],
+    ["#projects", t.nav.projects],
     ["#contact", t.nav.contact],
   ];
 

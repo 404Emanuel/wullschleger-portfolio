@@ -4,7 +4,7 @@ import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import TechnicalFocus from "./components/TechnicalFocus.jsx";
 import Experience from "./components/Experience.jsx";
-import CurrentlyExploring from "./components/CurrentlyExploring.jsx";
+import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
 import { profile, translations } from "./translations.js";
 
@@ -42,7 +42,7 @@ export default function App() {
         <About t={t} />
         <TechnicalFocus t={t} />
         <Experience t={t} />
-        <CurrentlyExploring t={t} />
+        <Projects t={t} />
         <Contact t={t} />
       </main>
       <footer className="site-footer">
