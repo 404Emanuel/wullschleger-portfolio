@@ -58,16 +58,11 @@ export default function Contact({ t }) {
                 <GoogleDevIcon />
                 Google Dev
               </a>
-              {CV_URL ? (
+              {CV_URL && (
                 <a className="btn btn-ghost" href={CV_URL} download>
                   <DownloadIcon />
                   {contact.cv}
                 </a>
-              ) : (
-                <button type="button" className="btn btn-ghost" disabled>
-                  <DownloadIcon />
-                  {contact.cv} <span className="cv-soon">({contact.cvSoon})</span>
-                </button>
               )}
             </div>
           </div>

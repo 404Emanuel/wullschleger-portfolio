@@ -1,4 +1,4 @@
-import { GitHubIcon, GoogleDevIcon, LinkedInIcon } from "./Icons.jsx";
+import { ArrowRightIcon, GitHubIcon, GoogleDevIcon, LinkedInIcon } from "./Icons.jsx";
 import { profile } from "../translations.js";
 
 export default function Hero({ t }) {
@@ -22,15 +22,14 @@ export default function Hero({ t }) {
           {t.hero.subheadline}
         </p>
 
-        <div className="hero-actions fade-up" style={{ animationDelay: "270ms" }}>
-          <a
-            className="btn btn-ghost"
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedInIcon />
-            {t.hero.linkedin}
+        <p className="hero-meta fade-up" style={{ animationDelay: "240ms" }}>
+          {t.hero.meta}
+        </p>
+
+        <div className="hero-actions fade-up" style={{ animationDelay: "300ms" }}>
+          <a className="btn btn-primary" href="#contact">
+            {t.hero.contact}
+            <ArrowRightIcon />
           </a>
           <a
             className="btn btn-ghost"
@@ -41,18 +40,28 @@ export default function Hero({ t }) {
             <GitHubIcon />
             {t.hero.github}
           </a>
-          <a
-            className="btn btn-ghost"
-            href={profile.gdev}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GoogleDevIcon />
-            {t.hero.gdev}
-          </a>
-          <a className="btn btn-primary" href="#contact">
-            {t.hero.contact}
-          </a>
+          <div className="hero-socials">
+            <a
+              className="btn btn-ghost btn-icon"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.hero.linkedin}
+              title={t.hero.linkedin}
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              className="btn btn-ghost btn-icon"
+              href={profile.gdev}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.hero.gdev}
+              title={t.hero.gdev}
+            >
+              <GoogleDevIcon />
+            </a>
+          </div>
         </div>
       </div>
     </section>

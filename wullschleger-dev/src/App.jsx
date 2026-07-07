@@ -6,7 +6,7 @@ import TechnicalFocus from "./components/TechnicalFocus.jsx";
 import Experience from "./components/Experience.jsx";
 import CurrentlyExploring from "./components/CurrentlyExploring.jsx";
 import Contact from "./components/Contact.jsx";
-import { translations } from "./translations.js";
+import { profile, translations } from "./translations.js";
 
 function getInitialLang() {
   try {
@@ -48,6 +48,17 @@ export default function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <p>© {new Date().getFullYear()} Emanuel Wullschleger · wullschleger.dev</p>
+          <nav className="footer-links" aria-label="Social">
+            <a href={profile.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a href={profile.gdev} target="_blank" rel="noopener noreferrer">
+              g.dev
+            </a>
+          </nav>
           <p className="footer-tech">{t.footer.built}</p>
         </div>
       </footer>
