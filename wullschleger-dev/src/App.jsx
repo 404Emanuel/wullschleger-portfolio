@@ -59,7 +59,16 @@ export default function App() {
               g.dev
             </a>
           </nav>
-          <p className="footer-tech">{t.footer.built}</p>
+          <a
+            className="footer-source"
+            href={profile.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t.footer.sourceLabel}
+            title={t.footer.sourceLabel}
+          >
+            <span aria-hidden="true">{"</>"}</span> {t.footer.source}
+          </a>
         </div>
       </footer>
     </>

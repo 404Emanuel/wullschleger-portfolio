@@ -6,6 +6,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/emanuel-wullschleger/",
   github: "https://github.com/404Emanuel",
   gdev: "https://g.dev/404Emanuel",
+  repo: "https://github.com/404Emanuel/wullschleger-portfolio",
 };
 
 export const translations = {
@@ -126,7 +127,8 @@ export const translations = {
       cvSoon: "folgt bald",
     },
     footer: {
-      built: "Erstellt mit React + Vite",
+      source: "Source",
+      sourceLabel: "Quellcode dieser Website auf GitHub",
     },
   },
 
@@ -247,7 +249,8 @@ export const translations = {
       cvSoon: "coming soon",
     },
     footer: {
-      built: "Built with React + Vite",
+      source: "Source",
+      sourceLabel: "Source code of this website on GitHub",
     },
   },
 };

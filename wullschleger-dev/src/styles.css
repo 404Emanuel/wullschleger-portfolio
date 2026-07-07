@@ -826,9 +826,16 @@ svg {
   color: var(--text);
 }
 
-.footer-tech {
+.footer-source {
   font-family: var(--font-mono);
   font-size: 0.78rem;
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-source:hover {
+  color: var(--text);
 }
 
 /* ---------- Animations ---------- */
