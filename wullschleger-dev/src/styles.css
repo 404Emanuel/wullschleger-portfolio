@@ -343,6 +343,14 @@ svg {
   align-items: center;
 }
 
+/* Grid items default to a content-based min-width, which lets one long
+   unbreakable word (e.g. "Applikationsentwicklung") force the whole
+   column wider than the viewport. min-width: 0 makes them shrink normally. */
+.hero-copy,
+.hero-layout > .terminal {
+  min-width: 0;
+}
+
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
@@ -361,6 +369,8 @@ svg {
   font-size: clamp(2.3rem, 4.8vw, 3.5rem);
   letter-spacing: -0.03em;
   color: var(--text);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-role {
@@ -373,6 +383,8 @@ svg {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-sub {

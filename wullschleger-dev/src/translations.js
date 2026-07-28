@@ -28,17 +28,17 @@ export const translations = {
     hero: {
       badge: "Junior Digital Integration Software Engineer",
       name: "Emanuel Wullschleger",
-      headline: "Software Testing → Application Development",
+      headline: "Software Testing → Applikationsentwicklung",
       subheadline:
-        "Ich arbeite im Software Testing und an der Testautomatisierung mit Python, Squish und Selenium – und baue dieses Fundament gezielt Richtung Application Development aus.",
-      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA", "Application Development"],
+        "Ich arbeite im Software Testing und an der Testautomatisierung mit Python, Squish und Selenium. Ich baue dieses Fundament gezielt Richtung Applikationsentwicklung aus.",
+      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA", "Applikationsentwicklung"],
       terminal: {
         title: "emanuel@wullschleger.dev",
         lines: [
           { cmd: "whoami", out: "Junior Digital Integration Software Engineer" },
           { cmd: "current_focus", out: "Software Testing · QA · Testautomatisierung" },
-          { cmd: "learning", out: "Application Development — Informatik HF (TEKO)" },
-          { cmd: "status", out: "In Entwicklung: Testing → Application Development" },
+          { cmd: "learning", out: "Applikationsentwicklung, Informatik HF (Schweizerische Fachschule TEKO)" },
+          { cmd: "status", out: "In Entwicklung: Testing → Applikationsentwicklung" },
         ],
       },
       linkedin: "LinkedIn",
@@ -50,9 +50,9 @@ export const translations = {
       num: "01",
       title: "Über mich",
       paragraphs: [
-        "Ich arbeite als Junior Digital Integration Software Engineer bei Franke Coffee Systems und studiere berufsbegleitend Dipl. Informatiker HF Applikationsentwicklung an der TEKO.",
-        "Mein Hintergrund liegt im Testen komplexer Systeme: Qualitätssicherung, Testautomatisierung, Bug-Analyse und CI/CD-Workflows. Diese Arbeit lehrt mich täglich, Software wirklich zu verstehen – wie sie funktioniert, wo sie bricht und wie man sie besser macht.",
-        "Auf diesem Fundament entwickle ich mich Schritt für Schritt Richtung Software Engineering und Application Development weiter.",
+        "Ich arbeite als Junior Digital Integration Software Engineer bei Franke Coffee Systems und studiere berufsbegleitend Dipl. Informatiker HF Applikationsentwicklung an der Schweizerischen Fachschule TEKO.",
+        "Mein Hintergrund liegt im Testen komplexer Systeme: Qualitätssicherung, Testautomatisierung, Bug-Analyse und CI/CD-Workflows. Diese Arbeit lehrt mich täglich, Software wirklich zu verstehen, wie sie funktioniert, wo sie bricht und wie man sie besser macht.",
+        "Auf diesem Fundament entwickle ich mich Schritt für Schritt Richtung Software Engineering und Applikationsentwicklung weiter.",
       ],
       highlights: [
         {
@@ -61,11 +61,11 @@ export const translations = {
         },
         {
           label: "Studium",
-          text: "Dipl. Informatiker HF Applikationsentwicklung an der TEKO, berufsbegleitend bis 2027.",
+          text: "Dipl. Informatiker HF Applikationsentwicklung an der Schweizerischen Fachschule TEKO, berufsbegleitend bis 2027.",
         },
         {
           label: "Richtung",
-          text: "Application Development – über Studium, Lernprojekte und das eigene Homelab.",
+          text: "Applikationsentwicklung, aufgebaut über Studium, Lernprojekte und das eigene Homelab.",
         },
       ],
     },
@@ -88,13 +88,13 @@ export const translations = {
         {
           icon: "tools",
           title: "Tools im Arbeitsalltag",
-          note: "Damit arbeite ich – und vertiefe es laufend.",
+          note: "Damit arbeite ich und vertiefe es laufend.",
           items: ["Python", "Squish", "Selenium", "Jenkins", "Jira / Xray", "Git / Bitbucket"],
         },
         {
           icon: "learn",
           title: "Aktuell am Lernen",
-          note: "Aus Studium, Lernprojekten und Homelab – Grundlagen im Aufbau.",
+          note: "Grundlagen, die ich in Studium, Lernprojekten und im Homelab aufbaue.",
           learning: true,
           items: ["FastAPI", "SQL / PostgreSQL", "React / Vite", "Docker", "Go", "Linux", "Cloudflare"],
         },
@@ -128,7 +128,7 @@ export const translations = {
         {
           period: "10/2024 – 10/2027",
           role: "Dipl. Informatiker HF Applikationsentwicklung",
-          org: "TEKO",
+          org: "Schweizerische Fachschule TEKO",
           tag: "Ausbildung",
           edu: true,
           bullets: [
@@ -140,21 +140,21 @@ export const translations = {
     },
     projects: {
       num: "04",
-      title: "Projekte & Lernfelder",
+      title: "Private Projekte",
       intro:
-        "Lernprojekte und Experimente neben Job und Studium – klein gehalten und zum Verstehen gebaut, keine Kundenprojekte.",
+        "Private Projekte und Experimente, die neben Arbeit und Schule entstehen: klein gehalten und zum Verstehen gebaut, keine Kundenprojekte.",
       items: [
         {
-          kicker: "Lernprojekt",
+          kicker: "Privates Projekt",
           name: "FastAPI & SQL API",
           desc: "Kleine REST-API mit FastAPI und PostgreSQL. Hier lerne ich Datenmodellierung, CRUD-Endpoints und die Grundlagen von sauberem API-Design.",
           tags: ["Python", "FastAPI", "PostgreSQL"],
           status: "In Arbeit",
         },
         {
-          kicker: "Lernprojekt",
+          kicker: "Privates Projekt",
           name: "React & Vite Frontend-Basics",
-          desc: "Diese Website und kleine UI-Experimente – Komponenten, State und ein einfaches Design-Token-System in der Praxis.",
+          desc: "Diese Website und kleine UI-Experimente: Komponenten, State und ein einfaches Design-Token-System in der Praxis.",
           tags: ["React", "Vite", "CSS"],
           status: "Laufend",
           repo: true,
@@ -163,7 +163,7 @@ export const translations = {
         {
           kicker: "Experiment",
           name: "Homelab & Self-Hosting",
-          desc: "Eigenes kleines Lab mit Linux, Docker-Basics und Cloudflare – zum Ausprobieren von Deployments, Networking und Self-Hosted Services.",
+          desc: "Eigenes kleines Lab mit Linux, Docker-Basics und Cloudflare: zum Ausprobieren von Deployments, Networking und Self-Hosted Services.",
           tags: ["Linux", "Docker", "Cloudflare"],
           status: "Laufend",
         },
@@ -173,7 +173,7 @@ export const translations = {
       num: "05",
       title: "Kontakt",
       lead: "Lass uns vernetzen!",
-      text: "Ob Feedback, Austausch oder eine mögliche Zusammenarbeit – ich freue mich über deine Nachricht.",
+      text: "Ob Feedback, Austausch oder eine mögliche Zusammenarbeit, ich freue mich über deine Nachricht.",
       channels: {
         email: "E-Mail schreiben",
         linkedin: "Auf LinkedIn vernetzen",
@@ -212,7 +212,7 @@ export const translations = {
         lines: [
           { cmd: "whoami", out: "Junior Digital Integration Software Engineer" },
           { cmd: "current_focus", out: "Software Testing · QA · Test Automation" },
-          { cmd: "learning", out: "Application Development — Computer Science HF (TEKO)" },
+          { cmd: "learning", out: "Application Development — Computer Science HF (Schweizerische Fachschule TEKO)" },
           { cmd: "status", out: "In progress: testing → application development" },
         ],
       },
@@ -225,7 +225,7 @@ export const translations = {
       num: "01",
       title: "About",
       paragraphs: [
-        "I work as a Junior Digital Integration Software Engineer at Franke Coffee Systems and study application development (Dipl. Informatiker HF) part-time at TEKO.",
+        "I work as a Junior Digital Integration Software Engineer at Franke Coffee Systems and study application development (Dipl. Informatiker HF) part-time at Schweizerische Fachschule TEKO.",
         "My background is in testing complex systems: quality assurance, test automation, bug analysis and CI/CD workflows. That work teaches me every day to understand software in depth — how it works, where it breaks and how to make it better.",
         "On that foundation I'm growing step by step towards software engineering and application development.",
       ],
@@ -236,7 +236,7 @@ export const translations = {
         },
         {
           label: "Studies",
-          text: "Dipl. Informatiker HF in application development at TEKO, part-time until 2027.",
+          text: "Dipl. Informatiker HF in application development at Schweizerische Fachschule TEKO, part-time until 2027.",
         },
         {
           label: "Direction",
@@ -303,7 +303,7 @@ export const translations = {
         {
           period: "10/2024 – 10/2027",
           role: "HF Application Development Student",
-          org: "TEKO",
+          org: "Schweizerische Fachschule TEKO",
           tag: "Education",
           edu: true,
           bullets: ["Part-time studies focused on software and application development"],
@@ -313,19 +313,19 @@ export const translations = {
     },
     projects: {
       num: "04",
-      title: "Projects & Learning",
+      title: "Private Projects",
       intro:
-        "Learning projects and experiments alongside work and studies — kept small and built to understand, not client work.",
+        "Private projects and experiments alongside work and school — kept small and built to understand, not client work.",
       items: [
         {
-          kicker: "Learning project",
+          kicker: "Private project",
           name: "FastAPI & SQL API",
           desc: "A small REST API with FastAPI and PostgreSQL. This is where I learn data modelling, CRUD endpoints and the basics of clean API design.",
           tags: ["Python", "FastAPI", "PostgreSQL"],
           status: "In progress",
         },
         {
-          kicker: "Learning project",
+          kicker: "Private project",
           name: "React & Vite Frontend Basics",
           desc: "This website and small UI experiments — components, state and a simple design-token system in practice.",
           tags: ["React", "Vite", "CSS"],
