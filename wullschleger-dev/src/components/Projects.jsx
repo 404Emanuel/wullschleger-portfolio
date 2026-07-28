@@ -1,6 +1,4 @@
 import Reveal from "./Reveal.jsx";
-import { ExternalIcon } from "./Icons.jsx";
-import { profile } from "../translations.js";
 
 export default function Projects({ t }) {
   const { projects } = t;
@@ -37,17 +35,6 @@ export default function Projects({ t }) {
                       </li>
                     ))}
                   </ul>
-                  {project.repo && (
-                    <a
-                      className="project-link"
-                      href={profile.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.repoLabel}
-                      <ExternalIcon />
-                    </a>
-                  )}
                 </div>
               </article>
             </Reveal>

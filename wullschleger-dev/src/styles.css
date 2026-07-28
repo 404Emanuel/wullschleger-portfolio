@@ -956,22 +956,6 @@ svg {
   border-radius: 999px;
 }
 
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  justify-self: start;
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--accent-strong);
-  text-decoration: none;
-}
-
-.project-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
 /* ---------- Contact ---------- */
 .contact-panel {
   position: relative;

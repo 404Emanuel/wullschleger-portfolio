@@ -8,10 +8,7 @@ import {
 } from "./Icons.jsx";
 import { profile } from "../translations.js";
 
-// CV download is a placeholder for now.
-// To enable it: put the PDF into /public (e.g. /public/cv-emanuel-wullschleger.pdf)
-// and set CV_URL to "/cv-emanuel-wullschleger.pdf".
-const CV_URL = "";
+const CV_URL = "/cv-emanuel-wullschleger.pdf";
 
 export default function Contact({ t }) {
   const { contact } = t;

@@ -157,8 +157,6 @@ export const translations = {
           desc: "Diese Website und kleine UI-Experimente: Komponenten, State und ein einfaches Design-Token-System in der Praxis.",
           tags: ["React", "Vite", "CSS"],
           status: "Laufend",
-          repo: true,
-          repoLabel: "Source ansehen",
         },
         {
           kicker: "Experiment",
@@ -330,8 +328,6 @@ export const translations = {
           desc: "This website and small UI experiments — components, state and a simple design-token system in practice.",
           tags: ["React", "Vite", "CSS"],
           status: "Ongoing",
-          repo: true,
-          repoLabel: "View source",
         },
         {
           kicker: "Experiment",
