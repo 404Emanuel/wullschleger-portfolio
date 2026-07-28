@@ -534,14 +534,39 @@ svg {
 }
 
 .btn-primary {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, var(--accent-strong), var(--accent));
   color: var(--accent-ink);
   box-shadow: var(--shadow-accent);
 }
 
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 22%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 15%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 85%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
 .btn-primary:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 30px -10px rgba(92, 158, 255, 0.55);
+}
+
+.btn-primary:hover::before {
+  left: 130%;
 }
 
 .btn-primary svg {
@@ -1165,6 +1190,10 @@ svg {
   .site-nav a::after,
   .xp-card {
     transition: none;
+  }
+
+  .btn-primary::before {
+    display: none;
   }
 }
 
