@@ -343,32 +343,16 @@ svg {
   align-items: center;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+.hero-eyebrow {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.hero-badge .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex: none;
-  box-shadow: 0 0 0 3px rgba(92, 158, 255, 0.18);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 
 .hero-title {
-  margin-top: 26px;
+  margin-top: 14px;
   font-weight: 700;
 }
 
@@ -732,17 +716,7 @@ svg {
 
 .chip--building {
   border-color: rgba(92, 158, 255, 0.28);
-}
-
-.chip--building::before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  margin-right: 7px;
-  vertical-align: 2px;
+  color: var(--accent-strong);
 }
 
 /* ---------- Experience (timeline with cards) ---------- */
@@ -934,26 +908,11 @@ svg {
 }
 
 .project-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.04em;
-  color: var(--accent-strong);
-  border: 1px solid rgba(92, 158, 255, 0.25);
-  background: var(--accent-soft);
-  padding: 4px 10px;
-  border-radius: 999px;
+  color: var(--text-faint);
   white-space: nowrap;
-}
-
-.project-status .dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex: none;
 }
 
 .project-desc {

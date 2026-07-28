@@ -9,21 +9,18 @@ export default function Hero({ t }) {
 
       <div className="container hero-layout">
         <div className="hero-copy">
-          <p className="hero-badge fade-up">
-            <span className="dot" aria-hidden="true"></span>
-            {t.hero.badge}
-          </p>
+          <p className="hero-eyebrow fade-up">{t.hero.badge}</p>
 
-          <h1 className="hero-title fade-up" style={{ animationDelay: "90ms" }}>
+          <h1 className="hero-title fade-up" style={{ animationDelay: "60ms" }}>
             <span className="hero-name">{t.hero.name}</span>
             <span className="hero-role">{t.hero.headline}</span>
           </h1>
 
-          <p className="hero-sub fade-up" style={{ animationDelay: "180ms" }}>
+          <p className="hero-sub fade-up" style={{ animationDelay: "150ms" }}>
             {t.hero.subheadline}
           </p>
 
-          <ul className="hero-tags fade-up" style={{ animationDelay: "240ms" }}>
+          <ul className="hero-tags fade-up" style={{ animationDelay: "210ms" }}>
             {t.hero.tags.map((tag) => (
               <li key={tag} className="chip">
                 {tag}
@@ -31,7 +28,7 @@ export default function Hero({ t }) {
             ))}
           </ul>
 
-          <div className="hero-actions fade-up" style={{ animationDelay: "300ms" }}>
+          <div className="hero-actions fade-up" style={{ animationDelay: "270ms" }}>
             <a className="btn btn-primary" href="#contact">
               {t.hero.contact}
               <ArrowRightIcon />
@@ -70,7 +67,7 @@ export default function Hero({ t }) {
           </div>
         </div>
 
-        <div className="terminal fade-up" style={{ animationDelay: "260ms" }}>
+        <div className="terminal fade-up" style={{ animationDelay: "230ms" }}>
           <div className="terminal-bar">
             <span className="terminal-dot terminal-dot--r" aria-hidden="true"></span>
             <span className="terminal-dot terminal-dot--y" aria-hidden="true"></span>

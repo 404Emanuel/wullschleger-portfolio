@@ -25,10 +25,7 @@ export default function Projects({ t }) {
               <article className="card project-card">
                 <div className="project-top">
                   <span className="project-kicker">{project.kicker}</span>
-                  <span className="project-status">
-                    <span className="dot" aria-hidden="true"></span>
-                    {project.status}
-                  </span>
+                  <span className="project-status">{project.status}</span>
                 </div>
                 <h3>{project.name}</h3>
                 <p className="project-desc">{project.desc}</p>
