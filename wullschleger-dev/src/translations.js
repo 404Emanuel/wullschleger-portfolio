@@ -212,7 +212,7 @@ export const translations = {
         lines: [
           { cmd: "whoami", out: "Junior Digital Integration Software Engineer" },
           { cmd: "current_focus", out: "Software Testing · QA · Test Automation" },
-          { cmd: "learning", out: "Application Development — Computer Science HF (Schweizerische Fachschule TEKO)" },
+          { cmd: "learning", out: "Application Development, Computer Science HF (Schweizerische Fachschule TEKO)" },
           { cmd: "status", out: "In progress: testing → application development" },
         ],
       },
