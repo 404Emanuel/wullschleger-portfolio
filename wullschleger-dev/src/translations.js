@@ -35,10 +35,10 @@ export const translations = {
     hero: {
       badge: "Junior Digital Integration Software Engineer",
       name: "Emanuel Wullschleger",
-      headline: "Software Testing → Applikationsentwicklung",
+      headline: "Software Testing →\u00a0Applikationsentwicklung",
       subheadline:
-        "Ich arbeite im Software Testing und an der Testautomatisierung mit Python, Squish und Selenium. Ich baue dieses Fundament gezielt Richtung Applikationsentwicklung aus.",
-      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA"],
+        "Heute teste ich Software und arbeite an der Testautomatisierung mit. Im Studium und in eigenen Projekten lerne ich, Software selbst zu entwickeln.",
+      tags: ["Python", "Squish", "Selenium", "Jenkins"],
       terminal: {
         title: "emanuel@wullschleger.dev",
         lines: [
@@ -49,7 +49,6 @@ export const translations = {
       },
       linkedin: "LinkedIn",
       github: "GitHub",
-      gdev: "Google Developer Profil",
       contact: "Kontakt aufnehmen",
     },
     about: {
@@ -221,10 +220,10 @@ export const translations = {
     hero: {
       badge: "Junior Digital Integration Software Engineer",
       name: "Emanuel Wullschleger",
-      headline: "Software Testing → Application Development",
+      headline: "Software Testing →\u00a0Application Development",
       subheadline:
-        "I work in software testing and test automation with Python, Squish and Selenium — and I'm building on that foundation to grow into application development.",
-      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA"],
+        "Today I test software and contribute to test automation. Through my studies and my own projects I'm learning to build software myself.",
+      tags: ["Python", "Squish", "Selenium", "Jenkins"],
       terminal: {
         title: "emanuel@wullschleger.dev",
         lines: [
@@ -235,7 +234,6 @@ export const translations = {
       },
       linkedin: "LinkedIn",
       github: "GitHub",
-      gdev: "Google Developer profile",
       contact: "Get in touch",
     },
     about: {

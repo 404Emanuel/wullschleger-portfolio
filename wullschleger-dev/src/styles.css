@@ -418,7 +418,7 @@ svg {
 
 .hero-role {
   display: block;
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: clamp(1.25rem, 2.4vw, 1.75rem);
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -431,11 +431,11 @@ svg {
 }
 
 .hero-sub {
-  margin-top: 22px;
-  max-width: 560px;
-  color: var(--text-muted);
+  margin-top: 24px;
+  max-width: 34rem;
+  color: var(--text-soft);
   font-size: clamp(1rem, 1.4vw, 1.1rem);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .hero-tags {
@@ -451,11 +451,6 @@ svg {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-}
-
-.hero-socials {
-  display: inline-flex;
-  gap: 10px;
 }
 
 /* ---------- Terminal card ---------- */
@@ -1442,10 +1437,6 @@ svg {
   .hero-actions .btn:not(.btn-icon) {
     flex: 1 1 auto;
     justify-content: center;
-  }
-
-  .hero-socials {
-    flex: none;
   }
 
   .contact-cards {
