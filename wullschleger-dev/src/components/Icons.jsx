@@ -185,3 +185,95 @@ export function DownloadIcon() {
     </svg>
   );
 }
+
+function StrokeIcon({ size = 18, width = 1.8, children }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={width}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      {children}
+    </svg>
+  );
+}
+
+export function CheckIcon() {
+  return (
+    <StrokeIcon width={2}>
+      <path d="m5 12.5 4.5 4.5L19 7.5" />
+    </StrokeIcon>
+  );
+}
+
+export function CopyIcon() {
+  return (
+    <StrokeIcon width={1.7}>
+      <rect x="8.5" y="8.5" width="11" height="11" rx="2" />
+      <path d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2" />
+    </StrokeIcon>
+  );
+}
+
+export function ChevronDownIcon() {
+  return (
+    <StrokeIcon width={1.8}>
+      <path d="m6.5 9.5 5.5 5.5 5.5-5.5" />
+    </StrokeIcon>
+  );
+}
+
+export function PhoneIcon() {
+  return (
+    <StrokeIcon width={1.7}>
+      <rect x="6.5" y="2.5" width="11" height="19" rx="2.5" />
+      <path d="M10.5 18.5h3" />
+    </StrokeIcon>
+  );
+}
+
+export function LockIcon() {
+  return (
+    <StrokeIcon width={1.7}>
+      <rect x="5" y="10.5" width="14" height="10" rx="2" />
+      <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3" />
+    </StrokeIcon>
+  );
+}
+
+export function UserOffIcon() {
+  return (
+    <StrokeIcon width={1.7}>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M5 20c.8-3.4 3.6-5.5 7-5.5s6.2 2.1 7 5.5" />
+      <path d="m4 4 16 16" />
+    </StrokeIcon>
+  );
+}
+
+export function DocumentIcon() {
+  return (
+    <StrokeIcon width={1.7}>
+      <path d="M14 3H7.5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5L14 3Z" />
+      <path d="M14 3v4.5h4.5" />
+      <path d="M9 12.5h6M9 16h6" />
+    </StrokeIcon>
+  );
+}
+
+export function AlertIcon() {
+  return (
+    <StrokeIcon width={1.8}>
+      <path d="M12 4 2.8 19.5h18.4L12 4Z" />
+      <path d="M12 10v4.5" />
+      <path d="M12 17.3v.2" />
+    </StrokeIcon>
+  );
+}
