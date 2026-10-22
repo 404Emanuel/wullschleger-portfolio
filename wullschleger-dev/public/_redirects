@@ -1,4 +1,0 @@
-# Cloudflare Pages redirects. There is no English start page under /en:
-# the start page "/" switches its language in place.
-/en  /  302
-/en/ /  302

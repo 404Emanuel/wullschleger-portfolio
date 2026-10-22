@@ -18,7 +18,13 @@ export default function Contact({ t }) {
       key: "email",
       href: `mailto:${profile.email}`,
       label: contact.channels.email,
-      value: profile.email,
+      // Line break opportunity after "@" for narrow screens
+      value: (
+        <>
+          {profile.email.split("@")[0]}@<wbr />
+          {profile.email.split("@")[1]}
+        </>
+      ),
       Icon: MailIcon,
       external: false,
     },

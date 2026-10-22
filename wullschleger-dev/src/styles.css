@@ -1143,11 +1143,16 @@ svg {
   max-width: 52ch;
 }
 
+/* E-mail first on its own row, so the address is never cut off */
 .contact-cards {
   margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+}
+
+.contact-card:first-child {
+  grid-column: 1 / -1;
 }
 
 .contact-card {
@@ -1202,9 +1207,7 @@ svg {
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--text);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .contact-card-arrow {
@@ -1308,20 +1311,21 @@ svg {
   }
 }
 
-/* Scroll reveal (driven by IntersectionObserver in Reveal.jsx) */
-.reveal {
+/* Scroll reveal (driven by IntersectionObserver in Reveal.jsx). Only with
+   JavaScript (html.js, set in index.html): without it everything is visible. */
+.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 0.65, 0.3, 1);
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
     transition: none;
@@ -1441,8 +1445,19 @@ svg {
   }
 
   .hero-socials {
-    flex: 1 1 auto;
-    justify-content: center;
+    flex: none;
+  }
+
+  .contact-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-card {
+    padding: 14px 16px;
+  }
+
+  .contact-card-arrow {
+    display: none;
   }
 
   .terminal-body {

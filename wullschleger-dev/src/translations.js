@@ -13,6 +13,11 @@ export const profile = {
 
 export const translations = {
   de: {
+    meta: {
+      title: "Emanuel Wullschleger – Software Engineering & Test Automation",
+      description:
+        "Junior Digital Integration Software Engineer mit Fokus auf Software Testing und Testautomatisierung (Python, Squish, Selenium, Jenkins). Auf dem Weg Richtung Applikationsentwicklung.",
+    },
     skipLink: "Zum Inhalt springen",
     langToggle: "Sprache wählen",
     nav: {
@@ -33,14 +38,13 @@ export const translations = {
       headline: "Software Testing → Applikationsentwicklung",
       subheadline:
         "Ich arbeite im Software Testing und an der Testautomatisierung mit Python, Squish und Selenium. Ich baue dieses Fundament gezielt Richtung Applikationsentwicklung aus.",
-      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA", "Applikationsentwicklung"],
+      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA"],
       terminal: {
         title: "emanuel@wullschleger.dev",
         lines: [
-          { cmd: "whoami", out: "Junior Digital Integration Software Engineer" },
           { cmd: "current_focus", out: "Software Testing · QA · Testautomatisierung" },
-          { cmd: "learning", out: "Applikationsentwicklung, Informatik HF (Schweizerische Fachschule TEKO)" },
-          { cmd: "status", out: "In Entwicklung: Testing → Applikationsentwicklung" },
+          { cmd: "learning", out: "Informatik HF, Schweizerische Fachschule TEKO" },
+          { cmd: "building", out: "CED Buddy, eine iPhone-App (in Vorbereitung)" },
         ],
       },
       linkedin: "LinkedIn",
@@ -52,7 +56,6 @@ export const translations = {
       num: "01",
       title: "Über mich",
       paragraphs: [
-        "Ich arbeite als Junior Digital Integration Software Engineer bei Franke Coffee Systems und studiere berufsbegleitend Dipl. Informatiker HF Applikationsentwicklung an der Schweizerischen Fachschule TEKO.",
         "Mein Hintergrund liegt im Testen komplexer Systeme: Qualitätssicherung, Testautomatisierung, Bug-Analyse und CI/CD-Workflows. Diese Arbeit lehrt mich täglich, Software wirklich zu verstehen, wie sie funktioniert, wo sie bricht und wie man sie besser macht.",
         "Auf diesem Fundament entwickle ich mich Schritt für Schritt Richtung Software Engineering und Applikationsentwicklung weiter.",
       ],
@@ -81,9 +84,9 @@ export const translations = {
           note: "Der Kern meiner täglichen Arbeit.",
           items: [
             "Software Testing",
-            "Quality Assurance",
-            "Bug Analysis",
-            "Regression Testing",
+            "Qualitätssicherung",
+            "Bug-Analyse",
+            "Regressionstests",
             "Testdokumentation",
           ],
         },
@@ -164,7 +167,7 @@ export const translations = {
         {
           kicker: "Privates Projekt",
           name: "React & Vite Frontend-Basics",
-          desc: "Diese Website und kleine UI-Experimente: Komponenten, State und ein einfaches Design-Token-System in der Praxis.",
+          desc: "Diese Website: React und Vite mit eigenem CSS auf Design-Tokens, zweisprachig, mit beim Build vorgerenderten Seiten und ohne Anfragen an Drittanbieter.",
           tags: ["React", "Vite", "CSS"],
           status: "Laufend",
         },
@@ -196,6 +199,11 @@ export const translations = {
   },
 
   en: {
+    meta: {
+      title: "Emanuel Wullschleger – Software Engineering & Test Automation",
+      description:
+        "Junior Digital Integration Software Engineer focused on software testing and test automation (Python, Squish, Selenium, Jenkins), growing towards application development.",
+    },
     skipLink: "Skip to content",
     langToggle: "Choose language",
     nav: {
@@ -216,14 +224,13 @@ export const translations = {
       headline: "Software Testing → Application Development",
       subheadline:
         "I work in software testing and test automation with Python, Squish and Selenium — and I'm building on that foundation to grow into application development.",
-      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA", "Application Development"],
+      tags: ["Python", "Squish", "Selenium", "Jenkins", "QA"],
       terminal: {
         title: "emanuel@wullschleger.dev",
         lines: [
-          { cmd: "whoami", out: "Junior Digital Integration Software Engineer" },
           { cmd: "current_focus", out: "Software Testing · QA · Test Automation" },
-          { cmd: "learning", out: "Application Development, Computer Science HF (Schweizerische Fachschule TEKO)" },
-          { cmd: "status", out: "In progress: testing → application development" },
+          { cmd: "learning", out: "Computer Science HF, Schweizerische Fachschule TEKO" },
+          { cmd: "building", out: "CED Buddy, an iPhone app (in preparation)" },
         ],
       },
       linkedin: "LinkedIn",
@@ -235,7 +242,6 @@ export const translations = {
       num: "01",
       title: "About",
       paragraphs: [
-        "I work as a Junior Digital Integration Software Engineer at Franke Coffee Systems and study application development (Dipl. Informatiker HF) part-time at Schweizerische Fachschule TEKO.",
         "My background is in testing complex systems: quality assurance, test automation, bug analysis and CI/CD workflows. That work teaches me every day to understand software in depth — how it works, where it breaks and how to make it better.",
         "On that foundation I'm growing step by step towards software engineering and application development.",
       ],
@@ -345,7 +351,7 @@ export const translations = {
         {
           kicker: "Private project",
           name: "React & Vite Frontend Basics",
-          desc: "This website and small UI experiments — components, state and a simple design-token system in practice.",
+          desc: "This website: React and Vite with custom CSS on design tokens, bilingual, with pages pre-rendered at build time and no third-party requests.",
           tags: ["React", "Vite", "CSS"],
           status: "Ongoing",
         },
