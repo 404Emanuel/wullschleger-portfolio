@@ -26,7 +26,7 @@ export default function NotFoundPage() {
                 <Heading className="page-title">{c.title}</Heading>
                 <p className="page-lead">{c.text}</p>
                 <div className="app-actions">
-                  <a className="btn btn-ghost" href="/">
+                  <a className="btn btn-ghost" href={lang === "en" ? "/en" : "/"}>
                     {c.home}
                   </a>
                   <a className="text-link" href={lang === "en" ? "/en/apps" : "/apps"}>

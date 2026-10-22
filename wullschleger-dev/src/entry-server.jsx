@@ -1,12 +1,12 @@
 // Build-time renderer for the pre-rendered pages (see scripts/prerender.mjs).
 import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
-import { routes, notFoundRoute } from "./routes.js";
+import { routes, notFoundRoute, routeFile } from "./routes.js";
 import { pageComponents, pageHead } from "./pages/registry.js";
 import { cedBuddy } from "./apps/apps.js";
 import { privacyContent, countPending } from "./apps/ced-buddy/privacy.js";
 
-export { routes, notFoundRoute, pageHead, cedBuddy };
+export { routes, notFoundRoute, routeFile, pageHead, cedBuddy };
 
 export function render(route) {
   const Page = pageComponents[route.page];

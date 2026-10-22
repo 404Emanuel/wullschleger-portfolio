@@ -3,25 +3,22 @@ import { CloseIcon, MenuIcon } from "./Icons.jsx";
 import { homeHref, localePath } from "../routes.js";
 
 /**
- * Site header for the start page and the pre-rendered pages.
- *
- * - On the start page the language toggle switches the text in place
- *   (`onLangChange`). On other pages it is a pair of real links to the same
- *   page in the other language (`langLinks`), so the URL decides the language.
- * - The mobile menu is a <details> element: it opens without JavaScript, and
- *   with JavaScript it also closes on a link tap and on Escape.
+ * Site header. The language toggle is a pair of real links to the same page
+ * in the other language (`langLinks`), so the URL decides the language.
+ * The mobile menu is a <details> element: it opens without JavaScript, and
+ * with JavaScript it also closes on a link tap and on Escape.
  */
-export default function Header({ lang, t, onHome = false, onLangChange, langLinks, current, showLang = true }) {
+export default function Header({ lang, t, onHome = false, langLinks, current, showLang = true }) {
   const menuRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { key: "about", href: homeHref("about", onHome), label: t.nav.about },
-    { key: "focus", href: homeHref("focus", onHome), label: t.nav.focus },
-    { key: "experience", href: homeHref("experience", onHome), label: t.nav.experience },
-    { key: "projects", href: homeHref("projects", onHome), label: t.nav.projects },
+    { key: "about", href: homeHref("about", onHome, lang), label: t.nav.about },
+    { key: "focus", href: homeHref("focus", onHome, lang), label: t.nav.focus },
+    { key: "experience", href: homeHref("experience", onHome, lang), label: t.nav.experience },
+    { key: "projects", href: homeHref("projects", onHome, lang), label: t.nav.projects },
     { key: "apps", href: localePath("/apps", lang), label: t.nav.apps },
-    { key: "contact", href: homeHref("contact", onHome), label: t.nav.contact },
+    { key: "contact", href: homeHref("contact", onHome, lang), label: t.nav.contact },
   ];
 
   const closeMenu = () => {
@@ -50,7 +47,7 @@ export default function Header({ lang, t, onHome = false, onLangChange, langLink
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <a href={onHome ? "#hero" : "/"} className="wordmark" title={onHome ? undefined : t.nav.home}>
+        <a href={onHome ? "#hero" : localePath("/", lang)} className="wordmark" title={onHome ? undefined : t.nav.home}>
           wullschleger<span>.dev</span>
         </a>
 
@@ -59,49 +56,26 @@ export default function Header({ lang, t, onHome = false, onLangChange, langLink
         </nav>
 
         <div className="header-tools">
-          {showLang && (
+          {showLang && langLinks && (
           <div className="lang-toggle" role="group" aria-label={t.langToggle}>
-            {langLinks ? (
-              <>
-                <a
-                  href={langLinks.de}
-                  hrefLang="de"
-                  lang="de"
-                  aria-label="Deutsch"
-                  aria-current={lang === "de" ? "true" : undefined}
-                >
-                  DE
-                </a>
-                <a
-                  href={langLinks.en}
-                  hrefLang="en"
-                  lang="en"
-                  aria-label="English"
-                  aria-current={lang === "en" ? "true" : undefined}
-                >
-                  EN
-                </a>
-              </>
-            ) : (
-              <>
-                <button
-                  type="button"
-                  aria-pressed={lang === "de"}
-                  aria-label="Deutsch"
-                  onClick={() => onLangChange("de")}
-                >
-                  DE
-                </button>
-                <button
-                  type="button"
-                  aria-pressed={lang === "en"}
-                  aria-label="English"
-                  onClick={() => onLangChange("en")}
-                >
-                  EN
-                </button>
-              </>
-            )}
+            <a
+              href={langLinks.de}
+              hrefLang="de"
+              lang="de"
+              aria-label="Deutsch"
+              aria-current={lang === "de" ? "true" : undefined}
+            >
+              DE
+            </a>
+            <a
+              href={langLinks.en}
+              hrefLang="en"
+              lang="en"
+              aria-label="English"
+              aria-current={lang === "en" ? "true" : undefined}
+            >
+              EN
+            </a>
           </div>
           )}
 

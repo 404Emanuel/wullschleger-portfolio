@@ -167,7 +167,7 @@ export const privacyContent = {
             p: "Die Website wird über Cloudflare Pages (Cloudflare, Inc.) ausgeliefert. Beim Aufruf überträgt dein Browser technisch nötige Angaben an Cloudflare, etwa IP-Adresse, Zeitpunkt, aufgerufene Seite und Browserangaben, damit die Seite ausgeliefert und vor Missbrauch geschützt werden kann. Cloudflare kann Daten auch ausserhalb der Schweiz bearbeiten. Mehr dazu: https://www.cloudflare.com/privacypolicy/",
           },
           {
-            p: "Die Seiten laden Schriften und Bilder von wullschleger.dev selbst und binden keine Analyse-, Werbe-, Tracking- oder Social-Media-Dienste ein. Sie setzen keine Cookies. Wählst du auf der Startseite eine Sprache oder öffnest eine Seite in einer Sprache, speichert dein Browser diese Wahl lokal (localStorage „lang“); sie wird nicht übertragen.",
+            p: "Die Seiten laden Schriften und Bilder von wullschleger.dev selbst und binden keine Analyse-, Werbe-, Tracking- oder Social-Media-Dienste ein. Sie setzen keine Cookies und speichern nichts in deinem Browser; die Sprache steht in der Adresse (/en für Englisch).",
           },
           {
             pending:
@@ -359,7 +359,7 @@ export const privacyContent = {
             p: "The website is delivered through Cloudflare Pages (Cloudflare, Inc.). When you open it, your browser sends technically necessary information to Cloudflare, such as IP address, time, requested page and browser details, so the page can be delivered and protected against abuse. Cloudflare may process data outside Switzerland. More: https://www.cloudflare.com/privacypolicy/",
           },
           {
-            p: "The pages load fonts and images from wullschleger.dev itself and embed no analytics, advertising, tracking or social media services. They set no cookies. If you choose a language on the start page or open a page in a language, your browser stores that choice locally (localStorage “lang”); it is not transmitted.",
+            p: "The pages load fonts and images from wullschleger.dev itself and embed no analytics, advertising, tracking or social media services. They set no cookies and store nothing in your browser; the language is part of the address (/en for English).",
           },
           {
             pending:

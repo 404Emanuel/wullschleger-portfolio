@@ -2,12 +2,12 @@
 //
 //   vite build                                   → dist/ (client bundle, index.html template)
 //   vite build --ssr src/entry-server.jsx        → dist-server/entry-server.js
-//   node scripts/prerender.mjs                   → dist/apps.html, dist/en/apps/ced-buddy.html, …,
-//                                                  dist/404.html, dist/sitemap.xml
+//   node scripts/prerender.mjs                   → dist/index.html, dist/en.html, dist/apps.html,
+//                                                  dist/en/apps/ced-buddy.html, …, dist/404.html,
+//                                                  dist/sitemap.xml
 //
 // Files are named "<path>.html" so that Cloudflare Pages serves them at the
-// URL without trailing slash (/apps/ced-buddy). The start page stays the
-// client-rendered dist/index.html.
+// URL without trailing slash (/apps/ced-buddy, /en); "/" is index.html.
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -15,10 +15,9 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
 const serverDir = join(root, "dist-server");
-const SITE = "https://wullschleger.dev";
 
 const server = await import(pathToFileURL(join(serverDir, "entry-server.js")).href);
-const { routes, notFoundRoute, render, pageHead, cedBuddy, pendingPrivacyPoints } = server;
+const { routes, notFoundRoute, routeFile, render, pageHead, cedBuddy, pendingPrivacyPoints } = server;
 
 // ---- Launch guards -------------------------------------------------------
 const problems = [];
@@ -98,19 +97,16 @@ function write(relativePath, content) {
 }
 
 // ---- Pages ---------------------------------------------------------------
-const sitemap = [{ loc: `${SITE}/` }];
+const sitemap = [];
 for (const route of routes) {
   const { head, document } = page(route);
-  write(`${route.path.slice(1)}.html`, document);
+  write(routeFile(route.path), document);
   if (head.inSitemap) sitemap.push({ loc: head.canonical, alternates: head.alternates });
   console.log(`prerender: ${route.path}${head.noindex ? " (noindex)" : ""}`);
 }
 
 write("404.html", page(notFoundRoute).document);
 console.log("prerender: 404.html");
-
-// The start page keeps its own meta; drop the build markers.
-write("index.html", template.replace(/\s*<!-- page-head:.*-->/, "").replace(/\s*<!-- \/page-head -->/, ""));
 
 // ---- Sitemap -------------------------------------------------------------
 const urls = sitemap

@@ -1,0 +1,115 @@
+<!doctype html>
+<!--
+  Share image of the start page (1200 × 630), in the style of the hero.
+  Rendered once into public/og/home-de.jpg and home-en.jpg:
+
+    node scripts/og/render.mjs
+
+  Open with ?lang=en for the English version.
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-weight: 700;
+        src: url("../../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-weight: 600;
+        src: url("../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "JetBrains Mono";
+        font-weight: 400;
+        src: url("../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2")
+          format("woff2");
+      }
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        background: #0a0d12;
+        overflow: hidden;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        padding: 96px 104px;
+        display: flex;
+        flex-direction: column;
+        color: #e7ebf1;
+        font-family: "Inter", sans-serif;
+        background: radial-gradient(1100px 620px at 30% -160px, rgba(92, 158, 255, 0.2), transparent 78%),
+          radial-gradient(700px 500px at 100% 100%, rgba(92, 158, 255, 0.08), transparent 75%), #0a0d12;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(151, 168, 190, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(151, 168, 190, 0.08) 1px, transparent 1px);
+        background-size: 72px 72px;
+        -webkit-mask-image: radial-gradient(1200px 700px at 40% -120px, #000, transparent 80%);
+      }
+      .eyebrow,
+      .site {
+        position: relative;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 22px;
+        letter-spacing: 0.06em;
+        color: #93a0b1;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+      }
+      h1 {
+        position: relative;
+        margin-top: 26px;
+        font-size: 92px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+      .role {
+        position: relative;
+        margin-top: 22px;
+        font-size: 44px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        background: linear-gradient(100deg, #a7c4ff 0%, #5c9eff 55%, #8f9fff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .site {
+        margin-top: auto;
+        color: #e7ebf1;
+      }
+      .site span {
+        color: #5c9eff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="eyebrow">Junior Digital Integration Software Engineer</p>
+      <h1>Emanuel Wullschleger</h1>
+      <p class="role" id="role">Software Testing → Applikationsentwicklung</p>
+      <p class="site">wullschleger<span>.dev</span></p>
+    </div>
+    <script>
+      if (new URLSearchParams(location.search).get("lang") === "en") {
+        document.documentElement.lang = "en";
+        document.getElementById("role").textContent = "Software Testing → Application Development";
+      }
+    </script>
+  </body>
+</html>

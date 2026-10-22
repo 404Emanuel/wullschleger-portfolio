@@ -11,9 +11,9 @@ Personal portfolio of **Emanuel Wullschleger** — Junior Digital Integration So
 Deliberately small — no template, no UI library, no CSS framework.
 
 - **React + Vite**, fully static, hosted on Cloudflare Pages
-- **Pre-rendered app pages** — the app pages under `/apps` are rendered to static HTML at build time (a small step in the Vite build, no framework), so they work without JavaScript and have their own meta data
+- **Pre-rendered pages** — every page is rendered to static HTML at build time (a small step in the Vite build, no framework), so it works without JavaScript and has its own meta data and share image
 - **Custom CSS** on a small design-token system (colors, spacing, radii, shadows); the app pages add one stylesheet with locally scoped app colours
-- **Bilingual** — German (default) and English. The start page switches language in place; the app pages have their own URL per language (`/apps/…`, `/en/apps/…`)
+- **Bilingual** — German (default) and English, each with its own URL (`/`, `/en`, `/apps/…`, `/en/apps/…`); nothing is stored in the browser
 - **No third-party requests** — fonts (Inter, JetBrains Mono) are served from the site itself
 - **Subtle motion** — CSS entrance animation and IntersectionObserver scroll reveals, disabled for `prefers-reduced-motion`
 - **Accessibility basics** — semantic HTML, skip link, visible focus states, ARIA labels
@@ -24,11 +24,12 @@ Deliberately small — no template, no UI library, no CSS framework.
 wullschleger-dev/
 ├── index.html             page template, start page meta
 ├── scripts/
-│   ├── prerender.mjs      writes static HTML for the app pages, 404 and sitemap
+│   ├── prerender.mjs      writes static HTML for all pages, 404 and sitemap
+│   ├── og/                share image template for the start page (node scripts/og/render.mjs)
 │   └── ced-buddy-assets.sh  copies app artwork/screenshots into web sizes
-├── public/                static files (CV, app images, robots.txt, _redirects, font licenses)
+├── public/                static files (CV, app and share images, robots.txt, font licenses)
 └── src/
-    ├── translations.js    start page text (DE + EN)
+    ├── translations.js    start page text and meta (DE + EN)
     ├── styles.css         design tokens + start page styling
     ├── apps.css           app pages styling
     ├── components/        one React component per section

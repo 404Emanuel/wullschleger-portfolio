@@ -86,7 +86,7 @@ Art. 25, Datenherausgabe Art. 28, Anzeige beim EDÖB Art. 49) sind nach den Anga
 **Website als Ganzes:** Die App-Erklärung deckt nur die Seiten unter `/apps` ab. Für den Rest von
 wullschleger.dev gibt es keine Datenschutzerklärung und kein Impressum. Ob das für eine private
 Portfolio-Seite nötig ist, ist eine eigene Entscheidung; die technischen Fakten (Cloudflare Pages, keine
-Cookies, Sprache in localStorage, Schriften lokal) stehen im Abschnitt „Besuch dieser Website“ und
+Cookies, nichts im Browser gespeichert, Schriften lokal) stehen im Abschnitt „Besuch dieser Website“ und
 liessen sich übernehmen.
 
 ## 5. Quelle der App-Fakten und Bilder
@@ -151,8 +151,9 @@ Dann `APP_REPO=… npm run assets:ced-buddy` mit angepasster Liste und die Tabel
 - **Verhaltensänderung:** Mit `404.html` beendet Cloudflare Pages den SPA-Modus. Unbekannte Pfade liefern
   jetzt 404 statt der Startseite. Die Startseite `/`, Anker wie `/#contact`, das CV-PDF und alle
   bestehenden Dateien funktionieren unverändert.
-- `public/_redirects`: `/en` und `/en/` leiten auf `/` (302), weil es keine englische Startseite unter
-  `/en` gibt.
+- Die Startseite ist seit dem 22.10.2026 ebenfalls vorgerendert: `/` (Deutsch) und `/en` (Englisch).
+  Die frühere Sprachwahl per Knopf und localStorage gibt es nicht mehr; die Sprache steht überall in der
+  URL. Es gibt keine `_redirects` mehr.
 - `public/robots.txt` mit Sitemap-Verweis. Cloudflare ergänzt live eine eigene verwaltete robots.txt
   („Content-Signal“); laut Cloudflare wird die verwaltete Fassung der eigenen Datei vorangestellt. Nach dem
   Deployment kontrollieren.
@@ -170,7 +171,7 @@ cd wullschleger-dev
 npm ci
 npm run build
 npx wrangler@4.140.0 pages dev dist --port 8788   # Cloudflare-Pages-Verhalten (Routing, 404, Redirects)
-# oder: npm run preview                           # Vite-Vorschau, ohne _redirects/404-Verhalten
+# oder: npm run preview                           # Vite-Vorschau, ohne Cloudflare-404-Verhalten
 ```
 
 Dann http://127.0.0.1:8788/apps/ced-buddy öffnen.
