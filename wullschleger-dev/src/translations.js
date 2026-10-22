@@ -21,7 +21,9 @@ export const translations = {
       focus: "Fokus",
       experience: "Erfahrung",
       projects: "Projekte",
+      apps: "Apps",
       contact: "Kontakt",
+      home: "Startseite",
       menuOpen: "Menü öffnen",
       menuClose: "Menü schliessen",
     },
@@ -143,6 +145,14 @@ export const translations = {
       title: "Private Projekte",
       intro:
         "Private Projekte und Experimente, die neben Arbeit und Schule entstehen: klein gehalten und zum Verstehen gebaut, keine Kundenprojekte.",
+      featured: {
+        kicker: "Eigene App · iPhone",
+        status: "In Vorbereitung",
+        name: "CED Buddy",
+        desc: "Ein persönliches Tagebuch für Menschen mit Morbus Crohn oder Colitis ulcerosa: Befinden, Beschwerden und Mahlzeiten festhalten und den nächsten Arzttermin vorbereiten.",
+        tags: ["React Native", "Expo", "TypeScript"],
+        cta: "App ansehen",
+      },
       items: [
         {
           kicker: "Privates Projekt",
@@ -194,7 +204,9 @@ export const translations = {
       focus: "Focus",
       experience: "Experience",
       projects: "Projects",
+      apps: "Apps",
       contact: "Contact",
+      home: "Home",
       menuOpen: "Open menu",
       menuClose: "Close menu",
     },
@@ -314,6 +326,14 @@ export const translations = {
       title: "Private Projects",
       intro:
         "Private projects and experiments alongside work and school — kept small and built to understand, not client work.",
+      featured: {
+        kicker: "Own app · iPhone",
+        status: "In preparation",
+        name: "CED Buddy",
+        desc: "A personal journal for people with Crohn's disease or ulcerative colitis: record how you feel, your symptoms and meals, and prepare for your next doctor's appointment.",
+        tags: ["React Native", "Expo", "TypeScript"],
+        cta: "View the app",
+      },
       items: [
         {
           kicker: "Private project",

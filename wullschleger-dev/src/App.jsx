@@ -1,76 +1,51 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import TechnicalFocus from "./components/TechnicalFocus.jsx";
 import Experience from "./components/Experience.jsx";
 import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
-import { profile, translations } from "./translations.js";
-
-function getInitialLang() {
-  try {
-    const saved = localStorage.getItem("lang");
-    if (saved === "de" || saved === "en") return saved;
-  } catch {
-    /* localStorage unavailable — fall back to default */
-  }
-  return "de";
-}
+import { translations } from "./translations.js";
+import { readStoredLang, storeLang } from "./lang.js";
 
 export default function App() {
-  const [lang, setLang] = useState(getInitialLang);
+  const [lang, setLang] = useState(() => readStoredLang() ?? "de");
   const t = translations[lang];
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    try {
-      localStorage.setItem("lang", lang);
-    } catch {
-      /* ignore */
-    }
+    storeLang(lang);
   }, [lang]);
+
+  // This page renders in the browser, after the browser has already tried to
+  // jump to the #section of the URL (e.g. "/#contact" from an app page).
+  // Jump once more now that the section exists.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   return (
     <>
       <a className="skip-link" href="#main">
         {t.skipLink}
       </a>
-      <Header lang={lang} onLangChange={setLang} t={t} />
+      <Header lang={lang} onLangChange={setLang} t={t} onHome />
       <main id="main">
         <Hero t={t} />
         <About t={t} />
         <TechnicalFocus t={t} />
         <Experience t={t} />
-        <Projects t={t} />
+        <Projects t={t} lang={lang} />
         <Contact t={t} />
       </main>
-      <footer className="site-footer">
-        <div className="container footer-inner">
-          <p>© {new Date().getFullYear()} Emanuel Wullschleger · wullschleger.dev</p>
-          <nav className="footer-links" aria-label="Social">
-            <a href={profile.github} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a href={profile.gdev} target="_blank" rel="noopener noreferrer">
-              g.dev
-            </a>
-          </nav>
-          <a
-            className="footer-source"
-            href={profile.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t.footer.sourceLabel}
-            title={t.footer.sourceLabel}
-          >
-            <span aria-hidden="true">{"</>"}</span> {t.footer.source}
-          </a>
-        </div>
-      </footer>
+      <Footer t={t} />
     </>
   );
 }
