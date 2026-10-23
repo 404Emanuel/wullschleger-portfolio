@@ -194,6 +194,8 @@ export const translations = {
     footer: {
       source: "Source",
       sourceLabel: "Quellcode dieser Website auf GitHub",
+      privacy: "Datenschutz",
+      privacyHref: "/apps/ced-buddy/privacy",
     },
   },
 
@@ -377,6 +379,8 @@ export const translations = {
     footer: {
       source: "Source",
       sourceLabel: "Source code of this website on GitHub",
+      privacy: "Privacy",
+      privacyHref: "/en/apps/ced-buddy/privacy",
     },
   },
 };

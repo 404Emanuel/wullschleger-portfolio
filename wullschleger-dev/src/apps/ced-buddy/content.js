@@ -416,6 +416,8 @@ export const supportContent = {
     title: "Hilfe und Kontakt",
     intro:
       "Du hast eine Frage, einen Fehler gefunden oder einen Wunsch? Schreib mir eine E-Mail. Dafür brauchst du kein Konto, und die App muss nicht installiert sein.",
+    comingSoonNote:
+      "CED Buddy ist noch nicht im App Store erhältlich. Die Antworten unten beschreiben die aktuelle Testversion.",
     addressLabel: "E-Mail-Adresse",
     write: "E-Mail schreiben",
     copy: "Adresse kopieren",
@@ -460,7 +462,11 @@ export const supportContent = {
       "In der App findest du unter Einstellungen › Hilfe & Feedback dasselbe. Dort kannst du technische Angaben (App-Version, iOS-Version, Sprache und Darstellung) auf Wunsch selbst hinzufügen; du siehst sie vor dem Senden.",
     privacyTitle: "Bitte nichts Sensibles mitsenden",
     privacyText:
-      "Schick keine Sicherungsdateien, Berichte, Gesundheitsangaben oder ungeschwärzten Screenshots mit, wenn ich nicht ausdrücklich darum bitte. Deine E-Mail ist nicht anonym: Sie kommt mit deiner Absenderadresse an.",
+      "Schick keine persönlichen Gesundheitsangaben, Sicherungsdateien, Berichte oder ungeschwärzten Screenshots mit. Für den Support frage ich nicht routinemässig danach. Deine E-Mail ist nicht anonym: Sie kommt mit deiner Absenderadresse an.",
+    dataTitle: "Was mit deiner E-Mail passiert",
+    dataText:
+      "Ich lese und beantworte den Support selbst. Das Postfach liegt bei Infomaniak in der Schweiz. Erledigte Anfragen lösche ich, sobald ich sie nicht mehr brauche, spätestens sechs Monate nach Abschluss. Kein Newsletter, keine Werbung.",
+    dataLink: "Details in der Datenschutzerklärung",
     expectTitle: "Was du erwarten kannst",
     expectText:
       "Ich entwickle CED Buddy neben Arbeit und Studium und antworte, so bald ich kann. Eine feste Antwortzeit kann ich nicht zusagen. Medizinische Fragen kann ich nicht beantworten; wende dich dafür an deine Ärztin oder deinen Arzt.",
@@ -534,7 +540,7 @@ export const supportContent = {
         ],
       },
     ],
-    privacyLink: "Datenschutzerklärung der App",
+    privacyLink: "Datenschutzerklärung",
     productLink: "Zur Produktseite",
   },
 
@@ -548,6 +554,8 @@ export const supportContent = {
     title: "Help and contact",
     intro:
       "Have a question, found a bug or have a wish? Send me an email. You don't need an account, and the app doesn't have to be installed.",
+    comingSoonNote:
+      "CED Buddy is not available on the App Store yet. The answers below describe the current test version.",
     addressLabel: "Email address",
     write: "Write an email",
     copy: "Copy address",
@@ -592,7 +600,11 @@ export const supportContent = {
       "In the app you find the same under Settings › Help & feedback. There you can choose to add technical details (app version, iOS version, language and appearance) yourself; you see them before sending.",
     privacyTitle: "Please don't send anything sensitive",
     privacyText:
-      "Don't attach backup files, reports, health information or unredacted screenshots unless I explicitly ask for them. Your email is not anonymous: it arrives with your sender address.",
+      "Don't send personal health information, backup files, reports or unredacted screenshots. I do not routinely ask for them for support. Your email is not anonymous: it arrives with your sender address.",
+    dataTitle: "What happens to your email",
+    dataText:
+      "I read and answer support myself. The mailbox is hosted by Infomaniak in Switzerland. I delete completed requests as soon as I no longer need them, no later than six months after they are closed. No newsletter, no advertising.",
+    dataLink: "Details in the privacy policy",
     expectTitle: "What you can expect",
     expectText:
       "I build CED Buddy alongside work and studies and reply as soon as I can. I can't promise a fixed response time. I can't answer medical questions; please ask your doctor.",
@@ -666,7 +678,7 @@ export const supportContent = {
         ],
       },
     ],
-    privacyLink: "Privacy policy of the app",
+    privacyLink: "Privacy policy",
     productLink: "Go to the product page",
   },
 };

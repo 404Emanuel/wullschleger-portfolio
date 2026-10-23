@@ -4,7 +4,7 @@ import { Breadcrumb } from "./CedBuddyPage.jsx";
 import { AppIcon } from "./AppIdentity.jsx";
 import { cedBuddyFooterLinks, cedBuddyLinks } from "./cedBuddyLinks.js";
 import { AlertIcon, ArrowRightIcon, ChevronDownIcon, MailIcon } from "../components/Icons.jsx";
-import { cedBuddy } from "../apps/apps.js";
+import { cedBuddy, isAvailable } from "../apps/apps.js";
 import { supportContent } from "../apps/ced-buddy/content.js";
 
 /** mailto: link that only opens a draft; nothing is sent automatically. */
@@ -30,6 +30,7 @@ export default function SupportPage({ route }) {
             <p className="ced-eyebrow">{c.eyebrow}</p>
             <h1 className="page-title">{c.title}</h1>
             <p className="page-lead">{c.intro}</p>
+            {!isAvailable(cedBuddy) && <p className="page-lead page-lead--note">{c.comingSoonNote}</p>}
           </div>
         </div>
       </section>
@@ -86,6 +87,12 @@ export default function SupportPage({ route }) {
             <div className="support-note">
               <h3>{c.privacyTitle}</h3>
               <p>{c.privacyText}</p>
+              <h3>{c.dataTitle}</h3>
+              <p>{c.dataText}</p>
+              <a className="text-link" href={`${links.privacy}#email`}>
+                {c.dataLink}
+                <ArrowRightIcon />
+              </a>
               <h3>{c.expectTitle}</h3>
               <p>{c.expectText}</p>
             </div>

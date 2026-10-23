@@ -25,6 +25,21 @@ function Block({ block, pendingLabel }) {
       </p>
     );
   }
+  if (block.h3) {
+    return <h3 className="legal-subtitle">{block.h3}</h3>;
+  }
+  if (block.address) {
+    return (
+      <address className="legal-address">
+        {block.address.map((line, i) => (
+          <span key={line}>
+            {i > 0 && <br />}
+            {line}
+          </span>
+        ))}
+      </address>
+    );
+  }
   if (block.ul) {
     return (
       <ul className="plain-list">
@@ -35,28 +50,33 @@ function Block({ block, pendingLabel }) {
     );
   }
   if (block.table) {
+    // On narrow screens the rows are stacked (apps.css); the explicit roles keep
+    // the table semantics for screen readers when CSS changes the display.
+    const { head, rows } = block.table;
     return (
       <div className="table-wrap">
-        <table>
+        <table role="table">
           <thead>
-            <tr>
-              {block.table.head.map((cell) => (
-                <th key={cell} scope="col">
+            <tr role="row">
+              {head.map((cell) => (
+                <th key={cell} scope="col" role="columnheader">
                   {cell}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {block.table.rows.map((row) => (
-              <tr key={row[0]}>
+            {rows.map((row) => (
+              <tr key={row[0]} role="row">
                 {row.map((cell, i) =>
                   i === 0 ? (
-                    <th key={cell} scope="row">
+                    <th key={i} scope="row" role="rowheader">
                       {cell}
                     </th>
                   ) : (
-                    <td key={cell}>{cell}</td>
+                    <td key={i} role="cell" data-label={head[i]}>
+                      {cell}
+                    </td>
                   )
                 )}
               </tr>

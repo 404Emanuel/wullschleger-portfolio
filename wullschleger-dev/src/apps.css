@@ -119,6 +119,12 @@
   line-height: 1.7;
 }
 
+.page-lead--note {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-faint);
+}
+
 .section--tight {
   padding-top: 8px;
 }
@@ -955,6 +961,14 @@
   margin-top: 12px;
 }
 
+.support-note p + .text-link {
+  margin-top: 10px;
+}
+
+.support-note .text-link + h3 {
+  margin-top: 22px;
+}
+
 .plain-list {
   display: grid;
   gap: 7px;
@@ -1112,6 +1126,20 @@
   overflow-wrap: anywhere;
 }
 
+.legal-subtitle {
+  margin-top: 10px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.legal-address {
+  font-style: normal;
+  color: var(--text-soft);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
 .pending-note {
   padding: 12px 16px;
   border: 1px dashed rgba(242, 213, 138, 0.5);
@@ -1163,6 +1191,52 @@
 
 .table-wrap td {
   color: var(--text-muted);
+}
+
+/* Tables in the privacy policy: rows become stacked blocks on phones, each
+   cell labelled with its column heading. */
+@media (max-width: 640px) {
+  .table-wrap thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .table-wrap table,
+  .table-wrap tbody,
+  .table-wrap tr,
+  .table-wrap th,
+  .table-wrap td {
+    display: block;
+  }
+
+  .table-wrap tbody tr {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .table-wrap tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .table-wrap tbody th,
+  .table-wrap td {
+    padding: 4px 0;
+    border-bottom: 0;
+  }
+
+  .table-wrap td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
 }
 
 /* ---------- 404 ---------- */
