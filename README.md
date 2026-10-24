@@ -13,8 +13,8 @@ Deliberately small — no template, no UI library, no CSS framework.
 - **React + Vite**, fully static, hosted on Cloudflare Pages
 - **Pre-rendered pages** — every page is rendered to static HTML at build time (a small step in the Vite build, no framework), so it works without JavaScript and has its own meta data and share image
 - **Custom CSS** on a small design-token system (colors, spacing, radii, shadows); the app pages add one stylesheet with locally scoped app colours
-- **Bilingual** — German (default) and English, each with its own URL (`/`, `/en`, `/apps/…`, `/en/apps/…`); nothing is stored in the browser
-- **No third-party requests from the code** — fonts (Inter, JetBrains Mono) are served from the site itself; Cloudflare Web Analytics (no cookies) is added by Cloudflare, not by the code. Details in the [privacy policy](https://wullschleger.dev/en/apps/ced-buddy/privacy) and [docs/apps/privacy-operations.md](docs/apps/privacy-operations.md)
+- **Bilingual** — German (default) and English, each with its own URL (`/`, `/en`, `/apps/…`, `/en/apps/…`); the language is never stored
+- **Statistics only with consent** — fonts (Inter, JetBrains Mono) are served from the site itself. Cloudflare Web Analytics (no cookies) is loaded by `src/analytics.js` only after a visitor chooses "Allow statistics"; the choice is kept in `localStorage` and can be changed under "Privacy settings" in the footer. Without a site token in `src/analytics.js` there is no question and no measurement. Details in the [privacy policy](https://wullschleger.dev/en/apps/ced-buddy/privacy) and [docs/apps/privacy-operations.md](docs/apps/privacy-operations.md)
 - **Subtle motion** — CSS entrance animation and IntersectionObserver scroll reveals, disabled for `prefers-reduced-motion`
 - **Accessibility basics** — semantic HTML, skip link, visible focus states, ARIA labels
 

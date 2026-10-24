@@ -20,8 +20,8 @@ gemergt, gepusht oder deployt. Die URLs unten existieren erst nach einem Deploym
 
 ## 2. Links für den App-Auftrag (`ced-buddy`)
 
-In `src/core/app-links.ts` der App eintragen, **erst nach dem Deployment** (und den Datenschutz-Link erst,
-wenn Abschnitt 4 erledigt ist):
+Stand 24.10.2026: im App-Repository bereits eingebaut (`feat/privacy-support-alignment`, ADR 0019, je
+Sprache `PUBLIC_PAGES.de`/`.en`). Ursprünglicher Vorschlag zur Einordnung:
 
 ```ts
 export const PUBLIC_PAGES = {
@@ -64,17 +64,18 @@ Alles in `wullschleger-dev/src/apps/apps.js`:
   App“). So bleibt es auch nach dem Launch richtig, wenn Apple je Land andere Preise zeigt.
 - Kein Google-Play-Badge, kein Android-Datum.
 
-## 4. Datenschutzerklärung (Stand 23.10.2026)
+## 4. Datenschutzerklärung (Stand 24.10.2026)
 
-Überarbeitet auf Branch `feat/app-privacy-finalization`: Verantwortlicher mit Anschrift, Infomaniak und
-Aufbewahrung der Support-Mails, Cloudflare (Auslieferung, Web Analytics, NEL, E-Mail-Verschleierung),
-Zwecke und Rechtsgrundlagen, Empfänger und Ausland, Rechte nach DSG und DSGVO. Die Erklärung gilt jetzt
-für App, Support-Mails und die ganze Website (Footer-Link „Datenschutz“ auf allen Seiten).
+Überarbeitet auf `feat/app-privacy-finalization` (Verantwortlicher, Infomaniak, Aufbewahrung, Cloudflare,
+Rechtsgrundlagen, Rechte) und `feat/privacy-consent` (Statistik nur mit Einwilligung, Footer
+„Datenschutzeinstellungen“, Kontaktadresse der Startseite `apps@wullschleger.dev`, Regel für unnötig
+mitgeschickte Gesundheitsangaben, Links aus der App, `email_off` gegen die E-Mail-Verschleierung). Die
+Erklärung gilt für App, E-Mails an `apps@wullschleger.dev` und die ganze Website.
 
-Weiterhin **Entwurf** (`privacyStatus: "draft"`), vier offene Punkte: Cloudflare-Web-Analytics-
-Einrichtung, DSGVO/EU-Vertretung/Einwilligung, persönliche Mailadresse der Startseite, Empfehlung zur
-E-Mail-Verschleierung. Einzelheiten, Betreiberanleitung zur Löschfrist, technische Prüfung und Quellen:
-[privacy-operations.md](privacy-operations.md). Übergabe an das App-Repository:
+Weiterhin **Entwurf** (`privacyStatus: "draft"`), zwei offene Punkte: Cloudflare-Konfiguration mit
+Prüfung auf dem ausgelieferten Build, EU-Vertretung. Der Build verweigert `"final"` auch ohne
+Web-Analytics-Token in `src/analytics.js`. Einzelheiten: [privacy-operations.md](privacy-operations.md),
+[eu-representative.md](eu-representative.md). Übergabe an das App-Repository:
 [ced-buddy-privacy-handover.md](ced-buddy-privacy-handover.md).
 
 ## 5. Quelle der App-Fakten und Bilder

@@ -26,7 +26,11 @@ function Block({ block, pendingLabel }) {
     );
   }
   if (block.h3) {
-    return <h3 className="legal-subtitle">{block.h3}</h3>;
+    return (
+      <h3 className="legal-subtitle" id={block.id}>
+        {block.h3}
+      </h3>
+    );
   }
   if (block.address) {
     return (

@@ -5,7 +5,7 @@
 // the website code, the live responses of wullschleger.dev and the provider
 // documents listed in docs/apps/privacy-operations.md. Not a legal review.
 //
-// Block types: { p }, { h3 }, { address: [] }, { ul: [] }, { table: { head: [], rows: [[]] } },
+// Block types: { p }, { h3, id? }, { address: [] }, { ul: [] }, { table: { head: [], rows: [[]] } },
 // { pending } (an open point; rendered as a visible note while the policy is
 // a draft). The build refuses `privacyStatus: "final"` while any `pending`
 // block is left (scripts/prerender.mjs). Open points and how to close them:
@@ -31,9 +31,9 @@ export const privacyContent = {
       "Dein Tagebuch bleibt auf deinem iPhone. Es gibt kein Konto und keinen eigenen Server; ich habe keinen Zugriff auf deine Einträge.",
       "Tagebuchdaten verlassen das Gerät nur, wenn du selbst eine Sicherungsdatei oder ein Bericht-PDF teilst.",
       "Den Kauf der Arztberichte wickelt Apple ab. Die App erfährt nur, ob der Kauf gilt.",
-      "Support- und Feedback-E-Mails sendest du freiwillig aus deinem eigenen Mailprogramm. Ich lösche erledigte Anfragen spätestens sechs Monate nach Abschluss.",
+      "E-Mails für Support, Feedback und Kontakt sendest du freiwillig aus deinem eigenen Mailprogramm. Ich lösche erledigte Anfragen spätestens sechs Monate nach Abschluss, unnötig mitgeschickte Gesundheitsangaben möglichst rasch.",
       "Die App enthält keine Werbung und keine Analyse-, Absturz- oder Tracking-Bibliothek.",
-      "Die Website wird über Cloudflare ausgeliefert. Ich nutze Cloudflare Web Analytics, um Seitenaufrufe, Herkunftsseiten und Ladezeiten zusammengefasst zu sehen, ohne Cookies.",
+      "Die Website wird über Cloudflare ausgeliefert. Nur wenn du zustimmst, misst Cloudflare Web Analytics Seitenaufrufe, Herkunftsseiten und Ladezeiten, ohne Cookies. Deine Wahl änderst du jederzeit unter „Datenschutzeinstellungen“ unten auf jeder Seite.",
     ],
     sections: [
       {
@@ -44,16 +44,12 @@ export const privacyContent = {
           {
             ul: [
               "die Nutzung der iPhone-App CED Buddy (Abschnitte 3 bis 7),",
-              "Support- und Feedback-E-Mails an apps@wullschleger.dev (Abschnitt 8),",
+              "E-Mails an apps@wullschleger.dev: Support, Feedback und Kontaktanfragen über die Website (Abschnitt 8),",
               "den Besuch der Website wullschleger.dev, also der Startseite, der App-Seiten und aller übrigen Seiten unter dieser Adresse (Abschnitt 9).",
             ],
           },
           {
             p: "CED Buddy ist ein persönliches Tagebuch für Menschen mit Morbus Crohn oder Colitis ulcerosa. Die App stellt keine Diagnosen und gibt keine Behandlungsempfehlungen.",
-          },
-          {
-            pending:
-              "E-Mails an die persönliche Adresse auf der Startseite (Kontaktbereich) gehen an ein anderes Postfach als apps@wullschleger.dev. Anbieter, Zweck und Aufbewahrung dieses Postfachs sind noch nicht bestätigt und deshalb hier noch nicht beschrieben.",
           },
         ],
       },
@@ -71,7 +67,7 @@ export const privacyContent = {
           },
           {
             pending:
-              "Prüfen, ob für Nutzende in der EU eine Vertretung nach Art. 27 DSGVO zu benennen ist. Bis dahin wird hier weder eine Vertretung genannt noch erklärt, dass keine nötig ist.",
+              "Noch nicht entschieden ist, ob für Nutzende in der EU eine Vertretung nach Art. 27 DSGVO bestellt wird oder ob die Ausnahme nach Art. 27 Abs. 2 greift. Bis das schriftlich geklärt ist, nennt diese Erklärung weder eine Vertretung noch eine Ausnahme.",
           },
         ],
       },
@@ -103,6 +99,10 @@ export const privacyContent = {
           },
           {
             p: "Löschen: Mahlzeiten, Beschwerden, Stuhlgänge und Notizen löschst du einzeln in der App; Check-ins kannst du bearbeiten, den Spitznamen jederzeit entfernen. Wenn du die App löschst, entfernt iOS die App mit ihren gespeicherten Einträgen vom Gerät. Ob Speicherbereiche dabei physisch überschrieben werden, bestimmt iOS.",
+          },
+          { h3: "Links zur Website" },
+          {
+            p: "Unter Einstellungen öffnen „Hilfeseite im Web“ und „Datenschutzerklärung“ diese Website erst, wenn du darauf tippst, und zwar im Standardbrowser deines iPhones ausserhalb der App. Die Adresse enthält nur die Seite und die Sprache, nichts aus deinem Tagebuch und nichts zu deinem Kauf. Für den Besuch gilt dann Abschnitt 9.",
           },
         ],
       },
@@ -170,19 +170,29 @@ export const privacyContent = {
       },
       {
         id: "email",
-        title: "Support- und Feedback-E-Mails",
+        title: "E-Mails an apps@wullschleger.dev",
         blocks: [
           {
-            p: "Wenn du in der App „Support kontaktieren“ oder „Feedback geben“ wählst oder auf dieser Website einen E-Mail-Link öffnest, entsteht ein Entwurf in deinem Mailprogramm. Gesendet wird nur, wenn du selbst sendest. Die Nachricht geht dann von deiner Absenderadresse über deinen Mailanbieter an apps@wullschleger.dev. Wegen der Absenderadresse ist sie nicht anonym.",
+            p: "Wenn du in der App unter Einstellungen › Hilfe & Feedback „Hilfe & Kontakt“ oder „Feedback geben“ nutzt oder auf dieser Website einen E-Mail-Link öffnest (Support-Seite oder Kontaktbereich der Startseite), entsteht ein Entwurf in deinem Mailprogramm. Gesendet wird nur, wenn du selbst sendest. Die Nachricht geht dann von deiner Absenderadresse über deinen Mailanbieter an apps@wullschleger.dev. Wegen der Absenderadresse ist sie nicht anonym.",
           },
           {
-            p: "Ich erhalte, was du schreibst und anhängst, deine Absenderadresse und den Namen, den dein Mailprogramm mitschickt, sowie die üblichen technischen Angaben einer E-Mail wie Zeitpunkt und beteiligte Mailserver. Beim Feedback aus der App kommen App-Version und Build, Betriebssystem mit Version, App-Sprache und Darstellung nur dazu, wenn du „Technische Angaben hinzufügen“ einschaltest; du siehst diese Angaben vor dem Senden.",
+            p: "Ich erhalte, was du schreibst und anhängst, deine Absenderadresse und den Namen, den dein Mailprogramm mitschickt, sowie die üblichen technischen Angaben einer E-Mail wie Zeitpunkt und beteiligte Mailserver. Was die App selbst vorbereitet, siehst du vor dem Senden:",
           },
           {
-            p: "Die App fügt Spitzname, Tagebucheinträge, Fotos, Gesundheitsangaben, Kaufdaten, Gerätekennungen und Standort nicht automatisch hinzu. Was du selbst in die Nachricht schreibst oder anhängst, erreicht mich aber. Bitte verzichte auf persönliche Gesundheitsangaben, Sicherungsdateien und Berichte; für den Support frage ich nicht routinemässig danach.",
+            ul: [
+              "Eine E-Mail aus „Hilfe & Kontakt“ hat als Betreff den Namen und die Version der App, zum Beispiel „CED Buddy 1.0.0: Hilfe“. Sonst füllt die App nichts aus.",
+              "Beim Feedback steht im Betreff die Art der Rückmeldung (zum Beispiel „[CED Buddy][BUG] Feedback“), im Text die Kategorie und was du geschrieben hast. App-Version und Build, Betriebssystem mit Version, App-Sprache und Darstellung kommen nur dazu, wenn du „Technische Angaben hinzufügen“ einschaltest.",
+            ],
           },
           {
-            p: "Ich verwende die Nachrichten, um dir zu antworten, Fehler zu beheben und sachliche Verbesserungsvorschläge auszuwerten. Ich bearbeite den Support selbst, leite die Nachrichten nicht automatisch an andere Postfächer weiter und nutze die Kontaktdaten weder für einen Newsletter noch für Werbung.",
+            p: "Die App fügt Spitzname, Tagebucheinträge, Fotos, Gesundheitsangaben, Kaufdaten, Gerätekennungen und Standort nicht automatisch hinzu. Was du selbst in die Nachricht schreibst oder anhängst, erreicht mich aber. Bitte verzichte auf persönliche Gesundheitsangaben, Befunde, Arztberichte, Sicherungsdateien und Bericht-PDFs. Für den Support brauche ich sie nicht und frage nicht danach.",
+          },
+          {
+            p: "Ich verwende die Nachrichten, um dir zu antworten, Fehler zu beheben, sachliche Verbesserungsvorschläge auszuwerten und allgemeine Anfragen zu beantworten. Ich bearbeite den Support selbst, leite die Nachrichten nicht automatisch an andere Postfächer weiter und nutze die Kontaktdaten weder für einen Newsletter noch für Werbung.",
+          },
+          { h3: "Wenn trotzdem Gesundheitsangaben ankommen" },
+          {
+            p: "Gesundheitsangaben, Befunde, Arztberichte, Sicherungsdateien oder Berichte, die für deine Anfrage nicht nötig sind, verwende ich für nichts anderes: nicht für die Weiterentwicklung der App, nicht in Notizen oder Tickets und nicht in KI-Werkzeugen. Ich zitiere sie nicht in meiner Antwort. Sobald ich sie bemerke, beantworte ich die Anfrage ohne diese Angaben und lösche die Nachricht mit ihren Anhängen möglichst rasch, auch aus dem Papierkorb und aus eigenen Kopien. Ich bewahre sie nicht bis zur Frist von sechs Monaten auf. Brauche ich für einen Fehler weitere Angaben, bitte ich dich um eine neue Beschreibung mit erfundenen Daten.",
           },
           { h3: "Mailanbieter" },
           {
@@ -192,9 +202,9 @@ export const privacyContent = {
           {
             ul: [
               "Solange eine Anfrage offen ist, bewahre ich die Nachrichten auf, die ich für die Bearbeitung brauche.",
-              "Erledigte Support- und Feedbackanfragen lösche ich, sobald ich sie nicht mehr brauche, spätestens sechs Monate nach Abschluss. Das gilt für deine Nachrichten und für meine Antworten.",
+              "Erledigte Anfragen (Support, Feedback und Kontakt) lösche ich, sobald ich sie nicht mehr brauche, spätestens sechs Monate nach Abschluss. Das gilt für deine Nachrichten und für meine Antworten. Für unnötig mitgeschickte Gesundheitsangaben gilt die kürzere Regel oben.",
               "Einzelne Nachrichten bewahre ich nur dann länger auf, wenn eine gesetzliche Aufbewahrungspflicht besteht oder ich sie für einen konkreten Rechtsanspruch brauche, und nur so lange wie dafür nötig.",
-              "Sachliche Fehlerbeschreibungen und Ideen kann ich ohne Personenbezug, also ohne Namen, Adresse und Gesundheitsangaben, getrennt für die Weiterentwicklung der App behalten.",
+              "Sachliche Fehlerbeschreibungen und Ideen kann ich ohne Personenbezug, also ohne Namen, Adressen und Gesundheitsangaben, in eigenen Worten getrennt für die Weiterentwicklung der App behalten.",
             ],
           },
           {
@@ -217,14 +227,14 @@ export const privacyContent = {
             p: "Wie lange Cloudflare diese Verbindungsdaten aufbewahrt, legt Cloudflare fest; eine feste Frist nennt Cloudflare dafür nicht. Mehr dazu: https://www.cloudflare.com/privacypolicy/",
           },
           {
-            p: "Die Seiten selbst setzen keine Cookies und speichern nichts in deinem Browser; die Sprache steht in der Adresse (/en für Englisch). Hält Cloudflare eine Anfrage für automatisiert, kann Cloudflare eine Sicherheitsprüfung zeigen und dafür ein Sicherheits-Cookie setzen (zum Beispiel „cf_clearance“). Solche Cookies dienen dem Schutz der Website, nicht der Analyse.",
+            p: "Die Seiten selbst setzen keine Cookies. Die Sprache steht in der Adresse (/en für Englisch). Damit die Website deine Wahl zur Statistik beachtet, speichert sie im lokalen Speicher deines Browsers (localStorage) einen Eintrag „wd-privacy-choice“: deine Wahl (erlaubt oder abgelehnt), eine Versionsnummer und das Datum der Wahl. Der Eintrag bleibt auf deinem Gerät und wird weder an mich noch an Cloudflare gesendet. Nach sechs Monaten fragt die Website neu; löschen kannst du den Eintrag jederzeit in den Einstellungen deines Browsers. Hält Cloudflare eine Anfrage für automatisiert, kann Cloudflare eine Sicherheitsprüfung zeigen und dafür ein Sicherheits-Cookie setzen (zum Beispiel „cf_clearance“). Solche Cookies dienen dem Schutz der Website, nicht der Analyse.",
+          },
+          { h3: "Cloudflare Web Analytics, nur mit deiner Zustimmung", id: "web-analytics" },
+          {
+            p: "Mit deiner Zustimmung nutze ich Cloudflare Web Analytics, um zu sehen, wie oft die Seiten aufgerufen werden, über welche Seiten Besucherinnen und Besucher kommen und wie schnell die Seiten laden. Die Website fragt dich danach, mit den gleichwertigen Knöpfen „Statistik erlauben“ und „Ohne Statistik fortfahren“. Solange du nicht zustimmst, lädt die Website das Skript nicht und baut keine Verbindung zu Cloudflare Web Analytics auf; alle Inhalte bleiben gleich nutzbar. Ohne JavaScript erscheint die Frage nicht, und es wird nichts gemessen.",
           },
           {
-            p: "Cloudflare verschlüsselt beim Ausliefern die E-Mail-Adressen in den Seiten, damit Spam-Programme sie schwerer auslesen. Ein kleines Skript, das von wullschleger.dev selbst geladen wird, macht sie im Browser wieder lesbar.",
-          },
-          { h3: "Cloudflare Web Analytics" },
-          {
-            p: "Ich nutze Cloudflare Web Analytics, um zu sehen, wie oft die Seiten aufgerufen werden, über welche Seiten Besucherinnen und Besucher kommen und wie schnell die Seiten laden. Dafür lädt dein Browser beim Seitenaufruf ein Skript von Cloudflare (static.cloudflareinsights.com) und sendet Messwerte an Cloudflare: die aufgerufene Seite, die Herkunftsseite, Lade- und Leistungswerte und eine zufällige Kennung für diesen einen Seitenaufruf. Aus der Anfrage leitet Cloudflare Land, Gerätetyp, Browser und Betriebssystem ab. Im Konto sehe ich nur zusammengefasste Zahlen, keine einzelnen Personen.",
+            p: "Nach deiner Zustimmung lädt dein Browser auf jeder Seite ein Skript von Cloudflare (static.cloudflareinsights.com). Es liest Leistungswerte aus deinem Browser aus und sendet Messwerte an Cloudflare (cloudflareinsights.com): die aufgerufene Seite, die Herkunftsseite, Lade- und Leistungswerte und eine zufällige Kennung für diesen einen Seitenaufruf. Aus der Anfrage leitet Cloudflare Land, Gerätetyp, Browser und Betriebssystem ab. Im Konto sehe ich nur zusammengefasste Zahlen, keine einzelnen Personen.",
           },
           {
             p: "Nach Angaben von Cloudflare verwendet Web Analytics keine Cookies und keinen lokalen Speicher im Browser, erstellt keine Fingerabdrücke aus IP-Adresse oder Browserangaben, speichert keine Abfrageparameter von Adressen und verwirft die IP-Adresse im nächsten Rechenzentrum. Die Messung dient nicht der Werbung und keinem Profil über dich.",
@@ -233,11 +243,11 @@ export const privacyContent = {
             p: "Aufbewahrung nach Angaben von Cloudflare: Die vollständigen Messdaten bleiben sieben Tage erhalten. Danach behält Cloudflare eine Stichprobe von rund 10 % für längerfristige Auswertungen; im Konto sind Daten der letzten sechs Monate abrufbar. Eine Frist, nach der alle Messdaten gelöscht sind, nennt Cloudflare nicht.",
           },
           {
-            p: "Du kannst die Messung ablehnen: Die Inhalte der Seiten lassen sich auch ohne JavaScript lesen. Wenn du JavaScript ausschaltest oder Anfragen an cloudflareinsights.com mit einem Inhaltsblocker sperrst, findet keine Messung statt. Laut Cloudflare blockieren übliche Werbeblocker das Skript bereits.",
+            p: "Deine Zustimmung ist freiwillig. Du kannst sie jederzeit mit Wirkung für die Zukunft widerrufen: unten auf jeder Seite unter „Datenschutzeinstellungen“ mit „Ohne Statistik fortfahren“. War das Skript geladen, lädt die Website die Seite danach neu, damit es nicht weiter misst. Messwerte, die bis dahin gesendet wurden, werden dadurch nicht gelöscht; für sie gilt die Aufbewahrung bei Cloudflare.",
           },
           {
             pending:
-              "Im Cloudflare-Konto bestätigen, wie Web Analytics für wullschleger.dev eingerichtet ist (Pages-Projekt oder automatische Einrichtung der Zone) und ob die Einstellung „Enable, excluding visitor data in the EU“ aktiv ist. Davon hängen der Satz zu Besuchen aus der EU und die Frage einer Einwilligung ab. Ausserdem bestätigen, dass keine Zugriffsprotokolle exportiert werden (Logpush).",
+              "Die Einbindung über die Zustimmung ist vorbereitet, aber noch nicht in Betrieb. Offen sind: im Cloudflare-Konto die automatische Einbindung von Web Analytics ausschalten (Pages-Projekt und Zone), damit Cloudflare das Skript nicht selbst einfügt, den Token der Website eintragen und auf der veröffentlichten Website prüfen, dass ohne Zustimmung keine Anfrage an Cloudflare Web Analytics entsteht und die E-Mail-Adressen unverändert ausgeliefert werden.",
           },
           { h3: "Fehlerberichte (Network Error Logging)" },
           {
@@ -254,10 +264,13 @@ export const privacyContent = {
         title: "Zwecke und Rechtsgrundlagen",
         blocks: [
           {
-            p: "Ich bearbeite Personendaten nach dem Schweizer Datenschutzgesetz (DSG) und nur für die in dieser Erklärung genannten Zwecke. Ich hole keine pauschale Einwilligung ein: Weder die Nutzung der App noch der Besuch der Website gilt als Einwilligung. Ich treffe keine automatisierten Einzelentscheidungen und erstelle keine Profile über dich.",
+            p: "Ich bearbeite Personendaten nach dem Schweizer Datenschutzgesetz (DSG) und nur für die in dieser Erklärung genannten Zwecke. Eine Einwilligung frage ich nur für die freiwillige Statistik der Website ab. Weder die Nutzung der App noch der Besuch der Website noch das Senden einer E-Mail gilt als Einwilligung. Ich treffe keine automatisierten Einzelentscheidungen und erstelle keine Profile über dich.",
           },
           {
             p: "Deine Tagebuchdaten bearbeite ich nicht. Sie liegen nur auf deinem Gerät und erreichen mich nur, wenn du sie mir selbst schickst.",
+          },
+          {
+            p: "Die Statistik der Website läuft auch für Besuche aus der Schweiz nur mit deiner Zustimmung. Über die Bearbeitung auf deinem Gerät und wie du sie ablehnst, informiert Abschnitt 9 (Art. 45c Fernmeldegesetz).",
           },
           {
             p: "Soweit die Datenschutz-Grundverordnung der EU (DSGVO) auf eine Bearbeitung anwendbar ist, etwa wenn du in der EU lebst und mir schreibst, stütze ich mich auf diese Rechtsgrundlagen:",
@@ -267,7 +280,7 @@ export const privacyContent = {
               head: ["Zweck", "Daten", "Rechtsgrundlage nach DSGVO"],
               rows: [
                 [
-                  "Anfragen beantworten, Fehler beheben, Vorschläge auswerten",
+                  "Anfragen beantworten (Support, Feedback, Kontakt), Fehler beheben, Vorschläge auswerten",
                   "Inhalt der E-Mail, Absenderadresse, Mail-Metadaten, freiwillige technische Angaben",
                   "Art. 6 Abs. 1 lit. b, soweit es um die Nutzung oder den Kauf der App geht; sonst Art. 6 Abs. 1 lit. f (Interesse, Anfragen zu beantworten und die App zu verbessern)",
                 ],
@@ -284,7 +297,12 @@ export const privacyContent = {
                 [
                   "Reichweite und Ladequalität messen",
                   "Messwerte von Web Analytics",
-                  "Art. 6 Abs. 1 lit. f (Interesse zu sehen, welche Seiten genutzt werden und wie schnell sie laden)",
+                  "Art. 6 Abs. 1 lit. a (deine Einwilligung); jederzeit widerrufbar unter „Datenschutzeinstellungen“",
+                ],
+                [
+                  "Deine Wahl zur Statistik beachten",
+                  "Eintrag im Browser (nur auf deinem Gerät)",
+                  "Art. 6 Abs. 1 lit. f (Interesse, deine Wahl einzuhalten, ohne bei jedem Aufruf neu zu fragen)",
                 ],
                 [
                   "Verbindungsfehler erkennen",
@@ -295,8 +313,7 @@ export const privacyContent = {
             },
           },
           {
-            pending:
-              "Klären, ob und für wen die DSGVO auf Support-E-Mails und Website anwendbar ist, ob die Messung von Besuchen aus der EU oder dem EWR eine Einwilligung braucht (hängt von der Cloudflare-Einstellung oben ab) und auf welche Grundlage sich Gesundheitsangaben stützen, die jemand ungefragt in eine E-Mail schreibt.",
+            p: "Gesundheitsangaben, die du ungefragt in eine E-Mail schreibst, bearbeite ich nicht für eigene Zwecke weiter. Ich stütze mich dafür weder auf eine Einwilligung noch auf eine andere Ausnahme nach Art. 9 DSGVO, sondern beende die Bearbeitung, indem ich sie wie in Abschnitt 8 beschrieben lösche.",
           },
         ],
       },
@@ -310,12 +327,12 @@ export const privacyContent = {
               rows: [
                 [
                   "Infomaniak Network SA, Genf",
-                  "Postfach apps@wullschleger.dev, in meinem Auftrag",
+                  "Postfach apps@wullschleger.dev (Support, Feedback, Kontakt), in meinem Auftrag",
                   "Schweiz (nach Angaben von Infomaniak ausschliesslich eigene Rechenzentren in der Schweiz)",
                 ],
                 [
                   "Cloudflare, Inc., San Francisco, und mit Cloudflare verbundene Gesellschaften",
-                  "Auslieferung und Schutz der Website, Web Analytics, Fehlerberichte",
+                  "Auslieferung und Schutz der Website, Fehlerberichte; Web Analytics nur mit deiner Einwilligung",
                   "Weltweites Netz von Rechenzentren; eine Anfrage wird meist im nächstgelegenen bearbeitet, das auch ausserhalb der Schweiz und der EU liegen kann. Gespeichert wird nach Angaben von Cloudflare vor allem in den USA und im EWR.",
                 ],
                 [
@@ -343,6 +360,9 @@ export const privacyContent = {
           },
           {
             p: "Soweit die DSGVO anwendbar ist, hast du ausserdem das Recht auf Einschränkung der Bearbeitung und auf Datenübertragbarkeit sowie das Recht, einer Bearbeitung aus berechtigtem Interesse jederzeit zu widersprechen. Du kannst dich bei einer Datenschutz-Aufsichtsbehörde beschweren, insbesondere in dem Land, in dem du lebst oder arbeitest.",
+          },
+          {
+            p: "Deine Einwilligung zur Statistik kannst du jederzeit widerrufen, unten auf jeder Seite unter „Datenschutzeinstellungen“. Der Widerruf wirkt für die Zukunft; was bis dahin auf Grundlage der Einwilligung geschah, bleibt rechtmässig.",
           },
           {
             p: "Für alle diese Anliegen, auch wenn du die Löschung deiner E-Mails verlangen willst, schreib an apps@wullschleger.dev. Wenn ich nicht sicher bin, dass die Anfrage von dir kommt, kann ich um eine Bestätigung bitten, zum Beispiel eine Antwort von der Adresse, von der du geschrieben hast.",
@@ -382,9 +402,9 @@ export const privacyContent = {
       "Your journal stays on your iPhone. There is no account and no server of my own; I have no access to your entries.",
       "Journal data only leaves the device when you share a backup file or a report PDF yourself.",
       "Apple handles the purchase of the doctor reports. The app only learns whether the purchase is valid.",
-      "You send support and feedback emails voluntarily, from your own mail app. I delete completed requests no later than six months after they are closed.",
+      "You send emails for support, feedback and contact voluntarily, from your own mail app. I delete completed requests no later than six months after they are closed, and health information sent unnecessarily as soon as possible.",
       "The app contains no advertising and no analytics, crash reporting or tracking library.",
-      "The website is delivered through Cloudflare. I use Cloudflare Web Analytics to see page views, referring pages and load times in aggregate, without cookies.",
+      "The website is delivered through Cloudflare. Only if you agree does Cloudflare Web Analytics measure page views, referring pages and load times, without cookies. You can change your choice at any time under “Privacy settings” at the bottom of every page.",
     ],
     sections: [
       {
@@ -395,16 +415,12 @@ export const privacyContent = {
           {
             ul: [
               "using the iPhone app CED Buddy (sections 3 to 7),",
-              "support and feedback emails to apps@wullschleger.dev (section 8),",
+              "emails to apps@wullschleger.dev: support, feedback and contact requests through the website (section 8),",
               "visiting the website wullschleger.dev, meaning the start page, the app pages and all other pages under this address (section 9).",
             ],
           },
           {
             p: "CED Buddy is a personal journal for people with Crohn's disease or ulcerative colitis. The app makes no diagnoses and gives no treatment recommendations.",
-          },
-          {
-            pending:
-              "Emails to the personal address on the start page (contact section) go to a different mailbox than apps@wullschleger.dev. Provider, purpose and retention for that mailbox are not confirmed yet and are therefore not described here yet.",
           },
         ],
       },
@@ -420,7 +436,7 @@ export const privacyContent = {
           },
           {
             pending:
-              "Check whether a representative in the EU under Art. 27 GDPR has to be designated for users in the EU. Until then, this policy neither names a representative nor states that none is needed.",
+              "It has not yet been decided whether a representative in the EU under Art. 27 GDPR will be appointed for users in the EU or whether the exception in Art. 27(2) applies. Until this is settled in writing, this policy names neither a representative nor an exception.",
           },
         ],
       },
@@ -452,6 +468,10 @@ export const privacyContent = {
           },
           {
             p: "Deleting: you delete meals, symptoms, bowel movements and notes one by one in the app; you can edit check-ins and remove the nickname at any time. If you delete the app, iOS removes the app and the entries stored in it from the device. Whether storage is physically overwritten is up to iOS.",
+          },
+          { h3: "Links to the website" },
+          {
+            p: "In Settings, “Help page on the web” and “Privacy policy” only open this website when you tap them, in your iPhone's default browser outside the app. The address contains only the page and the language, nothing from your journal and nothing about your purchase. Section 9 then applies to the visit.",
           },
         ],
       },
@@ -519,19 +539,29 @@ export const privacyContent = {
       },
       {
         id: "email",
-        title: "Support and feedback emails",
+        title: "Emails to apps@wullschleger.dev",
         blocks: [
           {
-            p: "When you choose “Contact support” or “Give feedback” in the app, or open an email link on this website, a draft opens in your mail app. It is only sent if you send it. The message then goes from your sender address through your mail provider to apps@wullschleger.dev. Because of the sender address, it is not anonymous.",
+            p: "When you use “Help & contact” or “Give feedback” in the app under Settings › Help & feedback, or open an email link on this website (support page or contact section of the start page), a draft opens in your mail app. It is only sent if you send it. The message then goes from your sender address through your mail provider to apps@wullschleger.dev. Because of the sender address, it is not anonymous.",
           },
           {
-            p: "I receive what you write and attach, your sender address and the name your mail app sends along, and the usual technical information of an email such as the time and the mail servers involved. Feedback from the app only includes app version and build, operating system and version, app language and appearance if you switch on “Add technical details”; you see this information before sending.",
+            p: "I receive what you write and attach, your sender address and the name your mail app sends along, and the usual technical information of an email such as the time and the mail servers involved. You see what the app prepares itself before sending:",
           },
           {
-            p: "The app does not automatically add your nickname, journal entries, photos, health information, purchase data, device identifiers or location. Whatever you write or attach yourself does reach me, though. Please leave out personal health information, backup files and reports; I do not routinely ask for them for support.",
+            ul: [
+              "An email from “Help & contact” has the app's name and version as its subject, for example “CED Buddy 1.0.0: help”. The app fills in nothing else.",
+              "For feedback, the subject names the kind of feedback (for example “[CED Buddy][BUG] Feedback”), and the text contains the category and what you wrote. App version and build, operating system and version, app language and appearance are only added if you switch on “Add technical details”.",
+            ],
           },
           {
-            p: "I use the messages to reply to you, fix bugs and evaluate factual suggestions for improvement. I handle support myself, do not automatically forward messages to other mailboxes and use contact details neither for a newsletter nor for advertising.",
+            p: "The app does not automatically add your nickname, journal entries, photos, health information, purchase data, device identifiers or location. Whatever you write or attach yourself does reach me, though. Please leave out personal health information, findings, doctor's reports, backup files and report PDFs. I do not need them for support and do not ask for them.",
+          },
+          {
+            p: "I use the messages to reply to you, fix bugs, evaluate factual suggestions for improvement and answer general requests. I handle support myself, do not automatically forward messages to other mailboxes and use contact details neither for a newsletter nor for advertising.",
+          },
+          { h3: "If health information arrives anyway" },
+          {
+            p: "Health information, findings, doctor's reports, backup files or reports that are not needed for your request are not used for anything else: not to develop the app, not in notes or tickets and not in AI tools. I do not quote them in my reply. As soon as I notice them, I answer the request without this information and delete the message with its attachments as soon as possible, including from the trash and from my own copies. I do not keep them until the six-month limit. If I need more details about a bug, I ask you for a new description with made-up data.",
           },
           { h3: "Mail provider" },
           {
@@ -541,9 +571,9 @@ export const privacyContent = {
           {
             ul: [
               "While a request is open, I keep the messages I need to handle it.",
-              "I delete completed support and feedback requests as soon as I no longer need them, no later than six months after they are closed. This applies to your messages and to my replies.",
+              "I delete completed requests (support, feedback and contact) as soon as I no longer need them, no later than six months after they are closed. This applies to your messages and to my replies. Health information sent unnecessarily falls under the shorter rule above.",
               "I only keep individual messages longer if a statutory retention obligation applies or I need them for a specific legal claim, and only as long as necessary for that.",
-              "I may keep factual bug descriptions and ideas separately, without personal reference (no names, addresses or health information), to develop the app further.",
+              "I may keep factual bug descriptions and ideas separately, in my own words and without personal reference (no names, addresses or health information), to develop the app further.",
             ],
           },
           {
@@ -566,14 +596,14 @@ export const privacyContent = {
             p: "How long Cloudflare keeps this connection data is set by Cloudflare; Cloudflare does not state a fixed period for it. More: https://www.cloudflare.com/privacypolicy/",
           },
           {
-            p: "The pages themselves set no cookies and store nothing in your browser; the language is part of the address (/en for English). If Cloudflare considers a request automated, it may show a security check and set a security cookie for it (for example “cf_clearance”). Such cookies protect the website; they are not used for analytics.",
+            p: "The pages themselves set no cookies. The language is part of the address (/en for English). So that the website respects your choice about statistics, it stores an entry “wd-privacy-choice” in your browser's local storage (localStorage): your choice (allowed or declined), a version number and the date of the choice. The entry stays on your device and is sent neither to me nor to Cloudflare. After six months the website asks again; you can delete the entry at any time in your browser settings. If Cloudflare considers a request automated, it may show a security check and set a security cookie for it (for example “cf_clearance”). Such cookies protect the website; they are not used for analytics.",
+          },
+          { h3: "Cloudflare Web Analytics, only with your consent", id: "web-analytics" },
+          {
+            p: "With your consent, I use Cloudflare Web Analytics to see how often the pages are viewed, which pages visitors come from and how fast the pages load. The website asks you, with the equal buttons “Allow statistics” and “Continue without statistics”. As long as you do not agree, the website does not load the script and opens no connection to Cloudflare Web Analytics; all content remains just as usable. Without JavaScript the question does not appear and nothing is measured.",
           },
           {
-            p: "When delivering the pages, Cloudflare encodes the email addresses in them so spam bots have a harder time reading them. A small script, loaded from wullschleger.dev itself, makes them readable again in your browser.",
-          },
-          { h3: "Cloudflare Web Analytics" },
-          {
-            p: "I use Cloudflare Web Analytics to see how often the pages are viewed, which pages visitors come from and how fast the pages load. For this, your browser loads a script from Cloudflare (static.cloudflareinsights.com) when you open a page and sends measurements to Cloudflare: the page viewed, the referring page, load and performance values and a random identifier for this one page view. From the request, Cloudflare derives country, device type, browser and operating system. In the account I only see aggregated figures, not individual people.",
+            p: "After you agree, your browser loads a script from Cloudflare (static.cloudflareinsights.com) on every page. It reads performance values from your browser and sends measurements to Cloudflare (cloudflareinsights.com): the page viewed, the referring page, load and performance values and a random identifier for this one page view. From the request, Cloudflare derives country, device type, browser and operating system. In the account I only see aggregated figures, not individual people.",
           },
           {
             p: "According to Cloudflare, Web Analytics uses no cookies and no local storage in the browser, does not fingerprint visitors from their IP address or browser details, does not store query parameters of addresses and discards the IP address at the nearest data centre. The measurement is not used for advertising or to build a profile of you.",
@@ -582,11 +612,11 @@ export const privacyContent = {
             p: "Retention according to Cloudflare: the complete measurements are kept for seven days. After that, Cloudflare keeps a sample of about 10% for longer-term analysis; data for the last six months is available in the account. Cloudflare does not state a period after which all measurements are deleted.",
           },
           {
-            p: "You can refuse the measurement: the content of the pages can also be read without JavaScript. If you switch JavaScript off or block requests to cloudflareinsights.com with a content blocker, no measurement takes place. According to Cloudflare, common ad blockers already block the script.",
+            p: "Your consent is voluntary. You can withdraw it at any time with effect for the future: at the bottom of every page under “Privacy settings”, with “Continue without statistics”. If the script was loaded, the website then reloads the page so that it stops measuring. Measurements sent until then are not deleted by this; Cloudflare's retention applies to them.",
           },
           {
             pending:
-              "Confirm in the Cloudflare account how Web Analytics is set up for wullschleger.dev (Pages project or automatic setup of the zone) and whether the setting “Enable, excluding visitor data in the EU” is active. The sentence on visits from the EU and the question of consent depend on this. Also confirm that no access logs are exported (Logpush).",
+              "Consent-based loading is prepared but not yet in operation. Still to do: switch off the automatic Web Analytics setup in the Cloudflare account (Pages project and zone) so that Cloudflare does not add the script itself, enter the site token, and check on the published website that no request to Cloudflare Web Analytics happens without consent and that email addresses are delivered unchanged.",
           },
           { h3: "Error reports (Network Error Logging)" },
           {
@@ -603,10 +633,13 @@ export const privacyContent = {
         title: "Purposes and legal bases",
         blocks: [
           {
-            p: "I process personal data under the Swiss Federal Act on Data Protection (FADP) and only for the purposes named in this policy. I do not ask for blanket consent: neither using the app nor visiting the website counts as consent. I make no automated individual decisions and build no profiles of you.",
+            p: "I process personal data under the Swiss Federal Act on Data Protection (FADP) and only for the purposes named in this policy. I only ask for consent for the optional website statistics. Neither using the app, nor visiting the website, nor sending an email counts as consent. I make no automated individual decisions and build no profiles of you.",
           },
           {
             p: "I do not process your journal data. It is only on your device and only reaches me if you send it to me yourself.",
+          },
+          {
+            p: "The website statistics also run for visits from Switzerland only with your consent. Section 9 explains the processing on your device and how to refuse it (Art. 45c Telecommunications Act).",
           },
           {
             p: "Where the EU General Data Protection Regulation (GDPR) applies to processing, for example when you live in the EU and write to me, I rely on these legal bases:",
@@ -616,7 +649,7 @@ export const privacyContent = {
               head: ["Purpose", "Data", "Legal basis under the GDPR"],
               rows: [
                 [
-                  "Answer requests, fix bugs, evaluate suggestions",
+                  "Answer requests (support, feedback, contact), fix bugs, evaluate suggestions",
                   "Content of the email, sender address, mail metadata, optional technical details",
                   "Art. 6(1)(b) where it concerns using or buying the app; otherwise Art. 6(1)(f) (interest in answering requests and improving the app)",
                 ],
@@ -633,7 +666,12 @@ export const privacyContent = {
                 [
                   "Measure reach and loading quality",
                   "Web Analytics measurements",
-                  "Art. 6(1)(f) (interest in seeing which pages are used and how fast they load)",
+                  "Art. 6(1)(a) (your consent); can be withdrawn at any time under “Privacy settings”",
+                ],
+                [
+                  "Respect your choice about statistics",
+                  "Entry in the browser (only on your device)",
+                  "Art. 6(1)(f) (interest in respecting your choice without asking on every visit)",
                 ],
                 [
                   "Detect connection errors",
@@ -644,8 +682,7 @@ export const privacyContent = {
             },
           },
           {
-            pending:
-              "Clarify whether and for whom the GDPR applies to support emails and the website, whether measuring visits from the EU or EEA needs consent (depends on the Cloudflare setting above), and which basis applies to health information someone writes into an email unasked.",
+            p: "I do not process health information you write into an email unasked for any purpose of my own. I rely neither on consent nor on any other exception under Art. 9 GDPR for it; instead I end the processing by deleting it as described in section 8.",
           },
         ],
       },
@@ -659,12 +696,12 @@ export const privacyContent = {
               rows: [
                 [
                   "Infomaniak Network SA, Geneva",
-                  "Mailbox apps@wullschleger.dev, on my behalf",
+                  "Mailbox apps@wullschleger.dev (support, feedback, contact), on my behalf",
                   "Switzerland (according to Infomaniak, exclusively its own data centres in Switzerland)",
                 ],
                 [
                   "Cloudflare, Inc., San Francisco, and Cloudflare affiliates",
-                  "Delivery and protection of the website, Web Analytics, error reports",
+                  "Delivery and protection of the website, error reports; Web Analytics only with your consent",
                   "Worldwide network of data centres; a request is usually handled by the nearest one, which may be outside Switzerland and the EU. According to Cloudflare, data is stored mainly in the USA and the EEA.",
                 ],
                 [
@@ -692,6 +729,9 @@ export const privacyContent = {
           },
           {
             p: "Where the GDPR applies, you also have the right to restriction of processing and to data portability, and the right to object at any time to processing based on legitimate interests. You can lodge a complaint with a data protection supervisory authority, in particular in the country where you live or work.",
+          },
+          {
+            p: "You can withdraw your consent to statistics at any time, at the bottom of every page under “Privacy settings”. The withdrawal applies to the future; processing based on the consent before that remains lawful.",
           },
           {
             p: "For all of these requests, including if you want your emails deleted, write to apps@wullschleger.dev. If I am not sure that a request comes from you, I may ask for confirmation, for example a reply from the address you wrote from.",
