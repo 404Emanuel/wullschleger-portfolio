@@ -6,7 +6,7 @@ Datenschutzerklärung (`pending` im Abschnitt „Verantwortlich und Kontakt“, 
 ## Ausgangslage
 
 - Verantwortlicher: Emanuel Wullschleger, Privatperson, Schweiz, ohne Niederlassung in der EU.
-- Geplant: CED Buddy auch in EU-Storefronts, laufender E-Mail-Support über Infomaniak, Website über
+- Geplant (bestätigt 24.10.2026): CED Buddy weltweit, also auch in EU-Storefronts, laufender E-Mail-Support über Infomaniak, Website über
   Cloudflare ohne Web-Analyse.
 - Für Verarbeitung im Zusammenhang mit einem gezielten Angebot an Personen in der EU kann Art. 3 Abs. 2
   DSGVO greifen; geprüft wird pro Verarbeitungstätigkeit (EDPB-Leitlinien 3/2018, Abschnitt 2).
@@ -15,6 +15,11 @@ Datenschutzerklärung (`pending` im Abschnitt „Verantwortlich und Kontakt“, 
   (Abschnitt 4). Laufender Support und Websitebetrieb machen eine pauschale Ausnahme unsicher.
 - Wenige Nutzende, kein Handelsregistereintrag, kein eigener Server oder geringe Umsätze sind für sich
   keine Befreiung. Ein App-Download allein löst nicht zwingend eine Pflicht aus.
+
+- Weltweiter Vertrieb heisst auch: Andere Märkte können eigene Regeln haben. Das Vereinigte Königreich
+  kennt nach UK GDPR ebenfalls eine Vertretungspflicht (Art. 27 UK GDPR) mit ähnlicher Ausnahme. Diese
+  Notiz und die Recherche vom 24.10.2026 decken nur Schweiz und EU ab; UK und weitere Märkte bei der
+  Fachperson mitfragen.
 
 ## Optionen
 
@@ -32,8 +37,7 @@ Datenschutzerklärung (`pending` im Abschnitt „Verantwortlich und Kontakt“, 
 
    Bei positivem, schriftlichem Ergebnis: den `pending` durch einen sachlichen Satz ersetzen, der auf
    dieser Beurteilung beruht, nicht auf „kleines privates Projekt“.
-3. **EU-Storefronts weglassen.** Nur auf ausdrücklichen Entscheid von Emanuel; nicht ohne ihn aus dem
-   Release entfernen.
+3. **EU-Storefronts weglassen.** Entfällt: Emanuel will weltweit anbieten (24.10.2026).
 
 ## Nicht tun
 
