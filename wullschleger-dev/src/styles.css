@@ -1262,6 +1262,23 @@ svg {
   font-size: 0.85rem;
 }
 
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+}
+
+.footer-privacy {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-privacy:hover {
+  color: var(--text);
+}
+
 .footer-links {
   display: flex;
   gap: 18px;

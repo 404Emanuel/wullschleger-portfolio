@@ -64,30 +64,18 @@ Alles in `wullschleger-dev/src/apps/apps.js`:
   App“). So bleibt es auch nach dem Launch richtig, wenn Apple je Land andere Preise zeigt.
 - Kein Google-Play-Badge, kein Android-Datum.
 
-## 4. Offene Angaben (blockieren nur die Datenschutz-URL)
+## 4. Datenschutzerklärung (Stand 23.10.2026)
 
-Im Datenschutztext als „Offen“ markiert (`src/apps/ced-buddy/privacy.js`, Blöcke `pending`):
+Überarbeitet auf Branch `feat/app-privacy-finalization`: Verantwortlicher mit Anschrift, Infomaniak und
+Aufbewahrung der Support-Mails, Cloudflare (Auslieferung, Web Analytics, NEL, E-Mail-Verschleierung),
+Zwecke und Rechtsgrundlagen, Empfänger und Ausland, Rechte nach DSG und DSGVO. Die Erklärung gilt jetzt
+für App, Support-Mails und die ganze Website (Footer-Link „Datenschutz“ auf allen Seiten).
 
-1. **Angaben zum Verantwortlichen:** heute nur Name, „Privatperson, Schweiz“ und E-Mail. Ob eine
-   Postanschrift nötig ist (CH/EU) und ob eine Vertretung in der EU nötig ist, prüfen lassen.
-2. **E-Mail-Anbieter** für `apps@wullschleger.dev` (wer, wo die Daten liegen).
-3. **Aufbewahrungsdauer** der Support- und Feedback-E-Mails.
-4. **Cloudflare-Einstellungen bestätigen:** Web Analytics aus? Welche Protokolle? Der Live-Server
-   sendet heute die Header `NEL` und `Report-To` (Network Error Logging von Cloudflare); im HTML ist kein
-   Analytics-Skript eingebunden, und es werden keine Cookies gesetzt (geprüft am 22.10.2026 per
-   `curl` auf https://wullschleger.dev).
-5. **DSGVO:** ob und wie weit sie anwendbar ist; dann Rechtsgrundlagen, weitere Rechte und
-   Aufsichtsbehörden ergänzen. Fachperson.
-
-Der Text ist aus den Datenflüssen abgeleitet, **keine Rechtsprüfung**. Rechte nach DSG (Auskunft
-Art. 25, Datenherausgabe Art. 28, Anzeige beim EDÖB Art. 49) sind nach den Angaben des EDÖB
-(edoeb.admin.ch, „Meine Rechte kennen und durchsetzen“) formuliert.
-
-**Website als Ganzes:** Die App-Erklärung deckt nur die Seiten unter `/apps` ab. Für den Rest von
-wullschleger.dev gibt es keine Datenschutzerklärung und kein Impressum. Ob das für eine private
-Portfolio-Seite nötig ist, ist eine eigene Entscheidung; die technischen Fakten (Cloudflare Pages, keine
-Cookies, nichts im Browser gespeichert, Schriften lokal) stehen im Abschnitt „Besuch dieser Website“ und
-liessen sich übernehmen.
+Weiterhin **Entwurf** (`privacyStatus: "draft"`), vier offene Punkte: Cloudflare-Web-Analytics-
+Einrichtung, DSGVO/EU-Vertretung/Einwilligung, persönliche Mailadresse der Startseite, Empfehlung zur
+E-Mail-Verschleierung. Einzelheiten, Betreiberanleitung zur Löschfrist, technische Prüfung und Quellen:
+[privacy-operations.md](privacy-operations.md). Übergabe an das App-Repository:
+[ced-buddy-privacy-handover.md](ced-buddy-privacy-handover.md).
 
 ## 5. Quelle der App-Fakten und Bilder
 

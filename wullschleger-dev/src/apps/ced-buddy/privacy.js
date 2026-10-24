@@ -1,47 +1,59 @@
-// Privacy policy of CED Buddy and its web pages (DE/EN). DRAFT.
+// Privacy policy of CED Buddy and of the website wullschleger.dev (DE/EN).
 //
-// Built from the data flows in the app repository (feat/feedback @ 5f80835:
-// docs/release/privacy-facts.md, ADR 0006/0007/0016/0017, src/core/i18n) and
-// the website code and hosting (Cloudflare Pages). Not a legal review.
+// Built from the data flows in the app repository (main @ 1c93127:
+// docs/release/privacy-facts.md, ADR 0006/0007/0016/0017, src/core/i18n),
+// the website code, the live responses of wullschleger.dev and the provider
+// documents listed in docs/apps/privacy-operations.md. Not a legal review.
 //
-// Block types: { p }, { ul: [] }, { table: { head: [], rows: [[]] } },
+// Block types: { p }, { h3 }, { address: [] }, { ul: [] }, { table: { head: [], rows: [[]] } },
 // { pending } (an open point; rendered as a visible note while the policy is
 // a draft). The build refuses `privacyStatus: "final"` while any `pending`
-// block is left (scripts/prerender.mjs).
+// block is left (scripts/prerender.mjs). Open points and how to close them:
+// docs/apps/privacy-operations.md, section "Offene Punkte".
 
 export const privacyContent = {
   de: {
     meta: {
-      title: "Datenschutz · CED Buddy",
+      title: "Datenschutz · CED Buddy und wullschleger.dev",
       description:
-        "Datenschutzerklärung der App CED Buddy und ihrer Webseiten: was lokal bleibt, wann Daten das Gerät verlassen, Kauf über Apple, Support-E-Mails und Website-Besuch.",
+        "Datenschutzerklärung der App CED Buddy und der Website wullschleger.dev: was in der App lokal bleibt, wie Support-E-Mails bearbeitet werden und was beim Besuch der Website über Cloudflare geschieht.",
     },
-    eyebrow: "CED Buddy · Datenschutz",
+    eyebrow: "CED Buddy · wullschleger.dev",
     title: "Datenschutzerklärung",
     updated: "Stand",
     draftTitle: "Entwurf",
     draftText:
-      "Diese Datenschutzerklärung ist noch nicht abgeschlossen und noch nicht gültig. Offene Punkte sind markiert.",
+      "Diese Datenschutzerklärung ist noch nicht abgeschlossen und noch nicht gültig. Die verbleibenden offenen Punkte sind markiert.",
     pendingLabel: "Offen",
     tocLabel: "Inhalt",
     summaryTitle: "Kurz gesagt",
     summary: [
-      "Dein Tagebuch bleibt auf deinem iPhone. Es gibt kein Konto und keinen eigenen Server; der Entwickler hat keinen Zugriff auf deine Einträge.",
+      "Dein Tagebuch bleibt auf deinem iPhone. Es gibt kein Konto und keinen eigenen Server; ich habe keinen Zugriff auf deine Einträge.",
       "Tagebuchdaten verlassen das Gerät nur, wenn du selbst eine Sicherungsdatei oder ein Bericht-PDF teilst.",
       "Den Kauf der Arztberichte wickelt Apple ab. Die App erfährt nur, ob der Kauf gilt.",
-      "Support- und Feedback-E-Mails schreibst und sendest du freiwillig über dein eigenes Mailprogramm.",
+      "Support- und Feedback-E-Mails sendest du freiwillig aus deinem eigenen Mailprogramm. Ich lösche erledigte Anfragen spätestens sechs Monate nach Abschluss.",
       "Die App enthält keine Werbung und keine Analyse-, Absturz- oder Tracking-Bibliothek.",
+      "Die Website wird über Cloudflare ausgeliefert. Ich nutze Cloudflare Web Analytics, um Seitenaufrufe, Herkunftsseiten und Ladezeiten zusammengefasst zu sehen, ohne Cookies.",
     ],
     sections: [
       {
         id: "geltung",
         title: "Worum es geht",
         blocks: [
+          { p: "Diese Erklärung hat drei getrennte Teile:" },
           {
-            p: "Diese Erklärung beschreibt, welche Personendaten bei der Nutzung der iPhone-App CED Buddy und beim Besuch der zugehörigen Seiten unter wullschleger.dev/apps bearbeitet werden. Für die übrigen Seiten von wullschleger.dev gilt sie nicht automatisch.",
+            ul: [
+              "die Nutzung der iPhone-App CED Buddy (Abschnitte 3 bis 7),",
+              "Support- und Feedback-E-Mails an apps@wullschleger.dev (Abschnitt 8),",
+              "den Besuch der Website wullschleger.dev, also der Startseite, der App-Seiten und aller übrigen Seiten unter dieser Adresse (Abschnitt 9).",
+            ],
           },
           {
             p: "CED Buddy ist ein persönliches Tagebuch für Menschen mit Morbus Crohn oder Colitis ulcerosa. Die App stellt keine Diagnosen und gibt keine Behandlungsempfehlungen.",
+          },
+          {
+            pending:
+              "E-Mails an die persönliche Adresse auf der Startseite (Kontaktbereich) gehen an ein anderes Postfach als apps@wullschleger.dev. Anbieter, Zweck und Aufbewahrung dieses Postfachs sind noch nicht bestätigt und deshalb hier noch nicht beschrieben.",
           },
         ],
       },
@@ -49,11 +61,17 @@ export const privacyContent = {
         id: "verantwortlich",
         title: "Verantwortlich und Kontakt",
         blocks: [
-          { p: "Emanuel Wullschleger, Privatperson, Schweiz." },
-          { p: "E-Mail: apps@wullschleger.dev" },
+          { p: "Verantwortlich für App und Website ist:" },
+          { address: ["Emanuel Wullschleger", "Winkelstrasse 21", "4665 Oftringen", "Schweiz"] },
+          {
+            p: "E-Mail für Support und alle Fragen zum Datenschutz: apps@wullschleger.dev",
+          },
+          {
+            p: "Ich betreibe App und Website als Privatperson. In dieser Erklärung bedeutet „ich“ diese verantwortliche Person.",
+          },
           {
             pending:
-              "Angaben zum Verantwortlichen vervollständigen (z. B. Postanschrift) und prüfen lassen, welche Angaben für Schweiz und EU nötig sind, einschliesslich einer allfälligen Vertretung in der EU.",
+              "Prüfen, ob für Nutzende in der EU eine Vertretung nach Art. 27 DSGVO zu benennen ist. Bis dahin wird hier weder eine Vertretung genannt noch erklärt, dass keine nötig ist.",
           },
         ],
       },
@@ -67,7 +85,7 @@ export const privacyContent = {
               "einen freiwilligen Spitznamen für die Begrüssung,",
               "dein tägliches Befinden, Beschwerden und Stuhlgänge,",
               "Notizen und Markierungen „für den Arzttermin“,",
-              "Mahlzeiten mit Namen und auf Wunsch mit Foto,",
+              "Mahlzeiten mit Namen und auf Wunsch mit Foto, dazu gespeicherte Mahlzeiten zum Wiederverwenden,",
               "Einstellungen wie Sprache, Erscheinungsbild und Erinnerungszeit.",
             ],
           },
@@ -75,12 +93,17 @@ export const privacyContent = {
             p: "Diese Angaben sind Gesundheitsdaten und damit besonders schützenswert. Die App verlangt kein Konto, keine E-Mail-Adresse und keinen echten Namen und erhebt keine Gerätekennung.",
           },
           {
-            p: "Die Daten liegen nur auf deinem Gerät, in einer verschlüsselten Datenbank (SQLCipher); Fotos sind einzeln verschlüsselt (AES-256-GCM). Die Schlüssel liegen im Schlüsselbund des iPhones. Für iCloud- und Computer-Backups des Geräts markiert die App ihre Daten als „nicht sichern“.",
+            p: "Die Daten liegen nur auf deinem Gerät, in einer verschlüsselten Datenbank (SQLCipher); Fotos sind einzeln verschlüsselt (AES-256-GCM). Die Schlüssel liegen im Schlüsselbund des iPhones, sind an dieses Gerät gebunden und gehen nicht auf ein anderes Gerät über. Für iCloud- und Computer-Backups des Geräts markiert die App ihre Daten als „nicht sichern“.",
           },
           {
-            p: "Die App lädt nichts auf einen Server des Entwicklers hoch; es gibt keinen solchen Server und keine Synchronisation. Der Entwickler kann deine Einträge deshalb weder einsehen noch wiederherstellen.",
+            p: "Ausnahme beim Erfassen eines Fotos: Solange du eine Mahlzeit mit einem neuen Foto bearbeitest, liegt eine verkleinerte Fassung unverschlüsselt im Zwischenspeicher der App. Die App löscht sie beim Speichern oder Verwerfen, spätestens beim nächsten Start.",
           },
-          { p: "Löschen: Mahlzeiten, Beschwerden, Stuhlgänge und Notizen löschst du einzeln in der App; Check-ins kannst du bearbeiten, den Spitznamen jederzeit entfernen. Wenn du die App löschst, entfernt iOS die App und die darin gespeicherten Einträge vom Gerät." },
+          {
+            p: "Die App lädt nichts auf einen Server von mir hoch; es gibt keinen solchen Server und keine Synchronisation. Ich kann deine Einträge deshalb weder einsehen noch wiederherstellen.",
+          },
+          {
+            p: "Löschen: Mahlzeiten, Beschwerden, Stuhlgänge und Notizen löschst du einzeln in der App; Check-ins kannst du bearbeiten, den Spitznamen jederzeit entfernen. Wenn du die App löschst, entfernt iOS die App mit ihren gespeicherten Einträgen vom Gerät. Ob Speicherbereiche dabei physisch überschrieben werden, bestimmt iOS.",
+          },
         ],
       },
       {
@@ -107,10 +130,13 @@ export const privacyContent = {
         title: "Sicherungsdatei",
         blocks: [
           {
-            p: "Eine Sicherungsdatei entsteht nur, wenn du sie selbst erstellst. Sie enthält deine Einträge und auf Wunsch die Fotos und ist mit einem Passwort verschlüsselt, das du wählst. Wohin du sie über das Teilen-Menü legst (zum Beispiel „Dateien“, AirDrop oder Mail), bestimmst du.",
+            p: "Eine Sicherungsdatei entsteht nur, wenn du sie selbst erstellst. Sie enthält deine Einträge und auf Wunsch die Fotos und ist mit einem Passwort verschlüsselt, das du wählst. Wohin du sie über das Teilen-Menü legst (zum Beispiel „Dateien“, AirDrop oder Mail), bestimmst du. Die Kopie, die die App dafür kurz anlegt, ist ebenfalls verschlüsselt und wird danach gelöscht.",
           },
           {
-            p: "Wer die Datei und das Passwort hat, kann dein Tagebuch lesen. Ein vergessenes Passwort lässt sich nicht zurücksetzen, auch nicht durch den Entwickler. Beim Wiederherstellen ersetzt der Inhalt der Datei alle Einträge auf dem Gerät.",
+            p: "Wer die Datei und das Passwort hat, kann dein Tagebuch lesen. Ein vergessenes Passwort lässt sich nicht zurücksetzen, auch nicht durch mich.",
+          },
+          {
+            p: "Beim Wiederherstellen öffnet die App die gewählte Datei mit deinem Passwort, prüft sie und zeigt dir ihren Inhalt. Erst wenn du bestätigst, ersetzt der Inhalt der Datei alle Einträge auf dem Gerät. Die App importiert nur CED-Buddy-Sicherungen.",
           },
         ],
       },
@@ -122,7 +148,7 @@ export const privacyContent = {
             p: "Ein PDF-Bericht für den Arzttermin entsteht nur auf deinen Wunsch. Er enthält die Gesundheitsangaben, die du für Zeitraum und Inhalte auswählst, ist nicht passwortgeschützt und ohne Fotos von Mahlzeiten. Den Spitznamen enthält er nur, wenn du das einschaltest.",
           },
           {
-            p: "Ob und an wen du das PDF weitergibst, entscheidest du im Teilen-Dialog. Für die weitere Bearbeitung durch die Empfängerin oder den Empfänger oder durch die gewählte App ist der Entwickler nicht verantwortlich. Die App löscht ihre temporäre PDF-Datei, wenn du die Ansicht schliesst.",
+            p: "Ob und an wen du das PDF weitergibst, entscheidest du im Teilen-Dialog. Nach der Weitergabe ist das PDF unverschlüsselt lesbar; für die weitere Bearbeitung durch Empfängerinnen und Empfänger oder durch die gewählte App bin ich nicht verantwortlich. Die App löscht ihre eigene temporäre PDF-Datei, wenn du die Ansicht schliesst, spätestens beim nächsten Start.",
           },
         ],
       },
@@ -131,7 +157,7 @@ export const privacyContent = {
         title: "Kauf der Arztberichte über Apple",
         blocks: [
           {
-            p: "Die PDF-Berichte schaltest du mit einem einmaligen In-App-Kauf frei. Die App nutzt dafür Apples StoreKit direkt, ohne Bibliothek eines Dritten und ohne eigenen Server.",
+            p: "Die PDF-Berichte schaltest du mit einem einmaligen In-App-Kauf frei; es gibt kein Abo. Die App nutzt dafür Apples StoreKit direkt, ohne Bibliothek eines Dritten und ohne eigenen Server.",
           },
           {
             p: "Kauf, Zahlung, Apple Account, Familienfreigabe und Erstattungen wickelt Apple nach seinen eigenen Bedingungen ab. Die App sieht dabei weder Zahlungsmittel noch Account-Daten. StoreKit verbindet sich mit dem App Store, wenn die App den Preis lädt, du kaufst oder Käufe wiederherstellst und wenn das System Transaktionen abgleicht.",
@@ -147,31 +173,164 @@ export const privacyContent = {
         title: "Support- und Feedback-E-Mails",
         blocks: [
           {
-            p: "Wenn du in der App „Support kontaktieren“ oder „Feedback geben“ wählst oder auf dieser Website einen E-Mail-Link öffnest, entsteht ein Entwurf in deinem Mailprogramm. Gesendet wird nur, wenn du selbst sendest. Die Nachricht geht dann von deiner Absenderadresse über deinen Mailanbieter an apps@wullschleger.dev; sie ist nicht anonym.",
+            p: "Wenn du in der App „Support kontaktieren“ oder „Feedback geben“ wählst oder auf dieser Website einen E-Mail-Link öffnest, entsteht ein Entwurf in deinem Mailprogramm. Gesendet wird nur, wenn du selbst sendest. Die Nachricht geht dann von deiner Absenderadresse über deinen Mailanbieter an apps@wullschleger.dev. Wegen der Absenderadresse ist sie nicht anonym.",
           },
           {
-            p: "Die Nachricht enthält, was du schreibst, deine Absenderadresse und die üblichen technischen Angaben einer E-Mail. Beim Feedback aus der App kommen nur dann App-Version und Build, Betriebssystem mit Version, App-Sprache und Darstellung dazu, wenn du „Technische Angaben hinzufügen“ einschaltest; du siehst sie vorher. Nie dabei: Spitzname, Tagebucheinträge, Fotos, Kaufdaten, Gerätekennungen, Standort oder Protokolle.",
+            p: "Ich erhalte, was du schreibst und anhängst, deine Absenderadresse und den Namen, den dein Mailprogramm mitschickt, sowie die üblichen technischen Angaben einer E-Mail wie Zeitpunkt und beteiligte Mailserver. Beim Feedback aus der App kommen App-Version und Build, Betriebssystem mit Version, App-Sprache und Darstellung nur dazu, wenn du „Technische Angaben hinzufügen“ einschaltest; du siehst diese Angaben vor dem Senden.",
           },
           {
-            p: "Die E-Mails nutzt der Entwickler, um deine Anfrage zu beantworten und die App zu verbessern. Bitte schicke keine Gesundheitsdaten oder Dateien mit, wenn nicht ausdrücklich danach gefragt wird.",
+            p: "Die App fügt Spitzname, Tagebucheinträge, Fotos, Gesundheitsangaben, Kaufdaten, Gerätekennungen und Standort nicht automatisch hinzu. Was du selbst in die Nachricht schreibst oder anhängst, erreicht mich aber. Bitte verzichte auf persönliche Gesundheitsangaben, Sicherungsdateien und Berichte; für den Support frage ich nicht routinemässig danach.",
           },
-          { pending: "E-Mail-Anbieter für apps@wullschleger.dev nennen (und wo er die Daten bearbeitet)." },
-          { pending: "Aufbewahrungsdauer der Support- und Feedback-E-Mails festlegen." },
+          {
+            p: "Ich verwende die Nachrichten, um dir zu antworten, Fehler zu beheben und sachliche Verbesserungsvorschläge auszuwerten. Ich bearbeite den Support selbst, leite die Nachrichten nicht automatisch an andere Postfächer weiter und nutze die Kontaktdaten weder für einen Newsletter noch für Werbung.",
+          },
+          { h3: "Mailanbieter" },
+          {
+            p: "Das Postfach apps@wullschleger.dev liegt bei Infomaniak Network SA, Genf, Schweiz. Infomaniak bearbeitet die Nachrichten in meinem Auftrag. Laut den Bedingungen für den Mail-Service von Infomaniak (Fassung vom 27. Mai 2026) werden die Daten ausschliesslich in Rechenzentren in der Schweiz gespeichert, die Infomaniak gehören. Infomaniak sichert den Inhalt der Postfächer täglich und bewahrt diese Sicherungen sieben Tage auf.",
+          },
+          { h3: "Wie lange ich Nachrichten aufbewahre" },
+          {
+            ul: [
+              "Solange eine Anfrage offen ist, bewahre ich die Nachrichten auf, die ich für die Bearbeitung brauche.",
+              "Erledigte Support- und Feedbackanfragen lösche ich, sobald ich sie nicht mehr brauche, spätestens sechs Monate nach Abschluss. Das gilt für deine Nachrichten und für meine Antworten.",
+              "Einzelne Nachrichten bewahre ich nur dann länger auf, wenn eine gesetzliche Aufbewahrungspflicht besteht oder ich sie für einen konkreten Rechtsanspruch brauche, und nur so lange wie dafür nötig.",
+              "Sachliche Fehlerbeschreibungen und Ideen kann ich ohne Personenbezug, also ohne Namen, Adresse und Gesundheitsangaben, getrennt für die Weiterentwicklung der App behalten.",
+            ],
+          },
+          {
+            p: "Ich prüfe das Postfach dafür regelmässig von Hand; eine automatische Löschung ist nicht eingerichtet. Nach dem Löschen können Nachrichten noch bis zu sieben Tage in den technischen Sicherungen von Infomaniak enthalten sein.",
+          },
         ],
       },
       {
         id: "website",
-        title: "Besuch dieser Website",
+        title: "Besuch der Website",
         blocks: [
           {
-            p: "Die Website wird über Cloudflare Pages (Cloudflare, Inc.) ausgeliefert. Beim Aufruf überträgt dein Browser technisch nötige Angaben an Cloudflare, etwa IP-Adresse, Zeitpunkt, aufgerufene Seite und Browserangaben, damit die Seite ausgeliefert und vor Missbrauch geschützt werden kann. Cloudflare kann Daten auch ausserhalb der Schweiz bearbeiten. Mehr dazu: https://www.cloudflare.com/privacypolicy/",
+            p: "Dieser Abschnitt gilt für alle Seiten unter wullschleger.dev. Die Website ist eine statische Website: Sie hat kein Kontaktformular, kein Konto und keine Kommentarfunktion.",
+          },
+          { h3: "Auslieferung und Sicherheit durch Cloudflare" },
+          {
+            p: "Die Website liegt bei Cloudflare Pages und wird über das Netzwerk von Cloudflare ausgeliefert (Cloudflare, Inc., USA). Bei jedem Aufruf erhält Cloudflare die technisch nötigen Angaben: IP-Adresse, Zeitpunkt, aufgerufene Adresse, Herkunftsseite (Referrer), Browser- und Systemangaben sowie weitere Verbindungsdaten. Cloudflare braucht sie, um die Seiten auszuliefern, Angriffe und Missbrauch abzuwehren und Störungen zu erkennen. Daraus erstellt Cloudflare zusammengefasste Statistiken, etwa Anzahl Anfragen, Länder und Statuscodes, die ich im Cloudflare-Konto sehe.",
           },
           {
-            p: "Die Seiten laden Schriften und Bilder von wullschleger.dev selbst und binden keine Analyse-, Werbe-, Tracking- oder Social-Media-Dienste ein. Sie setzen keine Cookies und speichern nichts in deinem Browser; die Sprache steht in der Adresse (/en für Englisch).",
+            p: "Wie lange Cloudflare diese Verbindungsdaten aufbewahrt, legt Cloudflare fest; eine feste Frist nennt Cloudflare dafür nicht. Mehr dazu: https://www.cloudflare.com/privacypolicy/",
+          },
+          {
+            p: "Die Seiten selbst setzen keine Cookies und speichern nichts in deinem Browser; die Sprache steht in der Adresse (/en für Englisch). Hält Cloudflare eine Anfrage für automatisiert, kann Cloudflare eine Sicherheitsprüfung zeigen und dafür ein Sicherheits-Cookie setzen (zum Beispiel „cf_clearance“). Solche Cookies dienen dem Schutz der Website, nicht der Analyse.",
+          },
+          {
+            p: "Cloudflare verschlüsselt beim Ausliefern die E-Mail-Adressen in den Seiten, damit Spam-Programme sie schwerer auslesen. Ein kleines Skript, das von wullschleger.dev selbst geladen wird, macht sie im Browser wieder lesbar.",
+          },
+          { h3: "Cloudflare Web Analytics" },
+          {
+            p: "Ich nutze Cloudflare Web Analytics, um zu sehen, wie oft die Seiten aufgerufen werden, über welche Seiten Besucherinnen und Besucher kommen und wie schnell die Seiten laden. Dafür lädt dein Browser beim Seitenaufruf ein Skript von Cloudflare (static.cloudflareinsights.com) und sendet Messwerte an Cloudflare: die aufgerufene Seite, die Herkunftsseite, Lade- und Leistungswerte und eine zufällige Kennung für diesen einen Seitenaufruf. Aus der Anfrage leitet Cloudflare Land, Gerätetyp, Browser und Betriebssystem ab. Im Konto sehe ich nur zusammengefasste Zahlen, keine einzelnen Personen.",
+          },
+          {
+            p: "Nach Angaben von Cloudflare verwendet Web Analytics keine Cookies und keinen lokalen Speicher im Browser, erstellt keine Fingerabdrücke aus IP-Adresse oder Browserangaben, speichert keine Abfrageparameter von Adressen und verwirft die IP-Adresse im nächsten Rechenzentrum. Die Messung dient nicht der Werbung und keinem Profil über dich.",
+          },
+          {
+            p: "Aufbewahrung nach Angaben von Cloudflare: Die vollständigen Messdaten bleiben sieben Tage erhalten. Danach behält Cloudflare eine Stichprobe von rund 10 % für längerfristige Auswertungen; im Konto sind Daten der letzten sechs Monate abrufbar. Eine Frist, nach der alle Messdaten gelöscht sind, nennt Cloudflare nicht.",
+          },
+          {
+            p: "Du kannst die Messung ablehnen: Die Inhalte der Seiten lassen sich auch ohne JavaScript lesen. Wenn du JavaScript ausschaltest oder Anfragen an cloudflareinsights.com mit einem Inhaltsblocker sperrst, findet keine Messung statt. Laut Cloudflare blockieren übliche Werbeblocker das Skript bereits.",
           },
           {
             pending:
-              "Einstellungen im Cloudflare-Konto bestätigen: Web Analytics, Protokolle und Network Error Logging (Cloudflare sendet den Header „NEL“, mit dem Browser Verbindungsfehler an Cloudflare melden können).",
+              "Im Cloudflare-Konto bestätigen, wie Web Analytics für wullschleger.dev eingerichtet ist (Pages-Projekt oder automatische Einrichtung der Zone) und ob die Einstellung „Enable, excluding visitor data in the EU“ aktiv ist. Davon hängen der Satz zu Besuchen aus der EU und die Frage einer Einwilligung ab. Ausserdem bestätigen, dass keine Zugriffsprotokolle exportiert werden (Logpush).",
+          },
+          { h3: "Fehlerberichte (Network Error Logging)" },
+          {
+            p: "Cloudflare sendet mit jeder Seite die Anweisungen „NEL“ und „Report-To“. Damit kann dein Browser Cloudflare melden, wenn eine Verbindung zu wullschleger.dev scheitert, zum Beispiel wegen eines DNS- oder Verbindungsfehlers. Erfolgreiche Aufrufe meldet er nicht. Ein solcher Bericht enthält unter anderem die betroffene Adresse, Herkunftsseite, Fehlerart, Dauer, Protokoll und die IP-Adresse des Servers. Nach Angaben von Cloudflare nutzt Cloudflare die IP-Adresse deines Browsers dabei nur kurz, um Land und Netzanbieter abzuleiten, und speichert sie nicht. Dein Browser befolgt die Anweisung bis zu sieben Tage lang; das ist keine Aufbewahrungsfrist bei Cloudflare.",
+          },
+          { h3: "Links und Downloads" },
+          {
+            p: "Schriften, Bilder und der Lebenslauf als PDF kommen von wullschleger.dev selbst. Links zu GitHub, LinkedIn, g.dev, Apple oder Behörden öffnen diese Seiten erst, wenn du sie anklickst; dort gilt der Datenschutz des jeweiligen Anbieters. „Adresse kopieren“ legt die Adresse nur in die Zwischenablage deines Geräts. Die Adressen der Website enthalten keine Tagebuchinhalte, E-Mail-Adressen oder Kaufdaten.",
+          },
+        ],
+      },
+      {
+        id: "rechtsgrundlagen",
+        title: "Zwecke und Rechtsgrundlagen",
+        blocks: [
+          {
+            p: "Ich bearbeite Personendaten nach dem Schweizer Datenschutzgesetz (DSG) und nur für die in dieser Erklärung genannten Zwecke. Ich hole keine pauschale Einwilligung ein: Weder die Nutzung der App noch der Besuch der Website gilt als Einwilligung. Ich treffe keine automatisierten Einzelentscheidungen und erstelle keine Profile über dich.",
+          },
+          {
+            p: "Deine Tagebuchdaten bearbeite ich nicht. Sie liegen nur auf deinem Gerät und erreichen mich nur, wenn du sie mir selbst schickst.",
+          },
+          {
+            p: "Soweit die Datenschutz-Grundverordnung der EU (DSGVO) auf eine Bearbeitung anwendbar ist, etwa wenn du in der EU lebst und mir schreibst, stütze ich mich auf diese Rechtsgrundlagen:",
+          },
+          {
+            table: {
+              head: ["Zweck", "Daten", "Rechtsgrundlage nach DSGVO"],
+              rows: [
+                [
+                  "Anfragen beantworten, Fehler beheben, Vorschläge auswerten",
+                  "Inhalt der E-Mail, Absenderadresse, Mail-Metadaten, freiwillige technische Angaben",
+                  "Art. 6 Abs. 1 lit. b, soweit es um die Nutzung oder den Kauf der App geht; sonst Art. 6 Abs. 1 lit. f (Interesse, Anfragen zu beantworten und die App zu verbessern)",
+                ],
+                [
+                  "Einzelne Nachrichten länger aufbewahren",
+                  "betroffene Nachrichten",
+                  "Art. 6 Abs. 1 lit. c (gesetzliche Pflicht) oder lit. f (konkreter Rechtsanspruch)",
+                ],
+                [
+                  "Website ausliefern und schützen",
+                  "Verbindungsdaten bei Cloudflare",
+                  "Art. 6 Abs. 1 lit. f (sichere und funktionierende Website)",
+                ],
+                [
+                  "Reichweite und Ladequalität messen",
+                  "Messwerte von Web Analytics",
+                  "Art. 6 Abs. 1 lit. f (Interesse zu sehen, welche Seiten genutzt werden und wie schnell sie laden)",
+                ],
+                [
+                  "Verbindungsfehler erkennen",
+                  "Fehlerberichte (NEL)",
+                  "Art. 6 Abs. 1 lit. f (erreichbare Website)",
+                ],
+              ],
+            },
+          },
+          {
+            pending:
+              "Klären, ob und für wen die DSGVO auf Support-E-Mails und Website anwendbar ist, ob die Messung von Besuchen aus der EU oder dem EWR eine Einwilligung braucht (hängt von der Cloudflare-Einstellung oben ab) und auf welche Grundlage sich Gesundheitsangaben stützen, die jemand ungefragt in eine E-Mail schreibt.",
+          },
+        ],
+      },
+      {
+        id: "empfaenger",
+        title: "Empfänger und Bearbeitung im Ausland",
+        blocks: [
+          {
+            table: {
+              head: ["Empfänger", "Wofür", "Wo"],
+              rows: [
+                [
+                  "Infomaniak Network SA, Genf",
+                  "Postfach apps@wullschleger.dev, in meinem Auftrag",
+                  "Schweiz (nach Angaben von Infomaniak ausschliesslich eigene Rechenzentren in der Schweiz)",
+                ],
+                [
+                  "Cloudflare, Inc., San Francisco, und mit Cloudflare verbundene Gesellschaften",
+                  "Auslieferung und Schutz der Website, Web Analytics, Fehlerberichte",
+                  "Weltweites Netz von Rechenzentren; eine Anfrage wird meist im nächstgelegenen bearbeitet, das auch ausserhalb der Schweiz und der EU liegen kann. Gespeichert wird nach Angaben von Cloudflare vor allem in den USA und im EWR.",
+                ],
+                [
+                  "Apple",
+                  "Kauf der Arztberichte, nach Apples eigenen Bedingungen und in eigener Verantwortung",
+                  "siehe Datenschutzrichtlinie von Apple",
+                ],
+              ],
+            },
+          },
+          {
+            p: "Für Übermittlungen in die USA gibt Cloudflare an, nach dem Swiss-U.S. und dem EU-U.S. Data Privacy Framework zertifiziert zu sein und ergänzend Standardvertragsklauseln zu verwenden. Der Bundesrat anerkennt seit dem 15. September 2024 ein angemessenes Datenschutzniveau für US-Unternehmen, die nach dem Swiss-U.S. Data Privacy Framework zertifiziert sind. Cloudflare beschreibt seine Rolle so: Für Inhalte, die über seine Dienste laufen, und für Kundenprotokolle bearbeitet Cloudflare Daten im Auftrag seiner Kunden; für bestimmte weitere Daten ist Cloudflare selbst verantwortlich.",
+          },
+          {
+            p: "Ich verkaufe keine Personendaten und gebe sie nicht für Werbung weiter. Andere Empfänger gibt es nicht, ausser ich wäre gesetzlich zur Herausgabe verpflichtet.",
           },
         ],
       },
@@ -180,14 +339,16 @@ export const privacyContent = {
         title: "Deine Rechte",
         blocks: [
           {
-            p: "Nach dem Schweizer Datenschutzgesetz kannst du Auskunft über deine Personendaten verlangen und die Berichtigung, Löschung oder Herausgabe deiner Daten verlangen. Schreib dafür an apps@wullschleger.dev. Beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) kannst du eine Anzeige einreichen: https://www.edoeb.admin.ch/",
+            p: "Nach dem DSG kannst du Auskunft über deine Personendaten verlangen, die Herausgabe oder Übertragung deiner Daten, die Berichtigung unrichtiger Daten und die Löschung. Du kannst einer Bearbeitung auch widersprechen. Beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) kannst du eine Anzeige einreichen: https://www.edoeb.admin.ch/",
           },
           {
-            p: "Deine Tagebucheinträge liegen nur auf deinem Gerät. Du verwaltest und löschst sie selbst in der App; der Entwickler kann darüber keine Auskunft geben, weil er sie nicht hat.",
+            p: "Soweit die DSGVO anwendbar ist, hast du ausserdem das Recht auf Einschränkung der Bearbeitung und auf Datenübertragbarkeit sowie das Recht, einer Bearbeitung aus berechtigtem Interesse jederzeit zu widersprechen. Du kannst dich bei einer Datenschutz-Aufsichtsbehörde beschweren, insbesondere in dem Land, in dem du lebst oder arbeitest.",
           },
           {
-            pending:
-              "Prüfen lassen, ob und in welchem Umfang die DSGVO anwendbar ist; dann Rechtsgrundlagen, weitere Rechte und die zuständigen Aufsichtsbehörden ergänzen.",
+            p: "Für alle diese Anliegen, auch wenn du die Löschung deiner E-Mails verlangen willst, schreib an apps@wullschleger.dev. Wenn ich nicht sicher bin, dass die Anfrage von dir kommt, kann ich um eine Bestätigung bitten, zum Beispiel eine Antwort von der Adresse, von der du geschrieben hast.",
+          },
+          {
+            p: "Deine Tagebucheinträge liegen nur auf deinem Gerät. Du verwaltest und löschst sie selbst in der App; Auskunft darüber kann ich nicht geben, weil ich sie nicht habe.",
           },
         ],
       },
@@ -196,7 +357,7 @@ export const privacyContent = {
         title: "Änderungen",
         blocks: [
           {
-            p: "Ändert sich die App oder diese Website so, dass andere Daten bearbeitet werden, wird diese Erklärung angepasst. Es gilt die Fassung mit dem neuesten Datum.",
+            p: "Ändert sich die App oder die Website so, dass andere Daten bearbeitet werden, passe ich diese Erklärung an. Es gilt die Fassung mit dem neuesten Datum.",
           },
         ],
       },
@@ -205,35 +366,45 @@ export const privacyContent = {
 
   en: {
     meta: {
-      title: "Privacy · CED Buddy",
+      title: "Privacy · CED Buddy and wullschleger.dev",
       description:
-        "Privacy policy of the CED Buddy app and its web pages: what stays on the device, when data leaves it, purchases through Apple, support emails and visits to the website.",
+        "Privacy policy of the CED Buddy app and the website wullschleger.dev: what stays local in the app, how support emails are handled and what happens through Cloudflare when you visit the website.",
     },
-    eyebrow: "CED Buddy · Privacy",
+    eyebrow: "CED Buddy · wullschleger.dev",
     title: "Privacy policy",
     updated: "Last updated",
     draftTitle: "Draft",
-    draftText: "This privacy policy is not finished and not yet in effect. Open points are marked.",
+    draftText: "This privacy policy is not finished and not yet in effect. The remaining open points are marked.",
     pendingLabel: "Open",
     tocLabel: "Contents",
     summaryTitle: "In short",
     summary: [
-      "Your journal stays on your iPhone. There is no account and no server of our own; the developer has no access to your entries.",
+      "Your journal stays on your iPhone. There is no account and no server of my own; I have no access to your entries.",
       "Journal data only leaves the device when you share a backup file or a report PDF yourself.",
       "Apple handles the purchase of the doctor reports. The app only learns whether the purchase is valid.",
-      "You write and send support and feedback emails voluntarily, from your own mail app.",
+      "You send support and feedback emails voluntarily, from your own mail app. I delete completed requests no later than six months after they are closed.",
       "The app contains no advertising and no analytics, crash reporting or tracking library.",
+      "The website is delivered through Cloudflare. I use Cloudflare Web Analytics to see page views, referring pages and load times in aggregate, without cookies.",
     ],
     sections: [
       {
         id: "scope",
         title: "What this covers",
         blocks: [
+          { p: "This policy has three separate parts:" },
           {
-            p: "This policy describes which personal data is processed when you use the iPhone app CED Buddy and when you visit its pages under wullschleger.dev/apps. It does not automatically apply to the other pages of wullschleger.dev.",
+            ul: [
+              "using the iPhone app CED Buddy (sections 3 to 7),",
+              "support and feedback emails to apps@wullschleger.dev (section 8),",
+              "visiting the website wullschleger.dev, meaning the start page, the app pages and all other pages under this address (section 9).",
+            ],
           },
           {
             p: "CED Buddy is a personal journal for people with Crohn's disease or ulcerative colitis. The app makes no diagnoses and gives no treatment recommendations.",
+          },
+          {
+            pending:
+              "Emails to the personal address on the start page (contact section) go to a different mailbox than apps@wullschleger.dev. Provider, purpose and retention for that mailbox are not confirmed yet and are therefore not described here yet.",
           },
         ],
       },
@@ -241,11 +412,15 @@ export const privacyContent = {
         id: "controller",
         title: "Controller and contact",
         blocks: [
-          { p: "Emanuel Wullschleger, private individual, Switzerland." },
-          { p: "Email: apps@wullschleger.dev" },
+          { p: "The controller for the app and the website is:" },
+          { address: ["Emanuel Wullschleger", "Winkelstrasse 21", "4665 Oftringen", "Switzerland"] },
+          { p: "Email for support and all privacy questions: apps@wullschleger.dev" },
+          {
+            p: "I run the app and the website as a private individual. In this policy, “I” means this controller.",
+          },
           {
             pending:
-              "Complete the controller details (e.g. postal address) and have it checked which details Switzerland and the EU require, including a possible EU representative.",
+              "Check whether a representative in the EU under Art. 27 GDPR has to be designated for users in the EU. Until then, this policy neither names a representative nor states that none is needed.",
           },
         ],
       },
@@ -259,7 +434,7 @@ export const privacyContent = {
               "an optional nickname for the greeting,",
               "your daily wellbeing, symptoms and bowel movements,",
               "notes and marks “for the doctor's visit”,",
-              "meals with a name and, if you like, a photo,",
+              "meals with a name and, if you like, a photo, plus saved meals to reuse,",
               "settings such as language, appearance and reminder time.",
             ],
           },
@@ -267,12 +442,17 @@ export const privacyContent = {
             p: "This information is health data and therefore particularly sensitive. The app asks for no account, no email address and no real name, and collects no device identifier.",
           },
           {
-            p: "The data is stored only on your device, in an encrypted database (SQLCipher); photos are encrypted individually (AES-256-GCM). The keys are kept in the iPhone keychain. The app marks its data as “do not back up” for iCloud and computer backups of the device.",
+            p: "The data is stored only on your device, in an encrypted database (SQLCipher); photos are encrypted individually (AES-256-GCM). The keys are kept in the iPhone keychain, tied to this device and do not move to another device. The app marks its data as “do not back up” for iCloud and computer backups of the device.",
           },
           {
-            p: "The app uploads nothing to a server of the developer; there is no such server and no sync. The developer therefore can neither see nor recover your entries.",
+            p: "One exception while taking a photo: as long as you are editing a meal with a new photo, a resized copy is stored unencrypted in the app's cache. The app deletes it when you save or discard, at the latest at the next start.",
           },
-          { p: "Deleting: you delete meals, symptoms, bowel movements and notes one by one in the app; you can edit check-ins and remove the nickname at any time. If you delete the app, iOS removes the app and the entries stored in it from the device." },
+          {
+            p: "The app uploads nothing to a server of mine; there is no such server and no sync. I therefore can neither see nor recover your entries.",
+          },
+          {
+            p: "Deleting: you delete meals, symptoms, bowel movements and notes one by one in the app; you can edit check-ins and remove the nickname at any time. If you delete the app, iOS removes the app and the entries stored in it from the device. Whether storage is physically overwritten is up to iOS.",
+          },
         ],
       },
       {
@@ -299,10 +479,13 @@ export const privacyContent = {
         title: "Backup file",
         blocks: [
           {
-            p: "A backup file is only created when you create it. It contains your entries and, if you choose, the photos, and is encrypted with a password you choose. Where you put it via the share sheet (for example Files, AirDrop or Mail) is up to you.",
+            p: "A backup file is only created when you create it. It contains your entries and, if you choose, the photos, and is encrypted with a password you choose. Where you put it via the share sheet (for example Files, AirDrop or Mail) is up to you. The copy the app briefly creates for this is encrypted too and deleted afterwards.",
           },
           {
-            p: "Anyone with the file and the password can read your journal. A forgotten password cannot be reset, not even by the developer. Restoring replaces all entries on the device with the content of the file.",
+            p: "Anyone with the file and the password can read your journal. A forgotten password cannot be reset, not even by me.",
+          },
+          {
+            p: "When restoring, the app opens the chosen file with your password, checks it and shows you what it contains. Only when you confirm does the content of the file replace all entries on the device. The app only imports CED Buddy backups.",
           },
         ],
       },
@@ -314,7 +497,7 @@ export const privacyContent = {
             p: "A PDF report for a doctor's visit is only created at your request. It contains the health information you select for the period and contents, is not password-protected and contains no meal photos. It only includes your nickname if you switch that on.",
           },
           {
-            p: "Whether and with whom you share the PDF is your decision, in the share sheet. The developer is not responsible for further processing by recipients or by the app you choose. The app deletes its temporary PDF file when you close the view.",
+            p: "Whether and with whom you share the PDF is your decision, in the share sheet. Once shared, the PDF is readable without encryption; I am not responsible for further processing by recipients or by the app you choose. The app deletes its own temporary PDF file when you close the view, at the latest at the next start.",
           },
         ],
       },
@@ -323,7 +506,7 @@ export const privacyContent = {
         title: "Purchasing doctor reports through Apple",
         blocks: [
           {
-            p: "You unlock the PDF reports with a one-time in-app purchase. The app uses Apple's StoreKit directly, without a third-party library and without a server of its own.",
+            p: "You unlock the PDF reports with a one-time in-app purchase; there is no subscription. The app uses Apple's StoreKit directly, without a third-party library and without a server of its own.",
           },
           {
             p: "Apple handles the purchase, payment, Apple Account, Family Sharing and refunds under its own terms. The app sees neither payment methods nor account data. StoreKit connects to the App Store when the app loads the price, when you buy or restore purchases, and when the system syncs transactions.",
@@ -339,31 +522,164 @@ export const privacyContent = {
         title: "Support and feedback emails",
         blocks: [
           {
-            p: "When you choose “Contact support” or “Give feedback” in the app, or open an email link on this website, a draft opens in your mail app. It is only sent if you send it. The message then goes from your sender address through your mail provider to apps@wullschleger.dev; it is not anonymous.",
+            p: "When you choose “Contact support” or “Give feedback” in the app, or open an email link on this website, a draft opens in your mail app. It is only sent if you send it. The message then goes from your sender address through your mail provider to apps@wullschleger.dev. Because of the sender address, it is not anonymous.",
           },
           {
-            p: "The message contains what you write, your sender address and the usual technical information of an email. Feedback from the app only includes app version and build, operating system and version, app language and appearance if you switch on “Add technical details”; you see them beforehand. Never included: nickname, journal entries, photos, purchase data, device identifiers, location or logs.",
+            p: "I receive what you write and attach, your sender address and the name your mail app sends along, and the usual technical information of an email such as the time and the mail servers involved. Feedback from the app only includes app version and build, operating system and version, app language and appearance if you switch on “Add technical details”; you see this information before sending.",
           },
           {
-            p: "The developer uses these emails to answer your request and to improve the app. Please don't send health data or files unless explicitly asked.",
+            p: "The app does not automatically add your nickname, journal entries, photos, health information, purchase data, device identifiers or location. Whatever you write or attach yourself does reach me, though. Please leave out personal health information, backup files and reports; I do not routinely ask for them for support.",
           },
-          { pending: "Name the email provider for apps@wullschleger.dev (and where it processes data)." },
-          { pending: "Decide how long support and feedback emails are kept." },
+          {
+            p: "I use the messages to reply to you, fix bugs and evaluate factual suggestions for improvement. I handle support myself, do not automatically forward messages to other mailboxes and use contact details neither for a newsletter nor for advertising.",
+          },
+          { h3: "Mail provider" },
+          {
+            p: "The mailbox apps@wullschleger.dev is hosted by Infomaniak Network SA, Geneva, Switzerland. Infomaniak processes the messages on my behalf. According to Infomaniak's terms for its Mail Service (version of 27 May 2026), data is stored exclusively in data centres in Switzerland owned by Infomaniak. Infomaniak backs up mailbox content daily and keeps these backups for seven days.",
+          },
+          { h3: "How long I keep messages" },
+          {
+            ul: [
+              "While a request is open, I keep the messages I need to handle it.",
+              "I delete completed support and feedback requests as soon as I no longer need them, no later than six months after they are closed. This applies to your messages and to my replies.",
+              "I only keep individual messages longer if a statutory retention obligation applies or I need them for a specific legal claim, and only as long as necessary for that.",
+              "I may keep factual bug descriptions and ideas separately, without personal reference (no names, addresses or health information), to develop the app further.",
+            ],
+          },
+          {
+            p: "I check the mailbox for this manually at regular intervals; there is no automatic deletion in place. After deletion, messages may remain in Infomaniak's technical backups for up to seven days.",
+          },
         ],
       },
       {
         id: "website",
-        title: "Visiting this website",
+        title: "Visiting the website",
         blocks: [
           {
-            p: "The website is delivered through Cloudflare Pages (Cloudflare, Inc.). When you open it, your browser sends technically necessary information to Cloudflare, such as IP address, time, requested page and browser details, so the page can be delivered and protected against abuse. Cloudflare may process data outside Switzerland. More: https://www.cloudflare.com/privacypolicy/",
+            p: "This section applies to all pages under wullschleger.dev. The website is a static website: it has no contact form, no account and no comments.",
+          },
+          { h3: "Delivery and security by Cloudflare" },
+          {
+            p: "The website is hosted on Cloudflare Pages and delivered through Cloudflare's network (Cloudflare, Inc., USA). With every request, Cloudflare receives the technically necessary information: IP address, time, requested address, referring page (referrer), browser and system details and other connection data. Cloudflare needs it to deliver the pages, defend against attacks and abuse and detect faults. From it, Cloudflare creates aggregated statistics, such as number of requests, countries and status codes, which I see in the Cloudflare account.",
           },
           {
-            p: "The pages load fonts and images from wullschleger.dev itself and embed no analytics, advertising, tracking or social media services. They set no cookies and store nothing in your browser; the language is part of the address (/en for English).",
+            p: "How long Cloudflare keeps this connection data is set by Cloudflare; Cloudflare does not state a fixed period for it. More: https://www.cloudflare.com/privacypolicy/",
+          },
+          {
+            p: "The pages themselves set no cookies and store nothing in your browser; the language is part of the address (/en for English). If Cloudflare considers a request automated, it may show a security check and set a security cookie for it (for example “cf_clearance”). Such cookies protect the website; they are not used for analytics.",
+          },
+          {
+            p: "When delivering the pages, Cloudflare encodes the email addresses in them so spam bots have a harder time reading them. A small script, loaded from wullschleger.dev itself, makes them readable again in your browser.",
+          },
+          { h3: "Cloudflare Web Analytics" },
+          {
+            p: "I use Cloudflare Web Analytics to see how often the pages are viewed, which pages visitors come from and how fast the pages load. For this, your browser loads a script from Cloudflare (static.cloudflareinsights.com) when you open a page and sends measurements to Cloudflare: the page viewed, the referring page, load and performance values and a random identifier for this one page view. From the request, Cloudflare derives country, device type, browser and operating system. In the account I only see aggregated figures, not individual people.",
+          },
+          {
+            p: "According to Cloudflare, Web Analytics uses no cookies and no local storage in the browser, does not fingerprint visitors from their IP address or browser details, does not store query parameters of addresses and discards the IP address at the nearest data centre. The measurement is not used for advertising or to build a profile of you.",
+          },
+          {
+            p: "Retention according to Cloudflare: the complete measurements are kept for seven days. After that, Cloudflare keeps a sample of about 10% for longer-term analysis; data for the last six months is available in the account. Cloudflare does not state a period after which all measurements are deleted.",
+          },
+          {
+            p: "You can refuse the measurement: the content of the pages can also be read without JavaScript. If you switch JavaScript off or block requests to cloudflareinsights.com with a content blocker, no measurement takes place. According to Cloudflare, common ad blockers already block the script.",
           },
           {
             pending:
-              "Confirm the settings in the Cloudflare account: Web Analytics, logs and Network Error Logging (Cloudflare sends the “NEL” header, which lets browsers report connection errors to Cloudflare).",
+              "Confirm in the Cloudflare account how Web Analytics is set up for wullschleger.dev (Pages project or automatic setup of the zone) and whether the setting “Enable, excluding visitor data in the EU” is active. The sentence on visits from the EU and the question of consent depend on this. Also confirm that no access logs are exported (Logpush).",
+          },
+          { h3: "Error reports (Network Error Logging)" },
+          {
+            p: "With every page, Cloudflare sends the instructions “NEL” and “Report-To”. They let your browser report to Cloudflare when a connection to wullschleger.dev fails, for example because of a DNS or connection error. Successful requests are not reported. Such a report contains, among other things, the affected address, referring page, type of error, duration, protocol and the server's IP address. According to Cloudflare, it uses your browser's IP address only briefly to derive country and network provider and does not store it. Your browser follows the instruction for up to seven days; this is not a retention period at Cloudflare.",
+          },
+          { h3: "Links and downloads" },
+          {
+            p: "Fonts, images and the CV as a PDF come from wullschleger.dev itself. Links to GitHub, LinkedIn, g.dev, Apple or authorities only open those sites when you click them; their privacy policies apply there. “Copy address” only puts the address on your device's clipboard. The website's addresses contain no journal content, email addresses or purchase data.",
+          },
+        ],
+      },
+      {
+        id: "legal-bases",
+        title: "Purposes and legal bases",
+        blocks: [
+          {
+            p: "I process personal data under the Swiss Federal Act on Data Protection (FADP) and only for the purposes named in this policy. I do not ask for blanket consent: neither using the app nor visiting the website counts as consent. I make no automated individual decisions and build no profiles of you.",
+          },
+          {
+            p: "I do not process your journal data. It is only on your device and only reaches me if you send it to me yourself.",
+          },
+          {
+            p: "Where the EU General Data Protection Regulation (GDPR) applies to processing, for example when you live in the EU and write to me, I rely on these legal bases:",
+          },
+          {
+            table: {
+              head: ["Purpose", "Data", "Legal basis under the GDPR"],
+              rows: [
+                [
+                  "Answer requests, fix bugs, evaluate suggestions",
+                  "Content of the email, sender address, mail metadata, optional technical details",
+                  "Art. 6(1)(b) where it concerns using or buying the app; otherwise Art. 6(1)(f) (interest in answering requests and improving the app)",
+                ],
+                [
+                  "Keep individual messages longer",
+                  "the messages concerned",
+                  "Art. 6(1)(c) (legal obligation) or (f) (specific legal claim)",
+                ],
+                [
+                  "Deliver and protect the website",
+                  "Connection data at Cloudflare",
+                  "Art. 6(1)(f) (secure, working website)",
+                ],
+                [
+                  "Measure reach and loading quality",
+                  "Web Analytics measurements",
+                  "Art. 6(1)(f) (interest in seeing which pages are used and how fast they load)",
+                ],
+                [
+                  "Detect connection errors",
+                  "Error reports (NEL)",
+                  "Art. 6(1)(f) (reachable website)",
+                ],
+              ],
+            },
+          },
+          {
+            pending:
+              "Clarify whether and for whom the GDPR applies to support emails and the website, whether measuring visits from the EU or EEA needs consent (depends on the Cloudflare setting above), and which basis applies to health information someone writes into an email unasked.",
+          },
+        ],
+      },
+      {
+        id: "recipients",
+        title: "Recipients and processing abroad",
+        blocks: [
+          {
+            table: {
+              head: ["Recipient", "What for", "Where"],
+              rows: [
+                [
+                  "Infomaniak Network SA, Geneva",
+                  "Mailbox apps@wullschleger.dev, on my behalf",
+                  "Switzerland (according to Infomaniak, exclusively its own data centres in Switzerland)",
+                ],
+                [
+                  "Cloudflare, Inc., San Francisco, and Cloudflare affiliates",
+                  "Delivery and protection of the website, Web Analytics, error reports",
+                  "Worldwide network of data centres; a request is usually handled by the nearest one, which may be outside Switzerland and the EU. According to Cloudflare, data is stored mainly in the USA and the EEA.",
+                ],
+                [
+                  "Apple",
+                  "Purchase of the doctor reports, under Apple's own terms and responsibility",
+                  "see Apple's privacy policy",
+                ],
+              ],
+            },
+          },
+          {
+            p: "For transfers to the USA, Cloudflare states that it is certified under the Swiss-U.S. and EU-U.S. Data Privacy Framework and additionally uses standard contractual clauses. Since 15 September 2024, the Swiss Federal Council recognises an adequate level of data protection for US companies certified under the Swiss-U.S. Data Privacy Framework. Cloudflare describes its role as follows: for content passing through its services and for customer logs, Cloudflare processes data on behalf of its customers; for certain other data, Cloudflare is itself responsible.",
+          },
+          {
+            p: "I do not sell personal data and do not pass it on for advertising. There are no other recipients, unless I were legally obliged to disclose data.",
           },
         ],
       },
@@ -372,14 +688,16 @@ export const privacyContent = {
         title: "Your rights",
         blocks: [
           {
-            p: "Under the Swiss Federal Act on Data Protection you can request information about your personal data and ask for it to be corrected, deleted or handed over. Write to apps@wullschleger.dev. You can file a report with the Federal Data Protection and Information Commissioner (FDPIC): https://www.edoeb.admin.ch/en",
+            p: "Under the FADP you can request information about your personal data, have your data handed over or transferred, have incorrect data corrected and have data deleted. You can also object to processing. You can file a report with the Federal Data Protection and Information Commissioner (FDPIC): https://www.edoeb.admin.ch/en",
           },
           {
-            p: "Your journal entries are only on your device. You manage and delete them yourself in the app; the developer cannot provide information about them because he does not have them.",
+            p: "Where the GDPR applies, you also have the right to restriction of processing and to data portability, and the right to object at any time to processing based on legitimate interests. You can lodge a complaint with a data protection supervisory authority, in particular in the country where you live or work.",
           },
           {
-            pending:
-              "Have it checked whether and to what extent the GDPR applies; then add legal bases, further rights and the competent supervisory authorities.",
+            p: "For all of these requests, including if you want your emails deleted, write to apps@wullschleger.dev. If I am not sure that a request comes from you, I may ask for confirmation, for example a reply from the address you wrote from.",
+          },
+          {
+            p: "Your journal entries are only on your device. You manage and delete them yourself in the app; I cannot provide information about them because I do not have them.",
           },
         ],
       },
@@ -388,7 +706,7 @@ export const privacyContent = {
         title: "Changes",
         blocks: [
           {
-            p: "If the app or this website changes in a way that other data is processed, this policy will be updated. The version with the latest date applies.",
+            p: "If the app or the website changes in a way that other data is processed, I will update this policy. The version with the latest date applies.",
           },
         ],
       },

@@ -18,7 +18,13 @@ export default function Footer({ t, extraLinks }) {
       <div className="container footer-inner">
         {/* The year comes from the build on pre-rendered pages and from the
             browser after hydration; they only differ around New Year. */}
-        <p suppressHydrationWarning>© {new Date().getFullYear()} Emanuel Wullschleger · wullschleger.dev</p>
+        <div className="footer-meta">
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Emanuel Wullschleger · wullschleger.dev</p>
+          {/* One privacy policy covers the whole site (section "website"). */}
+          <a className="footer-privacy" href={t.footer.privacyHref}>
+            {t.footer.privacy}
+          </a>
+        </div>
         <nav className="footer-links" aria-label="Social">
           <a href={profile.github} target="_blank" rel="noopener noreferrer">
             GitHub
