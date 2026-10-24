@@ -459,10 +459,10 @@ export const supportContent = {
       "Kurze Schritte, mit denen sich der Fehler wiederholen lässt",
     ],
     inAppHint:
-      "In der App findest du unter Einstellungen › Hilfe & Feedback dasselbe. Dort kannst du technische Angaben (App-Version, iOS-Version, Sprache und Darstellung) auf Wunsch selbst hinzufügen; du siehst sie vor dem Senden.",
+      "In der App findest du unter Einstellungen › Hilfe & Feedback dasselbe. Eine E-Mail aus „Hilfe & Kontakt“ nennt im Betreff schon die App-Version. Bei „Feedback geben“ kannst du technische Angaben (App-Version, iOS-Version, Sprache und Darstellung) auf Wunsch selbst hinzufügen; du siehst sie vor dem Senden.",
     privacyTitle: "Bitte nichts Sensibles mitsenden",
     privacyText:
-      "Schick keine persönlichen Gesundheitsangaben, Sicherungsdateien, Berichte oder ungeschwärzten Screenshots mit. Für den Support frage ich nicht routinemässig danach. Deine E-Mail ist nicht anonym: Sie kommt mit deiner Absenderadresse an.",
+      "Schick keine persönlichen Gesundheitsangaben, Befunde, Arztberichte, Sicherungsdateien, Berichte oder ungeschwärzten Screenshots mit. Für den Support brauche ich sie nicht und frage nicht danach. Kommt so etwas trotzdem an, verwende ich es nicht weiter und lösche es möglichst rasch. Deine E-Mail ist nicht anonym: Sie kommt mit deiner Absenderadresse an.",
     dataTitle: "Was mit deiner E-Mail passiert",
     dataText:
       "Ich lese und beantworte den Support selbst. Das Postfach liegt bei Infomaniak in der Schweiz. Erledigte Anfragen lösche ich, sobald ich sie nicht mehr brauche, spätestens sechs Monate nach Abschluss. Kein Newsletter, keine Werbung.",
@@ -597,10 +597,10 @@ export const supportContent = {
       "Short steps that make the bug happen again",
     ],
     inAppHint:
-      "In the app you find the same under Settings › Help & feedback. There you can choose to add technical details (app version, iOS version, language and appearance) yourself; you see them before sending.",
+      "In the app you find the same under Settings › Help & feedback. An email from “Help & contact” already names the app version in its subject. With “Give feedback” you can choose to add technical details (app version, iOS version, language and appearance) yourself; you see them before sending.",
     privacyTitle: "Please don't send anything sensitive",
     privacyText:
-      "Don't send personal health information, backup files, reports or unredacted screenshots. I do not routinely ask for them for support. Your email is not anonymous: it arrives with your sender address.",
+      "Don't send personal health information, findings, doctor's reports, backup files, reports or unredacted screenshots. I do not need them for support and do not ask for them. If something like this arrives anyway, I do not use it further and delete it as soon as possible. Your email is not anonymous: it arrives with your sender address.",
     dataTitle: "What happens to your email",
     dataText:
       "I read and answer support myself. The mailbox is hosted by Infomaniak in Switzerland. I delete completed requests as soon as I no longer need them, no later than six months after they are closed. No newsletter, no advertising.",

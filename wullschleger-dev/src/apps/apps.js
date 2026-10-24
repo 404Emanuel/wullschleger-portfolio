@@ -28,7 +28,7 @@ export const cedBuddy = {
   // open point in the privacy text is resolved (the build checks it).
   privacyStatus: "draft",
   // Date of the privacy text, ISO format.
-  privacyUpdated: "2026-10-23",
+  privacyUpdated: "2026-10-24",
 
   assets: "/apps/ced-buddy",
 };

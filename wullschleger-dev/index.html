@@ -17,7 +17,11 @@
     <!-- /page-head -->
   </head>
   <body>
+    <!-- Cloudflare must not rewrite the mail links: rewriting breaks hydration
+         and the links without JavaScript (docs/apps/privacy-operations.md) -->
+    <!--email_off-->
     <div id="root"></div>
+    <!--/email_off-->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

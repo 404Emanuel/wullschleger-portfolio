@@ -5,8 +5,9 @@ import { routes, notFoundRoute, routeFile } from "./routes.js";
 import { pageComponents, pageHead } from "./pages/registry.js";
 import { cedBuddy } from "./apps/apps.js";
 import { privacyContent, countPending } from "./apps/ced-buddy/privacy.js";
+import { webAnalytics } from "./analytics.js";
 
-export { routes, notFoundRoute, routeFile, pageHead, cedBuddy };
+export { routes, notFoundRoute, routeFile, pageHead, cedBuddy, webAnalytics };
 
 export function render(route) {
   const Page = pageComponents[route.page];
