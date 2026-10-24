@@ -1,13 +1,12 @@
 # Übergabe an das App-Repository `ced-buddy`: Support- und Datenschutz-URLs
 
-Stand: 24.10.2026. Erstellt im Website-Repository (Branch `feat/privacy-consent`, aufbauend auf
-`feat/app-privacy-finalization`); im App-Repository wurde nichts geändert. Diese Datei kann als Notiz ins
+Stand: 24.10.2026. Erstellt im Website-Repository (Branch `fix/remove-analytics`); im App-Repository wurde nichts geändert. Diese Datei kann als Notiz ins
 App-Repository übernommen werden.
 
 ## Status
 
 **Nur lokal vorbereitet.** Nicht gepusht, nicht auf einer Vorschau-URL, nicht veröffentlicht. Die
-Datenschutzerklärung ist weiterhin als **Entwurf** gekennzeichnet (zwei offene Punkte, siehe unten).
+Datenschutzerklärung ist weiterhin als **Entwurf** gekennzeichnet (ein offener Punkt, siehe unten).
 Live ist bis zu einem Deployment die ältere Entwurfsfassung vom 22.10.2026.
 
 ## URLs
@@ -25,7 +24,7 @@ Live ist bis zu einem Deployment die ältere Entwurfsfassung vom 22.10.2026.
   Release-Build und keine Datenschutz-URL in App Store Connect, solange die Seite Entwurf ist (so auch
   in ADR 0019 und `RELEASE.md` der App).
 - Die Erklärung gilt gemeinsam für App, E-Mails an `apps@wullschleger.dev` (Support, Feedback, Kontakt)
-  und die ganze Website. Anker: `#email`, `#app-daten` / `#app-data`, `#web-analytics` (beide Sprachen),
+  und die ganze Website. Anker: `#email`, `#app-daten` / `#app-data`,
   `#rechte` / `#rights`.
 
 ## Bestätigte Betreiber- und Mailangaben (im Text verwendet)
@@ -66,13 +65,13 @@ Live ist bis zu einem Deployment die ältere Entwurfsfassung vom 22.10.2026.
 Nur Vorschläge für den separaten App-Auftrag; Verschlüsselung, Bundle-ID, Apple-Team und Kauflogik sind
 nicht betroffen.
 
-1. **Website-Statistik nur mit Einwilligung.** Die Website lädt Cloudflare Web Analytics erst, wenn
-   jemand auf der Website „Statistik erlauben“ wählt (Footer: „Datenschutzeinstellungen“). Der App-Text
+1. **Keine Website-Statistik mehr.** Die Website nutzt seit 24.10.2026 keine Web-Analyse. Der App-Text
    `publicPages.websiteNote` sagt heute „die Website kann Besuche mit Cloudflare Web Analytics statistisch
-   auswerten“. Vorschlag nach dem Deployment dieses Branches, DE: „… und die Website wertet Besuche nur
-   dann mit Cloudflare Web Analytics aus, wenn du dort zustimmst.“; EN: „… and the website only analyses
-   visits with Cloudflare Web Analytics if you agree there.“ Übrige App-Sprachen entsprechend.
-   Keine neue Einwilligung in der App für das lokale Tagebuch.
+   auswerten“. Vorschlag: diesen Satzteil streichen. DE: „Öffnet die Website des Entwicklers in deinem
+   Browser. Beim Aufruf erhält Cloudflare, das die Website ausliefert, technische Angaben wie deine
+   IP-Adresse. Die App gibt dabei nichts aus deinem Tagebuch oder zu deinem Kauf weiter.“ EN entsprechend,
+   übrige App-Sprachen ebenso. `privacy-facts.md` der App (Zeile „Website … Cloudflare (Auslieferung, Web
+   Analytics)“) ebenfalls anpassen.
 2. **Support-Betreff mit App-Version.** Die Erklärung beschreibt jetzt genau, was die App vorbereitet:
    „Hilfe & Kontakt“ → Betreff `CED Buddy <Version>: Hilfe` (sonst nichts ausgefüllt), „Feedback geben“
    → `[CED Buddy][BUG] Feedback` usw., technische Angaben nur mit „Technische Angaben hinzufügen“.
@@ -98,10 +97,7 @@ nicht betroffen.
 
 Details: `docs/apps/privacy-operations.md`, Abschnitte 2 und 5.
 
-1. Cloudflare: automatische Web-Analytics-Einbindung aus (Zone und Pages-Projekt), Token eintragen,
-   E-Mail-Verschleierung aus, Logpush notieren, dann Prüfung auf dem ausgelieferten Build.
-   *Handlung:* Emanuel im Cloudflare-Dashboard.
-2. EU-Vertretung nach Art. 27 DSGVO bestellen oder Ausnahme qualifiziert bestätigen lassen
+1. EU-Vertretung nach Art. 27 DSGVO bestellen oder Ausnahme qualifiziert bestätigen lassen
    (`docs/apps/eu-representative.md`). *Handlung:* Emanuel.
 
 ## Quellen und Datum

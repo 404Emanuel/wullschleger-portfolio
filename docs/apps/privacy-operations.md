@@ -1,14 +1,13 @@
 # Datenschutz wullschleger.dev und CED Buddy: Betrieb, Technik, offene Punkte
 
-Stand: 24.10.2026, Branch `feat/privacy-consent` (aufbauend auf `feat/app-privacy-finalization`).
+Stand: 24.10.2026, Branch `fix/remove-analytics` (nach `feat/privacy-consent`, PR #4).
 Interne Projektdoku, nicht öffentlich. Der öffentliche Text steht in
 `wullschleger-dev/src/apps/ced-buddy/privacy.js` und ist unter `/apps/ced-buddy/privacy` und
 `/en/apps/ced-buddy/privacy` erreichbar.
 
 **Veröffentlichungsstatus: Entwurf.** `privacyStatus` bleibt `"draft"` (Seite `noindex`, nicht in der
-Sitemap, sichtbarer Entwurfshinweis). Grund: die zwei offenen Punkte in Abschnitt 5. Der Build verweigert
-`"final"`, solange im Text `pending`-Blöcke stehen **oder** in `src/analytics.js` kein Web-Analytics-Token
-steht. Nichts davon ist gepusht oder deployt.
+Sitemap, sichtbarer Entwurfshinweis). Grund: der eine offene Punkt in Abschnitt 5 (EU-Vertretung). Der
+Build verweigert `"final"`, solange im Text `pending`-Blöcke stehen.
 
 Keine Rechtsprüfung. Grundlage: die tatsächlichen Datenflüsse, die Recherche „Datenschutz vor dem
 Launch“ vom 24.10.2026 (EDPB, CNIL, EDÖB, Cloudflare) und die Quellen in Abschnitt 7. Das ist keine
@@ -77,80 +76,50 @@ Die Regel ist keine neue Art.-9-Grundlage, sondern beendet die unnötige Bearbei
   Bestätigung selbst wird nach der normalen Regel gelöscht.
 - Keine Gesundheitsdaten oder Tagebuchdateien für den Support anfordern.
 
-## 2. Website: Statistik nur mit Einwilligung
+## 2. Website: keine Web-Analyse
 
-### Umsetzung im Code
+Entscheid Emanuel, 24.10.2026: keine Statistik auf der Website. Die zwischenzeitlich gebaute
+Einwilligungslösung (Commit `c743797`) ist mit diesem Branch wieder entfernt; es gibt kein
+Analyse-Skript, keine Frage, keinen Knopf „Datenschutzeinstellungen“ und nichts im Browserspeicher.
 
-- `src/analytics.js`: Token, Laden des Beacons, Speichern der Wahl. `src/components/PrivacyChoice.jsx`:
-  Frage und Knopf „Datenschutzeinstellungen“ im Footer (jede Seite, auch 404).
-- Vor der Wahl, nach Ablehnung und ohne JavaScript: kein Skript, kein Beacon, kein Preconnect, keine
-  Verbindung zu `cloudflareinsights.com`. Frage und Knopf entstehen erst nach der Hydrierung; im
-  vorgerenderten HTML stehen sie nicht.
-- Zwei gleichwertige Knöpfe („Statistik erlauben“ / „Ohne Statistik fortfahren“, gleiche Klasse
-  `btn btn-ghost`), kein Schliessen-Kreuz als dritte Option, kein Inhalt gesperrt. Die Frage nimmt beim
-  ersten Besuch keinen Fokus; über den Footer geöffnet springt der Fokus auf die Überschrift und nach der
-  Wahl zurück zum Knopf.
-- Gespeichert in `localStorage` unter `wd-privacy-choice`: `{"v":1,"analytics":true|false,"date":"JJJJ-MM-TT"}`.
-  Keine Kennung, kein Cookie. Nach sechs Monaten, bei anderer Version oder ungültigem Wert wird neu
-  gefragt. `CHOICE_VERSION` erhöhen, wenn sich die Frage inhaltlich ändert. Ist der Speicher gesperrt,
-  gilt die Wahl nur für die aktuelle Seite.
-- Nach Zustimmung: ein `<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-  data-cf-beacon='{"token":"…","spa":false}'>` pro Seitenaufruf. `"spa": false` schaltet die
-  Erkennung von Seitenwechseln über History/Navigation API ab (im Beacon-Quelltext nachgesehen); die
-  Website hat nur volle Seitenaufrufe, Ankerlinks zählen so nicht doppelt.
-- Widerruf: Wahl speichern; war das Skript auf der Seite geladen, wird die Seite neu geladen (ein
-  geladener Beacon lässt sich nicht abschalten). Bereits gesendete Messwerte bleiben bei Cloudflare.
-- Token leer (heute): keine Frage, kein Knopf, keine Messung. `VITE_WEB_ANALYTICS_TOKEN` überschreibt
-  den Token nur für lokale Testbuilds.
-- Build-Schutz (`scripts/prerender.mjs`): Token muss 32 Hex-Zeichen haben; `privacyStatus: "final"`
-  ohne Token bricht ab.
+**Befund live am 24.10.2026 vor dem Entfernen:** Cloudflare fügte über die Web-Analytics-Integration des
+Pages-Projekts selbst ein Skript in jede Seite ein (`<!-- Cloudflare Pages Analytics -->`, `beacon.min.js`
+mit Token), also ohne Zustimmung und unabhängig vom Code. Emanuel hat Web Analytics im Pages-Projekt am
+24.10.2026 deaktiviert; laut Dashboard greift das beim nächsten Deployment.
 
-### Cloudflare-Einstellungen (Betreiber, im Dashboard)
+### Cloudflare (Betreiber, im Dashboard)
 
-Ohne diese Schritte könnte Cloudflare das Skript selbst einfügen und die Wahl umgehen. Das Abschalten der
-automatischen Einbindung schaltet das Analytics-Produkt **nicht** ab; Hosting und Schutz bleiben unberührt.
-Ich hatte keinen Zugang zum Cloudflare-Konto und habe nichts daran geändert.
+1. *Workers & Pages → Pages-Projekt → Metrics → Web Analytics*: deaktiviert (erledigt 24.10.2026).
+2. *Account → Analytics & Logs → Web Analytics*: Steht `wullschleger.dev` dort als Site mit
+   automatischer Einrichtung, ebenfalls „Disable“ wählen oder die Site entfernen. Sonst kann Cloudflare das
+   Skript weiter über die Zone einfügen.
+3. *Zone → Scrape Shield → Email Address Obfuscation*: aus. Im HTML stehen zusätzlich
+   `<!--email_off-->…<!--/email_off-->`. Live am 24.10.2026 waren die Mail-Links bereits unverschlüsselt.
+4. *Zone → Analytics & Logs → Logpush*: nachsehen und hier notieren. Kein Logpush heisst nicht, dass
+   Cloudflare keine Logs hat; die Erklärung behauptet das auch nicht.
+5. Nachweise ablegen (ausserhalb des Repos): Cloudflare-DPA (cloudflare.com/dpa) und
+   Infomaniak-Auftragsbearbeitungsvertrag; im Infomaniak Manager bestätigen, dass `apps@wullschleger.dev`
+   den zitierten Mail-Service nutzt.
 
-1. *Account → Analytics & Logs → Web Analytics → wullschleger.dev → Manage site*: „Enable with JS Snippet
-   installation“ wählen. Aus dem angezeigten Snippet den Wert von `token` kopieren und in
-   `src/analytics.js` bei `SITE_TOKEN` eintragen. Ist die Site dort nicht aufgeführt: „Add a site“,
-   Hostname `wullschleger.dev`, ebenfalls manuelle Installation.
-2. *Workers & Pages → Pages-Projekt → Metrics → Web Analytics*: **Disable** (die Pages-Integration fügt
-   das Skript beim Deployment automatisch ein).
-3. *Zone wullschleger.dev → Scrape Shield → Email Address Obfuscation* (je nach Dashboard unter
-   *Security → Settings*): **Off**. Alternative, eng begrenzt: Configuration Rule für Hostname
-   `wullschleger.dev` mit „Email Obfuscation: Off“. Zusätzlich stehen im HTML jetzt
-   `<!--email_off-->…<!--/email_off-->` um den Seiteninhalt; laut Cloudflare wird darin nichts
-   verschleiert. Ob das allein genügt, zeigt erst die Prüfung nach dem Deployment.
-4. *Zone → Analytics & Logs → Logpush*: nachsehen, ob ein Job eingerichtet ist, und das Ergebnis hier
-   notieren. Kein Logpush heisst **nicht**, dass Cloudflare keine Logs hat; die Erklärung behauptet das
-   auch nicht.
-5. Nachweise ablegen (ausserhalb des Repos): Cloudflare-DPA für das Konto (cloudflare.com/dpa, Self-Serve-
-   Version 6.4) und Infomaniak-Auftragsbearbeitungsvertrag (Infomaniak Manager, als PDF erzeugen).
-   Ausserdem im Infomaniak Manager bestätigen, dass `apps@wullschleger.dev` den Mail-Service nutzt, dessen
-   Bedingungen (27.05.2026) die Erklärung zitiert.
+### Prüfung nach dem Deployment
 
-### Prüfung nach dem Deployment (mit dem ausgelieferten Build)
-
-Erst auf einer Pages-Vorschau oder live, nicht lokal möglich (lokal fehlt die Cloudflare-Zone):
-
-1. Frischer Browser, Netzwerk-Tab offen: Startseite laden. Keine Anfrage an `cloudflareinsights.com`
-   oder `static.cloudflareinsights.com`, kein `/cdn-cgi/rum`, kein `email-decode.min.js`,
-   keine `/cdn-cgi/l/email-protection`-Links. `view-source:` zeigt `mailto:apps@wullschleger.dev`.
-2. „Ohne Statistik fortfahren“, Seitenwechsel, Neuladen: weiterhin keine Analytics-Anfrage.
-3. Neuer frischer Browser, „Statistik erlauben“: genau ein `beacon.min.js` und ein Bericht an
-   `cloudflareinsights.com/cdn-cgi/rum` pro Seitenaufruf; kein zweites Skript (sonst ist eine
-   automatische Einbindung noch aktiv).
-4. Footer „Datenschutzeinstellungen“ → „Ohne Statistik fortfahren“: Seite lädt neu, danach keine
-   Analytics-Anfragen mehr.
-5. JavaScript aus: keine Frage, Mail-Links funktionieren.
-6. Konsole auf beiden Datenschutzseiten: kein React-Fehler #418 mehr.
-7. Ergebnis mit Datum hier in Abschnitt 3 eintragen, dann den `pending`-Block im Abschnitt Web Analytics
-   (DE und EN) entfernen.
+1. `curl -s https://wullschleger.dev/ | grep -c cloudflareinsights` ergibt `0`, ebenso für
+   `/apps/ced-buddy/privacy` und `/en`.
+2. Browser mit Netzwerk-Tab: keine Anfrage an `cloudflareinsights.com`, kein `/cdn-cgi/rum`, kein
+   `email-decode.min.js`; `localStorage` leer; keine Konsolenfehler.
+3. Findet sich doch ein Beacon: Schritt 2 oben prüfen. Die Erklärung sagt „keine Web-Analyse“; ein
+   Beacon wäre dann ein Fehler, der sofort behoben werden muss.
 
 ## 3. Technische Prüfungen
 
-### 24.10.2026, lokal (dieser Branch)
+### 24.10.2026, lokal, ohne Analytics (`fix/remove-analytics`)
+
+`wrangler pages dev` 4.140.0, Chrome headless, 375 px, alle 10 Seiten je mit Neuladen: HTTP 200, keine
+Anfrage ausserhalb der Website, `localStorage`/`sessionStorage` leer, keine Cookies, kein horizontales
+Scrollen, keine Konsolenfehler, Kontakt `mailto:apps@wullschleger.dev`. Im Build kommt
+`cloudflareinsights` nicht mehr vor.
+
+### 24.10.2026, lokal, Einwilligungslösung (`feat/privacy-consent`, inzwischen entfernt)
 
 `wrangler pages dev` 4.140.0 mit zwei Builds: wie er heute baut (ohne Token) und ein Testbuild mit
 erfundenem Token `0123456789abcdef0123456789abcdef`. Google Chrome headless über `playwright-core`
@@ -216,8 +185,7 @@ Alles „nach Angaben von Cloudflare“ ist Anbieterangabe, nicht selbst geprüf
 | --- | --- | --- |
 | Auslieferung, Sicherheit, Edge-Statistik | Verbindungsdaten bei jedem Aufruf; zusammengefasste Statistik im Konto; keine feste Frist | Cloudflare Privacy Policy (4.11.2025); Web Analytics FAQ |
 | Separate Logs | nicht behauptet; Logpush offen (Abschnitt 2, Schritt 4) | – |
-| Web Analytics | nur nach Einwilligung; Skript von `static.cloudflareinsights.com`, Berichte an `cloudflareinsights.com`; Felder Seite, Referrer, Lade-/Leistungswerte, `pageloadId`; Land, Gerätetyp, Browser, OS abgeleitet; keine Cookies/Local Storage/Fingerprinting; 7 Tage vollständig, dann ~10 % Stichprobe, 6 Monate im Konto | RUM-Beacon-Doku; Web Analytics FAQ (Berichtsziel bei manueller Einbindung, CSP); Beacon-Quelltext |
-| Wahl im Browser | `wd-privacy-choice` in `localStorage`, Inhalt, sechs Monate, nicht übertragen | eigener Code |
+| Web Analytics | nicht genutzt; nur zusammengefasste Zahlen aus den Verbindungsdaten der Auslieferung | Entscheid 24.10.2026; Abschnitt 2 |
 | NEL | Bericht nur bei Fehlern; Felder; IP nur kurz; `max_age` ist keine Aufbewahrungsfrist | Live-Header; Cloudflare NEL-Doku |
 | Sicherheits-Cookies | nur bei Sicherheitsprüfung (`cf_clearance`) | Cloudflare Cookie-Doku |
 | Ausland | DPF und SCC laut Cloudflare; Bundesrat: DPF-zertifizierte US-Firmen angemessen seit 15.9.2024 | Cloudflare Privacy Policy; admin.ch |
@@ -225,20 +193,20 @@ Alles „nach Angaben von Cloudflare“ ist Anbieterangabe, nicht selbst geprüf
 
 ## 5. Offene Punkte (blockieren `privacyStatus: "final"`)
 
-Im Text als `pending` markiert (je DE und EN, zusammen 2 je Sprache).
+Im Text als `pending` markiert (je DE und EN, 1 je Sprache).
 
-1. **Cloudflare-Konfiguration und Prüfung nach dem Deployment (Betreiber).** Abschnitt 2, Schritte 1
-   bis 5, dann „Prüfung nach dem Deployment“. Danach `SITE_TOKEN` gesetzt, `pending` im Abschnitt Web
-   Analytics entfernen.
-2. **EU-Vertretung nach Art. 27 DSGVO (Betreiber, Entscheidung und gegebenenfalls Vertrag).** Separat
+1. **EU-Vertretung nach Art. 27 DSGVO (Betreiber, Entscheidung und gegebenenfalls Vertrag).** Separat
    dokumentiert in [eu-representative.md](eu-representative.md). Keine Ausnahme und keine Vertretung in
    den Text schreiben, bevor das schriftlich geklärt ist.
 
-Erledigt mit diesem Branch (früher offen):
+Nicht im Text blockierend, aber vor „final“ erledigen: Abschnitt 2, Cloudflare-Schritte 2 bis 5 und die
+Prüfung nach dem Deployment.
 
+Erledigt:
+
+- Web-Analyse entfernt (Abschnitt 2); damit entfällt die Einwilligungsfrage.
 - Private iCloud-Adresse im Kontaktbereich ersetzt durch `apps@wullschleger.dev`; die Erklärung deckt
   allgemeine Kontaktanfragen über dieses Postfach ab (gleiche Aufbewahrungsregel).
-- Einwilligung für die Messung: gelöst durch Einwilligung für alle Besuche, unabhängig vom Land.
 - Ungefragte Gesundheitsangaben: keine Einwilligung und keine Art.-9-Ausnahme behauptet; Löschregel in
   Abschnitt 8 der Erklärung und oben in Abschnitt 1.
 - E-Mail-Verschleierung: als technischer Fehler behandelt (Abschnitt 3).
@@ -246,13 +214,11 @@ Erledigt mit diesem Branch (früher offen):
 Ausserhalb der Erklärung, nicht blockierend:
 
 - **CV-PDF** (`public/cv-emanuel-wullschleger.pdf`) enthält weiterhin `emanuel.wullschleger@icloud.com`
-  und eine Telefonnummer. Die Quelle des PDFs liegt nicht im Repository. Wenn die Kontaktadresse überall
-  gleich sein soll: CV mit `apps@wullschleger.dev` neu exportieren und die Datei ersetzen.
-- **App-Text** `publicPages.websiteNote` (App-Repository): sagt „die Website kann Besuche mit Cloudflare
-  Web Analytics statistisch auswerten“. Nach dem Deployment dieses Branches genauer: „nur wenn du auf der
-  Website zustimmst“. Siehe [ced-buddy-privacy-handover.md](ced-buddy-privacy-handover.md).
+  und eine Telefonnummer. Wenn die Kontaktadresse überall gleich sein soll: CV neu exportieren.
+- **App-Text** `publicPages.websiteNote` (App-Repository) erwähnt Cloudflare Web Analytics; der Satz
+  sollte entfallen. Siehe [ced-buddy-privacy-handover.md](ced-buddy-privacy-handover.md).
 
-Bei Schliessen der Punkte `privacyUpdated` in `src/apps/apps.js` auf das Datum der Fassung setzen.
+Bei Schliessen des Punkts `privacyUpdated` in `src/apps/apps.js` auf das Datum der Fassung setzen.
 
 ## 6. Sicht der Recherche vom 24.10.2026 (Kurzfassung)
 
@@ -260,9 +226,8 @@ Bei Schliessen der Punkte `privacyUpdated` in `src/apps/apps.js` auf das Datum d
   nur Software bereitstellen (CNIL, Empfehlung zu mobilen Apps, Abschnitt 3.3). Die Erklärung sagt
   deshalb „Deine Tagebuchdaten bearbeite ich nicht“, behauptet aber nicht, die DSGVO gelte nicht, und
   trennt Kauf, E-Mails und Website.
-- Analytics: EDPB-Leitlinien 2/2023 (v2) erfassen auch skriptbasierte Zugriffe ohne Cookie; die
-  Umsetzung hier ist konservativ (Einwilligung für alle), keine Aussage, jedes Cloudflare-Setup sei
-  zwingend einwilligungspflichtig.
+- Analytics: EDPB-Leitlinien 2/2023 (v2) erfassen auch skriptbasierte Zugriffe ohne Cookie. Statt einer
+  Einwilligungslösung wird keine Web-Analyse genutzt.
 - Art. 27: Die Ausnahme verlangt unter anderem „gelegentliche“ Verarbeitung; laufender Support und
   Websitebetrieb machen eine pauschale Ausnahme unsicher (EDPB-Leitlinien 3/2018, Abschnitt 4).
 

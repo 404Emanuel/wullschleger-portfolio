@@ -166,7 +166,7 @@ export const translations = {
         {
           kicker: "Privates Projekt",
           name: "React & Vite Frontend-Basics",
-          desc: "Diese Website: React und Vite mit eigenem CSS auf Design-Tokens, zweisprachig und mit beim Build vorgerenderten Seiten. Anfragen an Drittanbieter gibt es nur nach Zustimmung zur Statistik.",
+          desc: "Diese Website: React und Vite mit eigenem CSS auf Design-Tokens, zweisprachig, mit beim Build vorgerenderten Seiten und ohne Anfragen an Drittanbieter.",
           tags: ["React", "Vite", "CSS"],
           status: "Laufend",
         },
@@ -196,17 +196,6 @@ export const translations = {
       sourceLabel: "Quellcode dieser Website auf GitHub",
       privacy: "Datenschutz",
       privacyHref: "/apps/ced-buddy/privacy",
-    },
-    consent: {
-      settings: "Datenschutzeinstellungen",
-      title: "Statistik zur Website",
-      text: "Darf ich messen, wie oft die Seiten aufgerufen werden, woher Besuche kommen und wie schnell die Seiten laden? Nur wenn du zustimmst, lädt dein Browser dafür ein Skript von Cloudflare Web Analytics. Es setzt keine Cookies. Ohne Zustimmung funktioniert alles gleich, nur ohne Messung. Deine Wahl kannst du jederzeit unter „Datenschutzeinstellungen“ unten auf der Seite ändern.",
-      more: "Mehr dazu",
-      moreHref: "/apps/ced-buddy/privacy#web-analytics",
-      allow: "Statistik erlauben",
-      deny: "Ohne Statistik fortfahren",
-      statusAllowed: "Aktuell erlaubt.",
-      statusDenied: "Aktuell abgelehnt.",
     },
   },
 
@@ -362,7 +351,7 @@ export const translations = {
         {
           kicker: "Private project",
           name: "React & Vite Frontend Basics",
-          desc: "This website: React and Vite with custom CSS on design tokens, bilingual, with pages pre-rendered at build time. Third-party requests happen only after consent to statistics.",
+          desc: "This website: React and Vite with custom CSS on design tokens, bilingual, with pages pre-rendered at build time and no third-party requests.",
           tags: ["React", "Vite", "CSS"],
           status: "Ongoing",
         },
@@ -392,17 +381,6 @@ export const translations = {
       sourceLabel: "Source code of this website on GitHub",
       privacy: "Privacy",
       privacyHref: "/en/apps/ced-buddy/privacy",
-    },
-    consent: {
-      settings: "Privacy settings",
-      title: "Website statistics",
-      text: "May I measure how often the pages are viewed, where visits come from and how fast the pages load? Only if you agree does your browser load a script from Cloudflare Web Analytics for this. It sets no cookies. Without consent everything works the same, just without measurement. You can change your choice at any time under “Privacy settings” at the bottom of the page.",
-      more: "Learn more",
-      moreHref: "/en/apps/ced-buddy/privacy#web-analytics",
-      allow: "Allow statistics",
-      deny: "Continue without statistics",
-      statusAllowed: "Currently allowed.",
-      statusDenied: "Currently declined.",
     },
   },
 };

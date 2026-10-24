@@ -7,7 +7,7 @@ Datenschutzerklärung (`pending` im Abschnitt „Verantwortlich und Kontakt“, 
 
 - Verantwortlicher: Emanuel Wullschleger, Privatperson, Schweiz, ohne Niederlassung in der EU.
 - Geplant: CED Buddy auch in EU-Storefronts, laufender E-Mail-Support über Infomaniak, Website über
-  Cloudflare mit Statistik nur nach Einwilligung.
+  Cloudflare ohne Web-Analyse.
 - Für Verarbeitung im Zusammenhang mit einem gezielten Angebot an Personen in der EU kann Art. 3 Abs. 2
   DSGVO greifen; geprüft wird pro Verarbeitungstätigkeit (EDPB-Leitlinien 3/2018, Abschnitt 2).
 - Die Ausnahme nach Art. 27 Abs. 2 lit. a verlangt kumulativ unter anderem **gelegentliche**
@@ -26,8 +26,8 @@ Datenschutzerklärung (`pending` im Abschnitt „Verantwortlich und Kontakt“, 
 
    „Fällt Emanuel Wullschleger als Schweizer Einzelanbieter einer kostenfreien, ausschliesslich lokal
    arbeitenden Tagebuch-App mit Apple-In-App-Kauf unter die Ausnahme von Art. 27 Abs. 2 lit. a DSGVO,
-   wenn nur technischer E-Mail-Support über Infomaniak und eine über Cloudflare ausgelieferte Website mit
-   optionaler, einwilligungsbasierter Webanalyse beim Anbieter Datenverarbeitung auslösen? Bitte
+   wenn nur technischer E-Mail-Support über Infomaniak und eine über Cloudflare ausgelieferte Website ohne
+   Webanalyse beim Anbieter Datenverarbeitung auslösen? Bitte
    Verarbeitungstätigkeiten und das Merkmal gelegentlich getrennt beurteilen.“
 
    Bei positivem, schriftlichem Ergebnis: den `pending` durch einen sachlichen Satz ersetzen, der auf

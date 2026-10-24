@@ -66,16 +66,10 @@ Alles in `wullschleger-dev/src/apps/apps.js`:
 
 ## 4. Datenschutzerklärung (Stand 24.10.2026)
 
-Überarbeitet auf `feat/app-privacy-finalization` (Verantwortlicher, Infomaniak, Aufbewahrung, Cloudflare,
-Rechtsgrundlagen, Rechte) und `feat/privacy-consent` (Statistik nur mit Einwilligung, Footer
-„Datenschutzeinstellungen“, Kontaktadresse der Startseite `apps@wullschleger.dev`, Regel für unnötig
-mitgeschickte Gesundheitsangaben, Links aus der App, `email_off` gegen die E-Mail-Verschleierung). Die
-Erklärung gilt für App, E-Mails an `apps@wullschleger.dev` und die ganze Website.
-
-Weiterhin **Entwurf** (`privacyStatus: "draft"`), zwei offene Punkte: Cloudflare-Konfiguration mit
-Prüfung auf dem ausgelieferten Build, EU-Vertretung. Der Build verweigert `"final"` auch ohne
-Web-Analytics-Token in `src/analytics.js`. Einzelheiten: [privacy-operations.md](privacy-operations.md),
-[eu-representative.md](eu-representative.md). Übergabe an das App-Repository:
+Gilt für App, E-Mails an `apps@wullschleger.dev` (Support, Feedback, Kontakt) und die ganze Website. Die
+Website nutzt keine Web-Analyse. Weiterhin **Entwurf** (`privacyStatus: "draft"`) wegen eines offenen
+Punkts: EU-Vertretung nach Art. 27 DSGVO ([eu-representative.md](eu-representative.md)). Einzelheiten:
+[privacy-operations.md](privacy-operations.md). Übergabe an das App-Repository:
 [ced-buddy-privacy-handover.md](ced-buddy-privacy-handover.md).
 
 ## 5. Quelle der App-Fakten und Bilder

@@ -33,7 +33,7 @@ export const privacyContent = {
       "Den Kauf der Arztberichte wickelt Apple ab. Die App erfährt nur, ob der Kauf gilt.",
       "E-Mails für Support, Feedback und Kontakt sendest du freiwillig aus deinem eigenen Mailprogramm. Ich lösche erledigte Anfragen spätestens sechs Monate nach Abschluss, unnötig mitgeschickte Gesundheitsangaben möglichst rasch.",
       "Die App enthält keine Werbung und keine Analyse-, Absturz- oder Tracking-Bibliothek.",
-      "Die Website wird über Cloudflare ausgeliefert. Nur wenn du zustimmst, misst Cloudflare Web Analytics Seitenaufrufe, Herkunftsseiten und Ladezeiten, ohne Cookies. Deine Wahl änderst du jederzeit unter „Datenschutzeinstellungen“ unten auf jeder Seite.",
+      "Die Website wird über Cloudflare ausgeliefert und nutzt keine Web-Analyse. Die Seiten selbst setzen keine Cookies und speichern nichts in deinem Browser.",
     ],
     sections: [
       {
@@ -227,27 +227,11 @@ export const privacyContent = {
             p: "Wie lange Cloudflare diese Verbindungsdaten aufbewahrt, legt Cloudflare fest; eine feste Frist nennt Cloudflare dafür nicht. Mehr dazu: https://www.cloudflare.com/privacypolicy/",
           },
           {
-            p: "Die Seiten selbst setzen keine Cookies. Die Sprache steht in der Adresse (/en für Englisch). Damit die Website deine Wahl zur Statistik beachtet, speichert sie im lokalen Speicher deines Browsers (localStorage) einen Eintrag „wd-privacy-choice“: deine Wahl (erlaubt oder abgelehnt), eine Versionsnummer und das Datum der Wahl. Der Eintrag bleibt auf deinem Gerät und wird weder an mich noch an Cloudflare gesendet. Nach sechs Monaten fragt die Website neu; löschen kannst du den Eintrag jederzeit in den Einstellungen deines Browsers. Hält Cloudflare eine Anfrage für automatisiert, kann Cloudflare eine Sicherheitsprüfung zeigen und dafür ein Sicherheits-Cookie setzen (zum Beispiel „cf_clearance“). Solche Cookies dienen dem Schutz der Website, nicht der Analyse.",
+            p: "Die Seiten selbst setzen keine Cookies und speichern nichts in deinem Browser; die Sprache steht in der Adresse (/en für Englisch). Hält Cloudflare eine Anfrage für automatisiert, kann Cloudflare eine Sicherheitsprüfung zeigen und dafür ein Sicherheits-Cookie setzen (zum Beispiel „cf_clearance“). Solche Cookies dienen dem Schutz der Website, nicht der Analyse.",
           },
-          { h3: "Cloudflare Web Analytics, nur mit deiner Zustimmung", id: "web-analytics" },
+          { h3: "Keine Web-Analyse", id: "web-analytics" },
           {
-            p: "Mit deiner Zustimmung nutze ich Cloudflare Web Analytics, um zu sehen, wie oft die Seiten aufgerufen werden, über welche Seiten Besucherinnen und Besucher kommen und wie schnell die Seiten laden. Die Website fragt dich danach, mit den gleichwertigen Knöpfen „Statistik erlauben“ und „Ohne Statistik fortfahren“. Solange du nicht zustimmst, lädt die Website das Skript nicht und baut keine Verbindung zu Cloudflare Web Analytics auf; alle Inhalte bleiben gleich nutzbar. Ohne JavaScript erscheint die Frage nicht, und es wird nichts gemessen.",
-          },
-          {
-            p: "Nach deiner Zustimmung lädt dein Browser auf jeder Seite ein Skript von Cloudflare (static.cloudflareinsights.com). Es liest Leistungswerte aus deinem Browser aus und sendet Messwerte an Cloudflare (cloudflareinsights.com): die aufgerufene Seite, die Herkunftsseite, Lade- und Leistungswerte und eine zufällige Kennung für diesen einen Seitenaufruf. Aus der Anfrage leitet Cloudflare Land, Gerätetyp, Browser und Betriebssystem ab. Im Konto sehe ich nur zusammengefasste Zahlen, keine einzelnen Personen.",
-          },
-          {
-            p: "Nach Angaben von Cloudflare verwendet Web Analytics keine Cookies und keinen lokalen Speicher im Browser, erstellt keine Fingerabdrücke aus IP-Adresse oder Browserangaben, speichert keine Abfrageparameter von Adressen und verwirft die IP-Adresse im nächsten Rechenzentrum. Die Messung dient nicht der Werbung und keinem Profil über dich.",
-          },
-          {
-            p: "Aufbewahrung nach Angaben von Cloudflare: Die vollständigen Messdaten bleiben sieben Tage erhalten. Danach behält Cloudflare eine Stichprobe von rund 10 % für längerfristige Auswertungen; im Konto sind Daten der letzten sechs Monate abrufbar. Eine Frist, nach der alle Messdaten gelöscht sind, nennt Cloudflare nicht.",
-          },
-          {
-            p: "Deine Zustimmung ist freiwillig. Du kannst sie jederzeit mit Wirkung für die Zukunft widerrufen: unten auf jeder Seite unter „Datenschutzeinstellungen“ mit „Ohne Statistik fortfahren“. War das Skript geladen, lädt die Website die Seite danach neu, damit es nicht weiter misst. Messwerte, die bis dahin gesendet wurden, werden dadurch nicht gelöscht; für sie gilt die Aufbewahrung bei Cloudflare.",
-          },
-          {
-            pending:
-              "Die Einbindung über die Zustimmung ist vorbereitet, aber noch nicht in Betrieb. Offen sind: im Cloudflare-Konto die automatische Einbindung von Web Analytics ausschalten (Pages-Projekt und Zone), damit Cloudflare das Skript nicht selbst einfügt, den Token der Website eintragen und auf der veröffentlichten Website prüfen, dass ohne Zustimmung keine Anfrage an Cloudflare Web Analytics entsteht und die E-Mail-Adressen unverändert ausgeliefert werden.",
+            p: "Die Website verwendet keine Web-Analyse: kein Analyse- oder Statistikskript, keine Messung in deinem Browser. Die zusammengefassten Zahlen, die ich im Cloudflare-Konto sehe, stammen nur aus den Verbindungsdaten, die Cloudflare beim Ausliefern ohnehin erhält (siehe oben).",
           },
           { h3: "Fehlerberichte (Network Error Logging)" },
           {
@@ -264,13 +248,10 @@ export const privacyContent = {
         title: "Zwecke und Rechtsgrundlagen",
         blocks: [
           {
-            p: "Ich bearbeite Personendaten nach dem Schweizer Datenschutzgesetz (DSG) und nur für die in dieser Erklärung genannten Zwecke. Eine Einwilligung frage ich nur für die freiwillige Statistik der Website ab. Weder die Nutzung der App noch der Besuch der Website noch das Senden einer E-Mail gilt als Einwilligung. Ich treffe keine automatisierten Einzelentscheidungen und erstelle keine Profile über dich.",
+            p: "Ich bearbeite Personendaten nach dem Schweizer Datenschutzgesetz (DSG) und nur für die in dieser Erklärung genannten Zwecke. Ich hole keine Einwilligung ein: Weder die Nutzung der App noch der Besuch der Website noch das Senden einer E-Mail gilt als Einwilligung. Ich treffe keine automatisierten Einzelentscheidungen und erstelle keine Profile über dich.",
           },
           {
             p: "Deine Tagebuchdaten bearbeite ich nicht. Sie liegen nur auf deinem Gerät und erreichen mich nur, wenn du sie mir selbst schickst.",
-          },
-          {
-            p: "Die Statistik der Website läuft auch für Besuche aus der Schweiz nur mit deiner Zustimmung. Über die Bearbeitung auf deinem Gerät und wie du sie ablehnst, informiert Abschnitt 9 (Art. 45c Fernmeldegesetz).",
           },
           {
             p: "Soweit die Datenschutz-Grundverordnung der EU (DSGVO) auf eine Bearbeitung anwendbar ist, etwa wenn du in der EU lebst und mir schreibst, stütze ich mich auf diese Rechtsgrundlagen:",
@@ -293,16 +274,6 @@ export const privacyContent = {
                   "Website ausliefern und schützen",
                   "Verbindungsdaten bei Cloudflare",
                   "Art. 6 Abs. 1 lit. f (sichere und funktionierende Website)",
-                ],
-                [
-                  "Reichweite und Ladequalität messen",
-                  "Messwerte von Web Analytics",
-                  "Art. 6 Abs. 1 lit. a (deine Einwilligung); jederzeit widerrufbar unter „Datenschutzeinstellungen“",
-                ],
-                [
-                  "Deine Wahl zur Statistik beachten",
-                  "Eintrag im Browser (nur auf deinem Gerät)",
-                  "Art. 6 Abs. 1 lit. f (Interesse, deine Wahl einzuhalten, ohne bei jedem Aufruf neu zu fragen)",
                 ],
                 [
                   "Verbindungsfehler erkennen",
@@ -332,7 +303,7 @@ export const privacyContent = {
                 ],
                 [
                   "Cloudflare, Inc., San Francisco, und mit Cloudflare verbundene Gesellschaften",
-                  "Auslieferung und Schutz der Website, Fehlerberichte; Web Analytics nur mit deiner Einwilligung",
+                  "Auslieferung und Schutz der Website, Fehlerberichte",
                   "Weltweites Netz von Rechenzentren; eine Anfrage wird meist im nächstgelegenen bearbeitet, das auch ausserhalb der Schweiz und der EU liegen kann. Gespeichert wird nach Angaben von Cloudflare vor allem in den USA und im EWR.",
                 ],
                 [
@@ -360,9 +331,6 @@ export const privacyContent = {
           },
           {
             p: "Soweit die DSGVO anwendbar ist, hast du ausserdem das Recht auf Einschränkung der Bearbeitung und auf Datenübertragbarkeit sowie das Recht, einer Bearbeitung aus berechtigtem Interesse jederzeit zu widersprechen. Du kannst dich bei einer Datenschutz-Aufsichtsbehörde beschweren, insbesondere in dem Land, in dem du lebst oder arbeitest.",
-          },
-          {
-            p: "Deine Einwilligung zur Statistik kannst du jederzeit widerrufen, unten auf jeder Seite unter „Datenschutzeinstellungen“. Der Widerruf wirkt für die Zukunft; was bis dahin auf Grundlage der Einwilligung geschah, bleibt rechtmässig.",
           },
           {
             p: "Für alle diese Anliegen, auch wenn du die Löschung deiner E-Mails verlangen willst, schreib an apps@wullschleger.dev. Wenn ich nicht sicher bin, dass die Anfrage von dir kommt, kann ich um eine Bestätigung bitten, zum Beispiel eine Antwort von der Adresse, von der du geschrieben hast.",
@@ -404,7 +372,7 @@ export const privacyContent = {
       "Apple handles the purchase of the doctor reports. The app only learns whether the purchase is valid.",
       "You send emails for support, feedback and contact voluntarily, from your own mail app. I delete completed requests no later than six months after they are closed, and health information sent unnecessarily as soon as possible.",
       "The app contains no advertising and no analytics, crash reporting or tracking library.",
-      "The website is delivered through Cloudflare. Only if you agree does Cloudflare Web Analytics measure page views, referring pages and load times, without cookies. You can change your choice at any time under “Privacy settings” at the bottom of every page.",
+      "The website is delivered through Cloudflare and uses no web analytics. The pages themselves set no cookies and store nothing in your browser.",
     ],
     sections: [
       {
@@ -596,27 +564,11 @@ export const privacyContent = {
             p: "How long Cloudflare keeps this connection data is set by Cloudflare; Cloudflare does not state a fixed period for it. More: https://www.cloudflare.com/privacypolicy/",
           },
           {
-            p: "The pages themselves set no cookies. The language is part of the address (/en for English). So that the website respects your choice about statistics, it stores an entry “wd-privacy-choice” in your browser's local storage (localStorage): your choice (allowed or declined), a version number and the date of the choice. The entry stays on your device and is sent neither to me nor to Cloudflare. After six months the website asks again; you can delete the entry at any time in your browser settings. If Cloudflare considers a request automated, it may show a security check and set a security cookie for it (for example “cf_clearance”). Such cookies protect the website; they are not used for analytics.",
+            p: "The pages themselves set no cookies and store nothing in your browser; the language is part of the address (/en for English). If Cloudflare considers a request automated, it may show a security check and set a security cookie for it (for example “cf_clearance”). Such cookies protect the website; they are not used for analytics.",
           },
-          { h3: "Cloudflare Web Analytics, only with your consent", id: "web-analytics" },
+          { h3: "No web analytics", id: "web-analytics" },
           {
-            p: "With your consent, I use Cloudflare Web Analytics to see how often the pages are viewed, which pages visitors come from and how fast the pages load. The website asks you, with the equal buttons “Allow statistics” and “Continue without statistics”. As long as you do not agree, the website does not load the script and opens no connection to Cloudflare Web Analytics; all content remains just as usable. Without JavaScript the question does not appear and nothing is measured.",
-          },
-          {
-            p: "After you agree, your browser loads a script from Cloudflare (static.cloudflareinsights.com) on every page. It reads performance values from your browser and sends measurements to Cloudflare (cloudflareinsights.com): the page viewed, the referring page, load and performance values and a random identifier for this one page view. From the request, Cloudflare derives country, device type, browser and operating system. In the account I only see aggregated figures, not individual people.",
-          },
-          {
-            p: "According to Cloudflare, Web Analytics uses no cookies and no local storage in the browser, does not fingerprint visitors from their IP address or browser details, does not store query parameters of addresses and discards the IP address at the nearest data centre. The measurement is not used for advertising or to build a profile of you.",
-          },
-          {
-            p: "Retention according to Cloudflare: the complete measurements are kept for seven days. After that, Cloudflare keeps a sample of about 10% for longer-term analysis; data for the last six months is available in the account. Cloudflare does not state a period after which all measurements are deleted.",
-          },
-          {
-            p: "Your consent is voluntary. You can withdraw it at any time with effect for the future: at the bottom of every page under “Privacy settings”, with “Continue without statistics”. If the script was loaded, the website then reloads the page so that it stops measuring. Measurements sent until then are not deleted by this; Cloudflare's retention applies to them.",
-          },
-          {
-            pending:
-              "Consent-based loading is prepared but not yet in operation. Still to do: switch off the automatic Web Analytics setup in the Cloudflare account (Pages project and zone) so that Cloudflare does not add the script itself, enter the site token, and check on the published website that no request to Cloudflare Web Analytics happens without consent and that email addresses are delivered unchanged.",
+            p: "The website uses no web analytics: no analytics or statistics script, no measurement in your browser. The aggregated figures I see in the Cloudflare account come only from the connection data Cloudflare receives anyway when delivering the pages (see above).",
           },
           { h3: "Error reports (Network Error Logging)" },
           {
@@ -633,13 +585,10 @@ export const privacyContent = {
         title: "Purposes and legal bases",
         blocks: [
           {
-            p: "I process personal data under the Swiss Federal Act on Data Protection (FADP) and only for the purposes named in this policy. I only ask for consent for the optional website statistics. Neither using the app, nor visiting the website, nor sending an email counts as consent. I make no automated individual decisions and build no profiles of you.",
+            p: "I process personal data under the Swiss Federal Act on Data Protection (FADP) and only for the purposes named in this policy. I do not ask for consent: neither using the app, nor visiting the website, nor sending an email counts as consent. I make no automated individual decisions and build no profiles of you.",
           },
           {
             p: "I do not process your journal data. It is only on your device and only reaches me if you send it to me yourself.",
-          },
-          {
-            p: "The website statistics also run for visits from Switzerland only with your consent. Section 9 explains the processing on your device and how to refuse it (Art. 45c Telecommunications Act).",
           },
           {
             p: "Where the EU General Data Protection Regulation (GDPR) applies to processing, for example when you live in the EU and write to me, I rely on these legal bases:",
@@ -662,16 +611,6 @@ export const privacyContent = {
                   "Deliver and protect the website",
                   "Connection data at Cloudflare",
                   "Art. 6(1)(f) (secure, working website)",
-                ],
-                [
-                  "Measure reach and loading quality",
-                  "Web Analytics measurements",
-                  "Art. 6(1)(a) (your consent); can be withdrawn at any time under “Privacy settings”",
-                ],
-                [
-                  "Respect your choice about statistics",
-                  "Entry in the browser (only on your device)",
-                  "Art. 6(1)(f) (interest in respecting your choice without asking on every visit)",
                 ],
                 [
                   "Detect connection errors",
@@ -701,7 +640,7 @@ export const privacyContent = {
                 ],
                 [
                   "Cloudflare, Inc., San Francisco, and Cloudflare affiliates",
-                  "Delivery and protection of the website, error reports; Web Analytics only with your consent",
+                  "Delivery and protection of the website, error reports",
                   "Worldwide network of data centres; a request is usually handled by the nearest one, which may be outside Switzerland and the EU. According to Cloudflare, data is stored mainly in the USA and the EEA.",
                 ],
                 [
@@ -729,9 +668,6 @@ export const privacyContent = {
           },
           {
             p: "Where the GDPR applies, you also have the right to restriction of processing and to data portability, and the right to object at any time to processing based on legitimate interests. You can lodge a complaint with a data protection supervisory authority, in particular in the country where you live or work.",
-          },
-          {
-            p: "You can withdraw your consent to statistics at any time, at the bottom of every page under “Privacy settings”. The withdrawal applies to the future; processing based on the consent before that remains lawful.",
           },
           {
             p: "For all of these requests, including if you want your emails deleted, write to apps@wullschleger.dev. If I am not sure that a request comes from you, I may ask for confirmation, for example a reply from the address you wrote from.",

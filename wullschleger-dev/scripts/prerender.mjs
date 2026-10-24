@@ -17,7 +17,7 @@ const dist = join(root, "dist");
 const serverDir = join(root, "dist-server");
 
 const server = await import(pathToFileURL(join(serverDir, "entry-server.js")).href);
-const { routes, notFoundRoute, routeFile, render, pageHead, cedBuddy, webAnalytics, pendingPrivacyPoints } = server;
+const { routes, notFoundRoute, routeFile, render, pageHead, cedBuddy, pendingPrivacyPoints } = server;
 
 // ---- Launch guards -------------------------------------------------------
 const problems = [];
@@ -36,13 +36,6 @@ if (cedBuddy.privacyStatus === "final") {
   if (pending.de || pending.en) {
     problems.push(`privacyStatus "final" but open points remain (de ${pending.de}, en ${pending.en})`);
   }
-}
-// The privacy text describes consent-based Cloudflare Web Analytics.
-if (webAnalytics.token && !/^[0-9a-f]{32}$/.test(webAnalytics.token)) {
-  problems.push("Web Analytics token must be 32 hex characters (src/analytics.js)");
-}
-if (cedBuddy.privacyStatus === "final" && !webAnalytics.token) {
-  problems.push('privacyStatus "final" but no Web Analytics token (src/analytics.js)');
 }
 if (problems.length) {
   console.error(`prerender: ${problems.join("; ")}`);
